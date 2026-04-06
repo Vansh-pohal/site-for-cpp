@@ -1,0 +1,150 @@
+/* ============================ Base Styles ============================ */
+body {
+  font-family: 'Inter', sans-serif;
+  margin: 0;
+  background: #020617;
+  color: #e6edf3;
+  overflow-x: hidden;
+}
+
+/* ============================ Navbar ============================ */
+.navbar {
+  background: #0f172a;
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 9px 60px;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  border-bottom: 1px solid #1e293b;
+}
+
+.navbar h1 {
+  font-size: 24px;
+  background: linear-gradient(90deg, #38bdf8, #22c55e);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.navbar ul {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar a {
+  color: #94a3b8;
+  text-decoration: none;
+  font-weight: 400;
+  position: relative;
+}
+
+.navbar a::after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  background: #1dbbff;
+  left: 0;
+  bottom: -5px;
+  transition: 0.3s;
+}
+
+.navbar a:hover {
+  color: #fff;
+}
+
+.navbar a:hover::after {
+  width: 100%;
+}
+
+/* ============================ Heading Section ============================ */
+.heading {
+  text-align: center;
+  padding: 40px;
+  width: 80%;
+  margin: 80px auto;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.heading p {
+  font-size: 34px;
+  font-weight: 600;
+  margin: 0;
+  color: #38bdf8;
+  letter-spacing: 2px;
+  cursor: default;
+}
+
+/* ============================ Topics Section ============================ */
+.topics {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  padding: 40px;
+}
+
+/* ============================ Card Styles ============================ */
+.card {
+  background: #0f172a;
+  border-radius: 20px;
+  padding: 25px;
+  text-align: left;
+  transition: 0.3s ease;
+  border: 1px solid #1e293b;
+  position: relative;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  border-color: #38bdf8;
+  box-shadow: 0 0 20px rgba(56, 189, 248, 0.15);
+}
+
+.card h3 {
+  font-weight: 500;
+  line-height: 1.5;
+  color: #e2e8f0;
+  margin-bottom: 15px;
+}
+
+/* ============================ Buttons ============================ */
+.btn {
+  display: inline-block;
+  margin-top: 10px;
+  background: transparent;
+  color: #38bdf8;
+  padding: 8px 18px;
+  border-radius: 6px;
+  text-decoration: none;
+  cursor: pointer;
+  font-weight: 500;
+  border: 1px solid #38bdf8;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background: #38bdf8;
+  color: #020617;
+  transform: translateY(-2px);
+}
+
+/* ============================ Code Toggle ============================ */
+.code-output {
+  display: none;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 10px;
+  background-color: #0f172a;
+  color: white;
+  margin-bottom: 40px;
+}

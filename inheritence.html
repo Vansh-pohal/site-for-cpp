@@ -1,0 +1,625 @@
+    
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C Programming Hub</title>
+    <link rel="stylesheet" href="style_c_site.css">
+    </head>
+    <body>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <h1>C Programming Hub</h1>
+        <ul>
+        <li><a href="home.html">Home</a></li>
+        <li><a href="index.html">Topics</a></li>
+        <li><a href="https://youtube.com/playlist?list=PLk05cwASVVZsVc37eoI49N4fgJGLnOxI2&si=zacrxO4BEJYDkRt3">Tutorials</a></li>
+        <li><a href="ask.html">Ask Questions</a></li>
+        </ul>
+    </nav>
+
+    <!-- Main Container -->
+    <div class="main-container">
+    <h2 style="color: #e0f7fa; text-align: center; margin-bottom: 25px; font-weight: 600;">
+       INHERITANCE
+    </h2>
+       
+
+
+
+
+
+<!-- Q1 -->
+<div class="ques-card">
+<h3>Q1. Create a class Animal and override makeSound() in Cat.</h3>
+<button class="toggle-btn">Show Code ↓</button>
+<div class="code-output">
+
+<pre class="code-area">
+#include &lt;iostream&gt;
+using namespace std;
+
+class Animal {
+public:
+    virtual void makeSound() {
+        cout &lt;&lt; "Animal makes a sound\n";
+    }
+};
+
+class Cat : public Animal {
+public:
+    void makeSound() {
+        cout &lt;&lt; "Meow\n";
+    }
+};
+
+int main() {
+    Animal *a;
+    Cat c;
+    a = &c;
+    a-&gt;makeSound();
+}
+</pre>
+
+<p class="output-title">OUTPUT</p>
+<pre class="output-text">
+Meow
+</pre>
+
+</div></div>
+
+<!-- Q2 -->
+<div class="ques-card">
+<h3>Q2. Create Vehicle class and override drive() in Car.</h3>
+<button class="toggle-btn">Show Code ↓</button>
+<div class="code-output">
+
+<pre class="code-area">
+#include &lt;iostream&gt;
+using namespace std;
+
+class Vehicle {
+public:
+    virtual void drive() {
+        cout &lt;&lt; "Driving vehicle\n";
+    }
+};
+
+class Car : public Vehicle {
+public:
+    void drive() {
+        cout &lt;&lt; "Repairing a car\n";
+    }
+};
+
+int main() {
+    Vehicle *v;
+    Car c;
+    v = &c;
+    v-&gt;drive();
+}
+</pre>
+
+<p class="output-title">OUTPUT</p>
+<pre class="output-text">
+Repairing a car
+</pre>
+
+</div></div>
+
+<!-- Q3 -->
+<div class="ques-card">
+<h3>Q3. Create Shape and override getArea() in Rectangle.</h3>
+<button class="toggle-btn">Show Code ↓</button>
+<div class="code-output">
+
+<pre class="code-area">
+#include &lt;iostream&gt;
+using namespace std;
+
+class Shape {
+public:
+    virtual int getArea() {
+        return 0;
+    }
+};
+
+class Rectangle : public Shape {
+    int l, w;
+
+public:
+    Rectangle(int l, int w) {
+        this-&gt;l = l;
+        this-&gt;w = w;
+    }
+
+    int getArea() {
+        return l * w;
+    }
+};
+
+int main() {
+    Rectangle r(5, 4);
+    cout &lt;&lt; "Area: " &lt;&lt; r.getArea();
+}
+</pre>
+
+<p class="output-title">OUTPUT</p>
+<pre class="output-text">
+Area: 20
+</pre>
+
+</div></div>
+
+<!-- Q4 -->
+<div class="ques-card">
+<h3>Q4. Create Employee and override work() in HRManager.</h3>
+<button class="toggle-btn">Show Code ↓</button>
+<div class="code-output">
+
+<pre class="code-area">
+#include &lt;iostream&gt;
+using namespace std;
+
+class Employee {
+protected:
+    int salary;
+
+public:
+    Employee(int s) {
+        salary = s;
+    }
+
+    virtual void work() {
+        cout &lt;&lt; "Employee working\n";
+    }
+
+    int getSalary() {
+        return salary;
+    }
+};
+
+class HRManager : public Employee {
+public:
+    HRManager(int s) : Employee(s) {}
+
+    void work() {
+        cout &lt;&lt; "HR managing recruitment\n";
+    }
+
+    void addEmployee() {
+        cout &lt;&lt; "Employee added\n";
+    }
+};
+
+int main() {
+    HRManager hr(50000);
+    hr.work();
+    hr.addEmployee();
+    cout &lt;&lt; hr.getSalary();
+}
+</pre>
+
+<p class="output-title">OUTPUT</p>
+<pre class="output-text">
+HR managing recruitment
+Employee added
+50000
+</pre>
+
+</div></div>
+
+<!-- Q5 -->
+<div class="ques-card">
+<h3>Q5. Create BankAccount and override withdraw() in SavingsAccount.</h3>
+<button class="toggle-btn">Show Code ↓</button>
+<div class="code-output">
+
+<pre class="code-area">
+#include &lt;iostream&gt;
+using namespace std;
+
+class BankAccount {
+protected:
+    int balance;
+
+public:
+    BankAccount(int b) {
+        balance = b;
+    }
+
+    void deposit(int amt) {
+        balance += amt;
+    }
+
+    virtual void withdraw(int amt) {
+        if (amt > balance)
+            cout &lt;&lt; "Insufficient balance\n";
+        else {
+            balance -= amt;
+            cout &lt;&lt; "Withdraw successful\n";
+        }
+    }
+
+    int getBalance() {
+        return balance;
+    }
+};
+
+class SavingsAccount : public BankAccount {
+public:
+    SavingsAccount(int b) : BankAccount(b) {}
+
+    void withdraw(int amt) {
+        if (balance - amt &lt; 100)
+            cout &lt;&lt; "Minimum balance required\n";
+        else {
+            balance -= amt;
+            cout &lt;&lt; "Withdraw successful\n";
+        }
+    }
+};
+
+int main() {
+    SavingsAccount acc(500);
+    acc.deposit(200);
+    acc.withdraw(300);
+    cout &lt;&lt; acc.getBalance();
+}
+</pre>
+
+<p class="output-title">OUTPUT</p>
+<pre class="output-text">
+Withdraw successful
+400
+</pre>
+
+</div></div>
+
+<!-- Q6 -->
+<div class="ques-card">
+<h3>Q6. Create Animal and override move() in Cheetah.</h3>
+<button class="toggle-btn">Show Code ↓</button>
+<div class="code-output">
+
+<pre class="code-area">
+#include &lt;iostream&gt;
+using namespace std;
+
+class Animal {
+public:
+    virtual void move() {
+        cout &lt;&lt; "Animal moves\n";
+    }
+};
+
+class Cheetah : public Animal {
+public:
+    void move() {
+        cout &lt;&lt; "Cheetah runs fast\n";
+    }
+};
+
+int main() {
+    Animal *a;
+    Cheetah c;
+    a = &c;
+    a-&gt;move();
+}
+</pre>
+
+<p class="output-title">OUTPUT</p>
+<pre class="output-text">
+Cheetah runs fast
+</pre>
+
+</div></div>
+
+<!-- Q7 -->
+<div class="ques-card">
+<h3>Q7. Create Person and override getLastName() in Employee.</h3>
+<button class="toggle-btn">Show Code ↓</button>
+<div class="code-output">
+
+<pre class="code-area">
+#include &lt;iostream&gt;
+using namespace std;
+
+class Person {
+protected:
+    string first, last;
+
+public:
+    Person(string f, string l) {
+        first = f;
+        last = l;
+    }
+
+    string getFirstName() {
+        return first;
+    }
+
+    virtual string getLastName() {
+        return last;
+    }
+};
+
+class Employee : public Person {
+    int id;
+    string title;
+
+public:
+    Employee(string f, string l, int i, string t)
+        : Person(f, l) {
+        id = i;
+        title = t;
+    }
+
+    string getLastName() {
+        return last + " (" + title + ")";
+    }
+};
+
+int main() {
+    Employee e("Sarthak", "Gussain", 101, "Developer");
+    cout &lt;&lt; e.getFirstName() &lt;&lt; endl;
+    cout &lt;&lt; e.getLastName();
+}
+</pre>
+
+<p class="output-title">OUTPUT</p>
+<pre class="output-text">
+Sarthak
+Gussain (Developer)
+</pre>
+
+</div></div>
+
+
+
+<!-- Q8 -->
+<div class="ques-card">
+<h3>Q8. Create Shape and override getArea() and getPerimeter() in Circle.</h3>
+<button class="toggle-btn">Show Code ↓</button>
+<div class="code-output">
+
+<pre class="code-area">
+#include &lt;iostream&gt;
+using namespace std;
+
+class Shape {
+public:
+    virtual int getArea() { return 0; }
+    virtual int getPerimeter() { return 0; }
+};
+
+class Circle : public Shape {
+    int r;
+
+public:
+    Circle(int r) {
+        this-&gt;r = r;
+    }
+
+    int getArea() {
+        return (22 * r * r) / 7;
+    }
+
+    int getPerimeter() {
+        return (2 * 22 * r) / 7;
+    }
+};
+
+int main() {
+    Circle c(7);
+    cout &lt;&lt; "Area: " &lt;&lt; c.getArea() &lt;&lt; endl;
+    cout &lt;&lt; "Perimeter: " &lt;&lt; c.getPerimeter();
+}
+</pre>
+
+<p class="output-title">OUTPUT</p>
+<pre class="output-text">
+Area: 154
+Perimeter: 44
+</pre>
+
+</div></div>
+
+<!-- Q9 -->
+<div class="ques-card">
+<h3>Q9. Create Vehicle hierarchy (Truck, Car, Motorcycle) with efficiency, distance, speed.</h3>
+<button class="toggle-btn">Show Code ↓</button>
+<div class="code-output">
+
+<pre class="code-area">
+#include &lt;iostream&gt;
+using namespace std;
+
+class Vehicle {
+protected:
+    string make, model, fuel;
+    int year;
+
+public:
+    Vehicle(string mk, string md, int y, string f) {
+        make = mk; model = md; year = y; fuel = f;
+    }
+
+    virtual int fuelEfficiency() { return 0; }
+    virtual int maxSpeed() { return 0; }
+
+    int distance(int fuelUsed) {
+        return fuelEfficiency() * fuelUsed;
+    }
+};
+
+class Truck : public Vehicle {
+public:
+    Truck(string mk, string md, int y, string f)
+        : Vehicle(mk, md, y, f) {}
+
+    int fuelEfficiency() { return 8; }
+    int maxSpeed() { return 120; }
+};
+
+class Car : public Vehicle {
+public:
+    Car(string mk, string md, int y, string f)
+        : Vehicle(mk, md, y, f) {}
+
+    int fuelEfficiency() { return 15; }
+    int maxSpeed() { return 180; }
+};
+
+class Motorcycle : public Vehicle {
+public:
+    Motorcycle(string mk, string md, int y, string f)
+        : Vehicle(mk, md, y, f) {}
+
+    int fuelEfficiency() { return 35; }
+    int maxSpeed() { return 140; }
+};
+
+int main() {
+    Truck t("Tata","Prima",2022,"Diesel");
+    Car c("Honda","City",2023,"Petrol");
+    Motorcycle m("Yamaha","R15",2024,"Petrol");
+
+    int fuel = 5;
+
+    cout &lt;&lt; "Truck distance: " &lt;&lt; t.distance(fuel) &lt;&lt; endl;
+    cout &lt;&lt; "Car distance: " &lt;&lt; c.distance(fuel) &lt;&lt; endl;
+    cout &lt;&lt; "Bike distance: " &lt;&lt; m.distance(fuel);
+}
+</pre>
+
+<p class="output-title">OUTPUT</p>
+<pre class="output-text">
+Truck distance: 40
+Car distance: 75
+Bike distance: 175
+</pre>
+
+</div></div>
+
+<!-- Q10 -->
+<div class="ques-card">
+<h3>Q10. Create Employee hierarchy (Manager, Developer, Programmer) with bonus and reports.</h3>
+<button class="toggle-btn">Show Code ↓</button>
+<div class="code-output">
+
+<pre class="code-area">
+#include &lt;iostream&gt;
+using namespace std;
+
+class Employee {
+protected:
+    string name;
+    int salary;
+
+public:
+    Employee(string n, int s) {
+        name = n;
+        salary = s;
+    }
+
+    virtual int bonus() {
+        return salary * 0.1;
+    }
+
+    virtual void report() {
+        cout &lt;&lt; name &lt;&lt; " general report\n";
+    }
+};
+
+class Manager : public Employee {
+public:
+    Manager(string n, int s) : Employee(n,s) {}
+
+    int bonus() { return salary * 0.2; }
+
+    void report() {
+        cout &lt;&lt; name &lt;&lt; " manages team\n";
+    }
+};
+
+class Developer : public Employee {
+public:
+    Developer(string n, int s) : Employee(n,s) {}
+
+    int bonus() { return salary * 0.15; }
+
+    void report() {
+        cout &lt;&lt; name &lt;&lt; " writes code\n";
+    }
+};
+
+class Programmer : public Employee {
+public:
+    Programmer(string n, int s) : Employee(n,s) {}
+
+    int bonus() { return salary * 0.12; }
+
+    void report() {
+        cout &lt;&lt; name &lt;&lt; " tests programs\n";
+    }
+};
+
+int main() {
+    Manager m("Rahul",80000);
+    Developer d("Aman",60000);
+    Programmer p("Neha",50000);
+
+    m.report();
+    cout &lt;&lt; m.bonus() &lt;&lt; endl;
+
+    d.report();
+    cout &lt;&lt; d.bonus() &lt;&lt; endl;
+
+    p.report();
+    cout &lt;&lt; p.bonus();
+}
+</pre>
+
+<p class="output-title">OUTPUT</p>
+<pre class="output-text">
+Rahul manages team
+16000
+Aman writes code
+9000
+Neha tests programs
+6000
+</pre>
+
+</div>
+      <!-- Footer -->
+  <footer>
+    © 2026 C Programming Hub
+  </footer>
+     <script>
+    const toggleButtons = document.querySelectorAll('.toggle-btn');
+
+    toggleButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const card = btn.parentElement;
+        card.classList.toggle('active');
+        const output = card.querySelector('.code-output');
+
+        if(card.classList.contains('active')) {
+          output.style.display = 'flex';
+          btn.textContent = "Hide Code ↑";
+        } else {
+          output.style.display = 'none';
+          btn.textContent = "Show Code ↓";
+        }
+      });
+    });
+  </script>
+    </body>
+    </html>
+
+
+
+        <!-- Questions Section -->

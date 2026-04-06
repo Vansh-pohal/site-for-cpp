@@ -1,0 +1,675 @@
+ 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>C Programming Hub</title>
+<link rel="stylesheet" href="style_c_site.css">
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <h1>C Programming Hub</h1>
+    <ul>
+      <li><a href="home.html">Home</a></li>
+      <li><a href="index.html">Topics</a></li>
+      <li><a href="https://youtube.com/playlist?list=PLk05cwASVVZsVc37eoI49N4fgJGLnOxI2&si=zacrxO4BEJYDkRt3">Tutorials</a></li>
+      <li><a href="ask.html">Ask Questions</a></li>
+    </ul>
+  </nav>
+
+  <!-- Main Container -->
+  <div class="main-container">
+ <h2 style="color: #e0f7fa; text-align: center; margin-bottom: 25px; font-weight: 600;">
+    Conversion
+  </h2>
+    <!-- Question Card 1 -->
+
+
+
+
+
+
+
+
+
+<div class="ques-card">
+  <h3>Q1. C++ Program to convert String to int</h3>
+  <button class="toggle-btn">Show Code ↓</button>
+
+  <div class="code-output">
+    <pre class="code-area">
+#include &lt;iostream&gt;
+using namespace std;
+
+int main(){
+    char s[100];
+    cin&gt;&gt;s;
+
+    int num = 0;
+    for(int i=0; s[i] != '\0'; i++){
+        num = num * 10 + (s[i] - '0');
+    }
+
+    cout&lt;&lt;num;
+}
+</pre>
+
+    <p class="output-title">OUTPUT</p>
+<pre class="output-text">
+Input: 123
+Output: 123
+</pre>
+  </div>
+</div>
+
+
+<div class="ques-card">
+  <h3>Q2. C++ Program to convert int to String</h3>
+  <button class="toggle-btn">Show Code ↓</button>
+
+  <div class="code-output">
+    <pre class="code-area">
+#include &lt;iostream&gt;
+using namespace std;
+
+int main(){
+    int n;
+    cin&gt;&gt;n;
+
+    char s[100];
+    int i = 0;
+
+    while(n &gt; 0){
+        s[i++] = (n % 10) + '0';
+        n /= 10;
+    }
+
+    for(int j = i-1; j &gt;= 0; j--){
+        cout&lt;&lt;s[j];
+    }
+}
+</pre>
+
+    <p class="output-title">OUTPUT</p>
+<pre class="output-text">
+Input: 123
+Output: 123
+</pre>
+  </div>
+</div>
+
+
+<div class="ques-card">
+  <h3>Q3. C++ Program to convert String to long</h3>
+  <button class="toggle-btn">Show Code ↓</button>
+
+  <div class="code-output">
+    <pre class="code-area">
+#include &lt;iostream&gt;
+using namespace std;
+
+int main(){
+    char s[100];
+    cin&gt;&gt;s;
+
+    long num = 0;
+    for(int i=0; s[i] != '\0'; i++){
+        num = num * 10 + (s[i] - '0');
+    }
+
+    cout&lt;&lt;num;
+}
+</pre>
+
+    <p class="output-title">OUTPUT</p>
+<pre class="output-text">
+Input: 123456
+Output: 123456
+</pre>
+  </div>
+</div>
+
+
+<div class="ques-card">
+  <h3>Q4. C++ Program to convert long to String</h3>
+  <button class="toggle-btn">Show Code ↓</button>
+
+  <div class="code-output">
+    <pre class="code-area">
+#include &lt;iostream&gt;
+using namespace std;
+
+int main(){
+    long n;
+    cin&gt;&gt;n;
+
+    char s[100];
+    int i = 0;
+
+    while(n &gt; 0){
+        s[i++] = (n % 10) + '0';
+        n /= 10;
+    }
+
+    for(int j = i-1; j &gt;= 0; j--){
+        cout&lt;&lt;s[j];
+    }
+}
+</pre>
+
+    <p class="output-title">OUTPUT</p>
+<pre class="output-text">
+Input: 123456
+Output: 123456
+</pre>
+  </div>
+</div>
+
+
+<div class="ques-card">
+  <h3>Q5. C++ Program to convert String to float</h3>
+  <button class="toggle-btn">Show Code ↓</button>
+
+  <div class="code-output">
+    <pre class="code-area">
+#include &lt;iostream&gt;
+using namespace std;
+
+int main(){
+    char s[100];
+    cin&gt;&gt;s;
+
+    float num = 0, frac = 0, div = 1;
+    int i = 0, flag = 0;
+
+    while(s[i] != '\0'){
+        if(s[i] == '.'){
+            flag = 1;
+        }
+        else if(flag == 0){
+            num = num * 10 + (s[i] - '0');
+        }
+        else{
+            frac = frac * 10 + (s[i] - '0');
+            div *= 10;
+        }
+        i++;
+    }
+
+    cout&lt;&lt;(num + frac/div);
+}
+</pre>
+
+    <p class="output-title">OUTPUT</p>
+<pre class="output-text">
+Input: 12.34
+Output: 12.34
+</pre>
+  </div>
+</div>
+
+
+<div class="ques-card">
+  <h3>Q6. C++ Program to convert float to String</h3>
+  <button class="toggle-btn">Show Code ↓</button>
+
+  <div class="code-output">
+    <pre class="code-area">
+#include &lt;iostream&gt;
+using namespace std;
+
+int main(){
+    float n;
+    cin&gt;&gt;n;
+
+    int intPart = (int)n;
+    float frac = n - intPart;
+
+    char s[100];
+    int i = 0;
+
+    while(intPart &gt; 0){
+        s[i++] = (intPart % 10) + '0';
+        intPart /= 10;
+    }
+
+    for(int j=i-1; j&gt;=0; j--) cout&lt;&lt;s[j];
+
+    cout&lt;&lt;".";
+
+    for(int k=0; k&lt;3; k++){
+        frac *= 10;
+        int digit = (int)frac;
+        cout&lt;&lt;digit;
+        frac -= digit;
+    }
+}
+</pre>
+
+    <p class="output-title">OUTPUT</p>
+<pre class="output-text">
+Input: 12.34
+Output: 12.340
+</pre>
+  </div>
+</div>
+
+
+<div class="ques-card">
+  <h3>Q7. C++ Program to convert String to double</h3>
+  <button class="toggle-btn">Show Code ↓</button>
+
+  <div class="code-output">
+    <pre class="code-area">
+#include &lt;iostream&gt;
+using namespace std;
+
+int main(){
+    char s[100];
+    cin&gt;&gt;s;
+
+    double num = 0, frac = 0, div = 1;
+    int i = 0, flag = 0;
+
+    while(s[i] != '\0'){
+        if(s[i] == '.'){
+            flag = 1;
+        }
+        else if(flag == 0){
+            num = num * 10 + (s[i] - '0');
+        }
+        else{
+            frac = frac * 10 + (s[i] - '0');
+            div *= 10;
+        }
+        i++;
+    }
+
+    cout&lt;&lt;(num + frac/div);
+}
+</pre>
+
+    <p class="output-title">OUTPUT</p>
+<pre class="output-text">
+Input: 123.456
+Output: 123.456
+</pre>
+  </div>
+</div>
+
+
+<div class="ques-card">
+  <h3>Q8. C++ Program to convert double to String</h3>
+  <button class="toggle-btn">Show Code ↓</button>
+
+  <div class="code-output">
+    <pre class="code-area">
+#include &lt;iostream&gt;
+using namespace std;
+
+int main(){
+    double n;
+    cin&gt;&gt;n;
+
+    long intPart = (long)n;
+    double frac = n - intPart;
+
+    char s[100];
+    int i = 0;
+
+    while(intPart &gt; 0){
+        s[i++] = (intPart % 10) + '0';
+        intPart /= 10;
+    }
+
+    for(int j=i-1; j&gt;=0; j--) cout&lt;&lt;s[j];
+
+    cout&lt;&lt;".";
+
+    for(int k=0; k&lt;3; k++){
+        frac *= 10;
+        int digit = (int)frac;
+        cout&lt;&lt;digit;
+        frac -= digit;
+    }
+}
+</pre>
+
+    <p class="output-title">OUTPUT</p>
+<pre class="output-text">
+Input: 123.456
+Output: 123.456
+</pre>
+  </div>
+</div>
+
+
+<div class="ques-card">
+  <h3>Q9. C++ Program to convert char to int</h3>
+  <button class="toggle-btn">Show Code ↓</button>
+
+  <div class="code-output">
+    <pre class="code-area">
+#include &lt;iostream&gt;
+using namespace std;
+
+int main(){
+    char c;
+    cin&gt;&gt;c;
+    int n = c - '0';
+    cout&lt;&lt;n;
+}
+</pre>
+
+    <p class="output-title">OUTPUT</p>
+<pre class="output-text">
+Input: 5
+Output: 5
+</pre>
+  </div>
+</div>
+
+
+<div class="ques-card">
+  <h3>Q10. C++ Program to convert int to char</h3>
+  <button class="toggle-btn">Show Code ↓</button>
+
+  <div class="code-output">
+    <pre class="code-area">
+#include &lt;iostream&gt;
+using namespace std;
+
+int main(){
+    int n;
+    cin&gt;&gt;n;
+    char c = n + '0';
+    cout&lt;&lt;c;
+}
+</pre>
+
+    <p class="output-title">OUTPUT</p>
+<pre class="output-text">
+Input: 5
+Output: 5
+</pre>
+  </div>
+</div>
+
+
+
+<div class="ques-card">
+  <h3>Q11. C++ Program to convert Binary to Decimal.</h3>
+  <button class="toggle-btn">Show Code ↓</button>
+  <div class="code-output">
+
+<pre class="code-area">
+#include &lt;iostream&gt;
+using namespace std;
+
+int main() {
+    int bin, ld, pow = 1, res = 0;
+
+    cout&lt;&lt;"ENTER BINARY: ";
+    cin&gt;&gt;bin;
+
+    while(bin &gt; 0){
+        ld = bin % 10;
+        res += ld * pow;
+        pow *= 2;
+        bin = bin / 10;
+    }
+
+    cout&lt;&lt;"DECIMAL : "&lt;&lt;res;
+}
+</pre>
+
+<p class="output-title">OUTPUT</p>
+<pre class="output-text">
+ENTER BINARY: 1011
+DECIMAL : 11
+</pre>
+
+  </div>
+</div><div class="ques-card">
+  <h3>Q12. C++ Program to convert Decimal to Binary.</h3>
+  <button class="toggle-btn">Show Code ↓</button>
+  <div class="code-output">
+
+<pre class="code-area">
+#include &lt;iostream&gt;
+using namespace std;
+
+int main() {
+    int n, rem, i = 0;
+    int arr[25];
+
+    cout&lt;&lt;"ENTER DECIMAL: ";
+    cin&gt;&gt;n;
+
+    while(n &gt; 0){
+        rem = n % 2;
+        arr[i] = rem;
+        i++;
+        n = n / 2;
+    }
+
+    cout&lt;&lt;"BINARY : ";
+    for(int j = i - 1; j &gt;= 0; j--){
+        cout&lt;&lt;arr[j];
+    }
+}
+</pre>
+
+<p class="output-title">OUTPUT</p>
+<pre class="output-text">
+ENTER DECIMAL: 11
+BINARY : 1011
+</pre>
+
+  </div>
+</div><div class="ques-card">
+  <h3>Q13. C++ Program to convert Hexadecimal to Decimal.</h3>
+  <button class="toggle-btn">Show Code ↓</button>
+  <div class="code-output">
+
+<pre class="code-area">
+#include &lt;iostream&gt;
+#include &lt;cstring&gt;
+using namespace std;
+
+int main() {
+    char hex[25];
+    int res = 0, power = 1;
+
+    cout&lt;&lt;"ENTER HEX: ";
+    cin&gt;&gt;hex;
+
+    int len = strlen(hex);
+
+    for(int i = len - 1; i &gt;= 0; i--){
+        if(hex[i] &gt;= '0' &amp;&amp; hex[i] &lt;= '9')
+            res += (hex[i] - '0') * power;
+        else if(hex[i] &gt;= 'A' &amp;&amp; hex[i] &lt;= 'F')
+            res += (hex[i] - 'A' + 10) * power;
+        else if(hex[i] &gt;= 'a' &amp;&amp; hex[i] &lt;= 'f')
+            res += (hex[i] - 'a' + 10) * power;
+
+        power *= 16;
+    }
+
+    cout&lt;&lt;"DECIMAL : "&lt;&lt;res;
+}
+</pre>
+
+<p class="output-title">OUTPUT</p>
+<pre class="output-text">
+ENTER HEX: A
+DECIMAL : 10
+</pre>
+
+  </div>
+</div><div class="ques-card">
+  <h3>Q14. C++ Program to convert Decimal to Hexadecimal.</h3>
+  <button class="toggle-btn">Show Code ↓</button>
+  <div class="code-output">
+
+<pre class="code-area">
+#include &lt;iostream&gt;
+using namespace std;
+
+int main() {
+    int n, rem, i = 0;
+    char hex[25];
+
+    cout&lt;&lt;"ENTER DECIMAL: ";
+    cin&gt;&gt;n;
+
+    while(n &gt; 0){
+        rem = n % 16;
+
+        if(rem &lt; 10)
+            hex[i] = rem + '0';
+        else
+            hex[i] = rem - 10 + 'A';
+
+        i++;
+        n = n / 16;
+    }
+
+    cout&lt;&lt;"HEXADECIMAL : ";
+    for(int j = i - 1; j &gt;= 0; j--){
+        cout&lt;&lt;hex[j];
+    }
+}
+</pre>
+
+<p class="output-title">OUTPUT</p>
+<pre class="output-text">
+ENTER DECIMAL: 26
+HEXADECIMAL : 1A
+</pre>
+
+  </div>
+</div><div class="ques-card">
+  <h3>Q15. C++ Program to convert Octal to Decimal.</h3>
+  <button class="toggle-btn">Show Code ↓</button>
+  <div class="code-output">
+
+<pre class="code-area">
+#include &lt;iostream&gt;
+using namespace std;
+
+int main() {
+    int oct, ld, power = 1, res = 0;
+
+    cout&lt;&lt;"ENTER OCTAL: ";
+    cin&gt;&gt;oct;
+
+    while(oct &gt; 0){
+        ld = oct % 10;
+        res += ld * power;
+        power *= 8;
+        oct = oct / 10;
+    }
+
+    cout&lt;&lt;"DECIMAL : "&lt;&lt;res;
+}
+</pre>
+
+<p class="output-title">OUTPUT</p>
+<pre class="output-text">
+ENTER OCTAL: 17
+DECIMAL : 15
+</pre>
+
+  </div>
+</div><div class="ques-card">
+  <h3>Q16. C++ Program to convert Decimal to Octal.</h3>
+  <button class="toggle-btn">Show Code ↓</button>
+  <div class="code-output">
+
+<pre class="code-area">
+#include &lt;iostream&gt;
+using namespace std;
+
+int main() {
+    int n, rem, i = 0;
+    int arr[25];
+
+    cout&lt;&lt;"ENTER DECIMAL: ";
+    cin&gt;&gt;n;
+
+    while(n &gt; 0){
+        rem = n % 8;
+        arr[i] = rem;
+        i++;
+        n = n / 8;
+    }
+
+    cout&lt;&lt;"OCTAL : ";
+    for(int j = i - 1; j &gt;= 0; j--){
+        cout&lt;&lt;arr[j];
+    }
+}
+</pre>
+
+<p class="output-title">OUTPUT</p>
+<pre class="output-text">
+ENTER DECIMAL: 15
+OCTAL : 17
+</pre>
+
+  </div>
+</div>
+
+  <!-- Footer -->
+  <footer>
+    © 2026 C Programming Hub
+  </footer>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+  <script>
+    const toggleButtons = document.querySelectorAll('.toggle-btn');
+
+    toggleButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const card = btn.parentElement;
+        card.classList.toggle('active');
+        const output = card.querySelector('.code-output');
+
+        if(card.classList.contains('active')) {
+          output.style.display = 'flex';
+          btn.textContent = "Hide Code ↑";
+        } else {
+          output.style.display = 'none';
+          btn.textContent = "Show Code ↓";
+        }
+      });
+    });
+  </script>
+</body>
+</html>
+
+
+
+    <!-- Questions Section -->

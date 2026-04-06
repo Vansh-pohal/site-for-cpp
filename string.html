@@ -1,0 +1,1808 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C Programming Hub</title>
+    <link rel="stylesheet" href="style_c_site.css">
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <h1>C Programming Hub</h1>
+        <ul>
+            <li><a href="home.html">Home</a></li>
+            <li><a href="index.html">Topics</a></li>
+            <li><a
+                    href="https://youtube.com/playlist?list=PLk05cwASVVZsVc37eoI49N4fgJGLnOxI2&si=zacrxO4BEJYDkRt3">Tutorials</a>
+            </li>
+            <li><a href="ask.html">Ask Questions</a></li>
+        </ul>
+    </nav>
+
+    <!-- Main Container -->
+    <div class="main-container">
+        <h2 style="color: #e0f7fa; text-align: center; margin-bottom: 25px; font-weight: 600;">
+            STRING
+        </h2>
+        <!-- Question Card 1 -->
+
+        <div class="ques-card">
+            <h3>Q1. Program to Check Anagram</h3>
+            <button class="toggle-btn">Show Code ↓</button>
+            <div class="code-output">
+                <pre class="code-area">
+#include &lt;iostream&gt;
+#include &lt;string&gt;
+using namespace std;
+
+bool isAnagram(string first, string second){
+    if (first.length() != second.length()) return false;
+    int freq[256] = {0};
+    for (int i = 0; i &lt; (int)first.length(); i++){
+        freq[(int)first[i]]++;
+        freq[(int)second[i]]--;
+    }
+    for (int i = 0; i &lt; 256; i++){
+        if (freq[i] != 0) return false;
+    }
+    return true;
+}
+
+int main(){
+    string first, second;
+    cout &lt;&lt; "Enter first string: ";
+    cin &gt;&gt; first;
+    cout &lt;&lt; "Enter second string: ";
+    cin &gt;&gt; second;
+    if (isAnagram(first, second)) cout &lt;&lt; "Anagram\n";
+    else cout &lt;&lt; "Not anagram\n";
+    return 0;
+}
+    </pre>
+
+                <p class="output-title">OUTPUT</p>
+                <pre class="output-text">
+Enter first string: listen
+Enter second string: silent
+Anagram
+    </pre>
+            </div>
+        </div>
+
+        <div class="ques-card">
+            <h3>Q2. Program to Swapping Pair of Characters</h3>
+            <button class="toggle-btn">Show Code ↓</button>
+            <div class="code-output">
+                <pre class="code-area">
+#include &lt;iostream&gt;
+#include &lt;string&gt;
+using namespace std;
+
+int main(){
+    string text;
+    cout &lt;&lt; "Enter a string: ";
+    cin &gt;&gt; text;
+    for (int i = 0; i + 1 &lt; (int)text.length(); i += 2){
+        char temp = text[i];
+        text[i] = text[i + 1];
+        text[i + 1] = temp;
+    }
+    cout &lt;&lt; "After swapping pair of characters: " &lt;&lt; text &lt;&lt; "\n";
+    return 0;
+}
+    </pre>
+
+                <p class="output-title">OUTPUT</p>
+                <pre class="output-text">
+Enter a string: hello
+After swapping pair of characters: ehllo
+    </pre>
+            </div>
+        </div>
+
+        <div class="ques-card">
+            <h3>Q3. Program to Check if a String contains only digits</h3>
+            <button class="toggle-btn">Show Code ↓</button>
+            <div class="code-output">
+                <pre class="code-area">
+#include &lt;iostream&gt;
+#include &lt;string&gt;
+using namespace std;
+
+bool onlyDigits(string text){
+    if (text.length() == 0) return false;
+    for (int i = 0; i &lt; (int)text.length(); i++){
+        if (text[i] &lt; '0' || text[i] &gt; '9') return false;
+    }
+    return true;
+}
+
+int main(){
+    string text;
+    cout &lt;&lt; "Enter a string: ";
+    cin &gt;&gt; text;
+    if (onlyDigits(text)) cout &lt;&lt; "String contains only digits\n";
+    else cout &lt;&lt; "String does not contain only digits\n";
+    return 0;
+}
+    </pre>
+
+                <p class="output-title">OUTPUT</p>
+                <pre class="output-text">
+Enter a string: 12345
+String contains only digits
+    </pre>
+            </div>
+        </div>
+
+        <div class="ques-card">
+            <h3>Q4. Program to perform Deep Copy for String</h3>
+            <button class="toggle-btn">Show Code ↓</button>
+            <div class="code-output">
+                <pre class="code-area">
+#include &lt;iostream&gt;
+#include &lt;string&gt;
+using namespace std;
+
+int main(){
+    string original, copied = "";
+    cout &lt;&lt; "Enter a string: ";
+    cin &gt;&gt; original;
+    for (int i = 0; i &lt; (int)original.length(); i++){
+        copied += original[i];
+    }
+    cout &lt;&lt; "Original string: " &lt;&lt; original &lt;&lt; "\n";
+    cout &lt;&lt; "Copied string: " &lt;&lt; copied &lt;&lt; "\n";
+    return 0;
+}
+    </pre>
+
+                <p class="output-title">OUTPUT</p>
+                <pre class="output-text">
+Enter a string: hello
+Original string: hello
+Copied string: hello
+    </pre>
+            </div>
+        </div>
+
+        <div class="ques-card">
+            <h3>Q5. Program to remove all occurrences of a given character from input String</h3>
+            <button class="toggle-btn">Show Code ↓</button>
+            <div class="code-output">
+                <pre class="code-area">
+#include &lt;iostream&gt;
+#include &lt;string&gt;
+using namespace std;
+
+int main(){
+    string text, result = "";
+    char ch;
+    cout &lt;&lt; "Enter a string: ";
+    cin &gt;&gt; text;
+    cout &lt;&lt; "Enter character to remove: ";
+    cin &gt;&gt; ch;
+    for (int i = 0; i &lt; (int)text.length(); i++){
+        if (text[i] != ch) result += text[i];
+    }
+    cout &lt;&lt; "String after removal: " &lt;&lt; result &lt;&lt; "\n";
+    return 0;
+}
+    </pre>
+
+                <p class="output-title">OUTPUT</p>
+                <pre class="output-text">
+Enter a string: hello
+Enter character to remove: l
+String after removal: heo
+    </pre>
+            </div>
+        </div>
+
+        <div class="ques-card">
+            <h3>Q6. Program to Add Characters to a String</h3>
+            <button class="toggle-btn">Show Code ↓</button>
+            <div class="code-output">
+                <pre class="code-area">
+#include &lt;iostream&gt;
+#include &lt;string&gt;
+using namespace std;
+
+int main(){
+    string text, extra;
+    cout &lt;&lt; "Enter base string: ";
+    cin &gt;&gt; text;
+    cout &lt;&lt; "Enter characters to add: ";
+    cin &gt;&gt; extra;
+    text += extra;
+    cout &lt;&lt; "Updated string: " &lt;&lt; text &lt;&lt; "\n";
+    return 0;
+}
+    </pre>
+
+                <p class="output-title">OUTPUT</p>
+                <pre class="output-text">
+Enter base string: hello
+Enter characters to add: world
+Updated string: helloworld
+    </pre>
+            </div>
+        </div>
+
+        <div class="ques-card">
+            <h3>Q7. Program to check whether a string is a Palindrome</h3>
+            <button class="toggle-btn">Show Code ↓</button>
+            <div class="code-output">
+                <pre class="code-area">
+#include &lt;iostream&gt;
+#include &lt;string&gt;
+using namespace std;
+
+bool isPalindrome(string text){
+    int start = 0, end = (int)text.length() - 1;
+    while (start &lt; end){
+        if (text[start] != text[end]) return false;
+        start++; end--;
+    }
+    return true;
+}
+
+int main(){
+    string text;
+    cout &lt;&lt; "Enter a string: ";
+    cin &gt;&gt; text;
+    if (isPalindrome(text)) cout &lt;&lt; "Palindrome\n";
+    else cout &lt;&lt; "Not palindrome\n";
+    return 0;
+}
+    </pre>
+
+                <p class="output-title">OUTPUT</p>
+                <pre class="output-text">
+Enter a string: racecar
+Palindrome
+    </pre>
+            </div>
+        </div>
+
+        <div class="ques-card">
+            <h3>Q8. Program to Convert Enum to String</h3>
+            <button class="toggle-btn">Show Code ↓</button>
+            <div class="code-output">
+                <pre class="code-area">
+#include &lt;iostream&gt;
+#include &lt;string&gt;
+using namespace std;
+
+enum Color{RED=1, GREEN, BLUE, YELLOW};
+
+string colorToString(Color color){
+    if (color == RED) return "RED";
+    if (color == GREEN) return "GREEN";
+    if (color == BLUE) return "BLUE";
+    if (color == YELLOW) return "YELLOW";
+    return "INVALID";
+}
+
+int main(){
+    int value;
+    cout &lt;&lt; "Enter enum value (1-4): ";
+    cin &gt;&gt; value;
+    if (value &lt; 1 || value &gt; 4){
+        cout &lt;&lt; "INVALID\n";
+        return 0;
+    }
+    Color color = (Color)value;
+    cout &lt;&lt; "Enum as string: " &lt;&lt; colorToString(color) &lt;&lt; "\n";
+    return 0;
+}
+    </pre>
+
+                <p class="output-title">OUTPUT</p>
+                <pre class="output-text">
+Enter enum value (1-4): 3
+Enum as string: BLUE
+    </pre>
+            </div>
+        </div>
+
+        <div class="ques-card">
+            <h3>Q9. Program to count number of words in a String</h3>
+            <button class="toggle-btn">Show Code ↓</button>
+            <div class="code-output">
+                <pre class="code-area">
+#include &lt;iostream&gt;
+#include &lt;string&gt;
+using namespace std;
+
+int countWords(string text){
+    int words = 0, inWord = 0;
+    for (int i = 0; i &lt; (int)text.length(); i++){
+        if (text[i] != ' ' &amp;&amp; text[i] != '\t' &amp;&amp; text[i] != '\n'){
+            if (inWord == 0){ words++; inWord = 1; }
+        } else inWord = 0;
+    }
+    return words;
+}
+
+int main(){
+    string text;
+    cout &lt;&lt; "Enter a string: ";
+    getline(cin, text);
+    cout &lt;&lt; "Number of words: " &lt;&lt; countWords(text) &lt;&lt; "\n";
+    return 0;
+}
+    </pre>
+
+                <p class="output-title">OUTPUT</p>
+                <pre class="output-text">
+Enter a string: Hello world from C++
+Number of words: 4
+    </pre>
+            </div>
+        </div>
+
+        <div class="ques-card">
+            <h3>Q10. Program to count the total number of characters in a string</h3>
+            <button class="toggle-btn">Show Code ↓</button>
+            <div class="code-output">
+                <pre class="code-area">
+#include &lt;iostream&gt;
+#include &lt;string&gt;
+using namespace std;
+
+int main(){
+    string text;
+    cout &lt;&lt; "Enter a string: ";
+    getline(cin, text);
+    cout &lt;&lt; "Total characters: " &lt;&lt; (int)text.length() &lt;&lt; "\n";
+    return 0;
+}
+    </pre>
+
+                <p class="output-title">OUTPUT</p>
+                <pre class="output-text">
+Enter a string: Hello world
+Total characters: 11
+    </pre>
+            </div>
+        </div>
+
+        <div class="ques-card">
+            <h3>Q11. Program to count the total number of punctuation characters exists in a String</h3>
+            <button class="toggle-btn">Show Code ↓</button>
+            <div class="code-output">
+                <pre class="code-area">
+#include &lt;iostream&gt;
+#include &lt;string&gt;
+using namespace std;
+
+bool isPunctuation(char ch){
+    string marks = ".,;:!?'-\"()[]{}";
+    for (int i = 0; i &lt; (int)marks.length(); i++){
+        if (ch == marks[i]) return true;
+    }
+    return false;
+}
+
+int main(){
+    string text;
+    int count = 0;
+    cout &lt;&lt; "Enter a string: ";
+    getline(cin, text);
+    for (int i = 0; i &lt; (int)text.length(); i++){
+        if (isPunctuation(text[i])) count++;
+    }
+    cout &lt;&lt; "Total punctuation characters: " &lt;&lt; count &lt;&lt; "\n";
+    return 0;
+}
+    </pre>
+                <p class="output-title">OUTPUT</p>
+                <pre class="output-text">
+Enter a string: Hello, world!
+Total punctuation characters: 2
+    </pre>
+            </div>
+        </div>
+
+        <div class="ques-card">
+            <h3>Q12. Program to count the total number of vowels and consonants in a string</h3>
+            <button class="toggle-btn">Show Code ↓</button>
+            <div class="code-output">
+                <pre class="code-area">
+#include &lt;iostream&gt;
+#include &lt;string&gt;
+using namespace std;
+
+bool isLetter(char ch){
+    return (ch &gt;= 'a' &amp;&amp; ch &lt;= 'z') || (ch &gt;= 'A' &amp;&amp; ch &lt;= 'Z');
+}
+
+bool isVowel(char ch){
+    return ch=='a'||ch=='e'||ch=='i'||ch=='o'||ch=='u'||ch=='A'||ch=='E'||ch=='I'||ch=='O'||ch=='U';
+}
+
+int main(){
+    string text;
+    int vowels = 0, consonants = 0;
+    cout &lt;&lt; "Enter a string: ";
+    getline(cin, text);
+    for (int i = 0; i &lt; (int)text.length(); i++){
+        if (isLetter(text[i])){
+            if (isVowel(text[i])) vowels++;
+            else consonants++;
+        }
+    }
+    cout &lt;&lt; "Vowels: " &lt;&lt; vowels &lt;&lt; "\n";
+    cout &lt;&lt; "Consonants: " &lt;&lt; consonants &lt;&lt; "\n";
+    return 0;
+}
+    </pre>
+                <p class="output-title">OUTPUT</p>
+                <pre class="output-text">
+Enter a string: Hello World
+Vowels: 3
+Consonants: 7
+    </pre>
+            </div>
+        </div>
+
+        <div class="ques-card">
+            <h3>Q13. Program to determine whether a given string is palindrome</h3>
+            <button class="toggle-btn">Show Code ↓</button>
+            <div class="code-output">
+                <pre class="code-area">
+#include &lt;iostream&gt;
+#include &lt;string&gt;
+using namespace std;
+
+bool isPalindrome(string text){
+    int left = 0, right = (int)text.length() - 1;
+    while (left &lt; right){
+        if (text[left] != text[right]) return false;
+        left++; right--;
+    }
+    return true;
+}
+
+int main(){
+    string text;
+    cout &lt;&lt; "Enter a string: ";
+    cin &gt;&gt; text;
+    if (isPalindrome(text)) cout &lt;&lt; "Palindrome\n";
+    else cout &lt;&lt; "Not palindrome\n";
+    return 0;
+}
+    </pre>
+                <p class="output-title">OUTPUT</p>
+                <pre class="output-text">
+Enter a string: level
+Palindrome
+    </pre>
+            </div>
+        </div>
+
+        <div class="ques-card">
+            <h3>Q14. Program to determine whether one string is a rotation of another</h3>
+            <button class="toggle-btn">Show Code ↓</button>
+            <div class="code-output">
+                <pre class="code-area">
+#include &lt;iostream&gt;
+#include &lt;string&gt;
+using namespace std;
+
+bool containsText(string text, string pattern){
+    if (pattern.length() &gt; text.length()) return false;
+    for (int i = 0; i &lt;= (int)text.length() - (int)pattern.length(); i++){
+        int match = 1;
+        for (int j = 0; j &lt; (int)pattern.length(); j++){
+            if (text[i + j] != pattern[j]){ match = 0; break; }
+        }
+        if (match == 1) return true;
+    }
+    return false;
+}
+
+int main(){
+    string first, second;
+    cout &lt;&lt; "Enter first string: ";
+    cin &gt;&gt; first;
+    cout &lt;&lt; "Enter second string: ";
+    cin &gt;&gt; second;
+    if (first.length() != second.length()){ cout &lt;&lt; "Not rotation\n"; return 0; }
+    string doubled = first + first;
+    if (containsText(doubled, second)) cout &lt;&lt; "Rotation\n";
+    else cout &lt;&lt; "Not rotation\n";
+    return 0;
+}
+    </pre>
+                <p class="output-title">OUTPUT</p>
+                <pre class="output-text">
+Enter first string: ABCD
+Enter second string: CDAB
+Rotation
+    </pre>
+            </div>
+        </div>
+
+        <div class="ques-card">
+            <h3>Q15. Program to divide a string in 'N' equal parts</h3>
+            <button class="toggle-btn">Show Code ↓</button>
+            <div class="code-output">
+                <pre class="code-area">
+#include &lt;iostream&gt;
+#include &lt;string&gt;
+using namespace std;
+
+int main(){
+    string text;
+    int n;
+    cout &lt;&lt; "Enter a string: ";
+    cin &gt;&gt; text;
+    cout &lt;&lt; "Enter number of equal parts: ";
+    cin &gt;&gt; n;
+    if (n &lt;= 0){ cout &lt;&lt; "Invalid value of N\n"; return 0; }
+    if ((int)text.length() % n != 0){ cout &lt;&lt; "String cannot be divided in equal parts\n"; return 0; }
+    int partLength = (int)text.length() / n;
+    cout &lt;&lt; "Equal parts are:\n";
+    for (int i = 0; i &lt; (int)text.length(); i += partLength){
+        for (int j = 0; j &lt; partLength; j++) cout &lt;&lt; text[i + j];
+        cout &lt;&lt; "\n";
+    }
+    return 0;
+}
+    </pre>
+                <p class="output-title">OUTPUT</p>
+                <pre class="output-text">
+Enter a string: helloworld
+Enter number of equal parts: 2
+Equal parts are:
+hello
+world
+    </pre>
+            </div>
+        </div>
+
+        <div class="ques-card">
+            <h3>Q16. Program to find all subsets of a string</h3>
+            <button class="toggle-btn">Show Code ↓</button>
+            <div class="code-output">
+                <pre class="code-area">
+#include &lt;iostream&gt;
+#include &lt;string&gt;
+using namespace std;
+
+int main(){
+    string text;
+    cout &lt;&lt; "Enter a string: ";
+    cin &gt;&gt; text;
+    int length = (int)text.length();
+    int total = 1 &lt;&lt; length;
+    cout &lt;&lt; "Subsets are:\n";
+    for (int mask = 1; mask &lt; total; mask++){
+        for (int j = 0; j &lt; length; j++){
+            if ((mask &amp; (1 &lt;&lt; j)) != 0) cout &lt;&lt; text[j];
+        }
+        cout &lt;&lt; "\n";
+    }
+    return 0;
+}
+    </pre>
+                <p class="output-title">OUTPUT</p>
+                <pre class="output-text">
+Enter a string: abc
+Subsets are:
+a
+b
+ab
+c
+ac
+bc
+abc
+    </pre>
+            </div>
+        </div>
+
+        <div class="ques-card">
+            <h3>Q17. Program to find all the permutations of a string</h3>
+            <button class="toggle-btn">Show Code ↓</button>
+            <div class="code-output">
+                <pre class="code-area">
+#include &lt;iostream&gt;
+#include &lt;string&gt;
+using namespace std;
+
+void swapChar(char &amp;a, char &amp;b){ char temp=a;a=b;b=temp; }
+
+void printPermutations(string &amp;text,int start,int end){
+    if(start==end){ cout &lt;&lt; text &lt;&lt; "\n"; return; }
+    for(int i=start;i&lt;=end;i++){
+        swapChar(text[start],text[i]);
+        printPermutations(text,start+1,end);
+        swapChar(text[start],text[i]);
+    }
+}
+
+int main(){
+    string text;
+    cout &lt;&lt; "Enter a string: ";
+    cin &gt;&gt; text;
+    cout &lt;&lt; "Permutations are:\n";
+    printPermutations(text,0,(int)text.length()-1);
+    return 0;
+}
+    </pre>
+                <p class="output-title">OUTPUT</p>
+                <pre class="output-text">
+Enter a string: abc
+Permutations are:
+abc
+acb
+bac
+bca
+cab
+cba
+    </pre>
+            </div>
+        </div>
+
+        <div class="ques-card">
+            <h3>Q18. Program to find maximum and minimum occurring character in a string</h3>
+            <button class="toggle-btn">Show Code ↓</button>
+            <div class="code-output">
+                <pre class="code-area">
+#include &lt;iostream&gt;
+#include &lt;string&gt;
+using namespace std;
+
+int main(){
+    string text;
+    int freq[256]={0};
+    cout &lt;&lt; "Enter a string: ";
+    getline(cin,text);
+    if(text.length()==0){ cout &lt;&lt; "Empty string\n"; return 0; }
+    for(int i=0;i&lt;(int)text.length();i++){ if(text[i]!=' ') freq[(int)text[i]]++; }
+    int maxCount=0,minCount=0; char maxChar=' ',minChar=' ';
+    for(int i=0;i&lt;256;i++){ if(freq[i]>0){ maxCount=freq[i]; minCount=freq[i]; maxChar=(char)i; minChar=(char)i; break; } }
+    for(int i=0;i&lt;256;i++){
+        if(freq[i]&gt;0){
+            if(freq[i]&gt;maxCount){ maxCount=freq[i]; maxChar=(char)i; }
+            if(freq[i]&lt;minCount){ minCount=freq[i]; minChar=(char)i; }
+        }
+    }
+    cout &lt;&lt; "Maximum occurring character: " &lt;&lt; maxChar &lt;&lt; "\n";
+    cout &lt;&lt; "Minimum occurring character: " &lt;&lt; minChar &lt;&lt; "\n";
+    return 0;
+}
+    </pre>
+                <p class="output-title">OUTPUT</p>
+                <pre class="output-text">
+Enter a string: hello
+Maximum occurring character: l
+Minimum occurring character: h
+    </pre>
+            </div>
+        </div>
+
+        <div class="ques-card">
+            <h3>Q19. Program to find Reverse of the string</h3>
+            <button class="toggle-btn">Show Code ↓</button>
+            <div class="code-output">
+                <pre class="code-area">
+#include &lt;iostream&gt;
+#include &lt;string&gt;
+using namespace std;
+
+int main(){
+    string text;
+    cout &lt;&lt; "Enter a string: ";
+    getline(cin,text);
+    int left=0,right=(int)text.length()-1;
+    while(left&lt;right){ char temp=text[left]; text[left]=text[right]; text[right]=temp; left++; right--; }
+    cout &lt;&lt; "Reversed string: " &lt;&lt; text &lt;&lt; "\n";
+    return 0;
+}
+    </pre>
+                <p class="output-title">OUTPUT</p>
+                <pre class="output-text">
+Enter a string: hello
+Reversed string: olleh
+    </pre>
+            </div>
+        </div>
+
+        <div class="ques-card">
+            <h3>Q20. Program to find the duplicate characters in a string</h3>
+            <button class="toggle-btn">Show Code ↓</button>
+            <div class="code-output">
+                <pre class="code-area">
+#include &lt;iostream&gt;
+#include &lt;string&gt;
+using namespace std;
+
+int main(){
+    string text;
+    int freq[256]={0};
+    cout &lt;&lt; "Enter a string: ";
+    getline(cin,text);
+    for(int i=0;i&lt;(int)text.length();i++){ if(text[i]!=' ') freq[(int)text[i]]++; }
+    cout &lt;&lt; "Duplicate characters are:\n";
+    int found=0;
+    for(int i=0;i&lt;256;i++){ if(freq[i]&gt;1){ cout &lt;&lt; (char)i &lt;&lt; " "; found=1; } }
+    if(found==0) cout &lt;&lt; "No duplicates";
+    cout &lt;&lt; "\n";
+    return 0;
+}
+    </pre>
+                <p class="output-title">OUTPUT</p>
+                <pre class="output-text">
+Enter a string: hello
+Duplicate characters are:
+l
+    </pre>
+            </div>
+        </div>
+
+        <div class="ques-card">
+            <h3>Q21. Program to find the duplicate words in a string</h3>
+            <button class="toggle-btn">Show Code ↓</button>
+            <div class="code-output">
+                <pre class="code-area">
+#include &lt;iostream&gt;
+#include &lt;string&gt;
+using namespace std;
+
+int main(){
+    string text, words[200]; int wordCount=0;
+    cout &lt;&lt; "Enter a string: ";
+    getline(cin,text);
+    string current="";
+    for(int i=0;i&lt;=text.length();i++){
+        if(i&lt;text.length() &amp;&amp; text[i]!=' ') current+=text[i];
+        if(i==text.length() || text[i]==' '){ if(current.length()>0){ words[wordCount]=current; wordCount++; current=""; } }
+    }
+    cout &lt;&lt; "Duplicate words are:\n";
+    int found=0;
+    for(int i=0;i&lt;wordCount;i++){
+        int alreadyPrinted=0;
+        for(int k=0;k&lt;i;k++){ if(words[k]==words[i]){ alreadyPrinted=1; break; } }
+        if(alreadyPrinted==1) continue;
+        int count=0;
+        for(int j=0;j&lt;wordCount;j++){ if(words[i]==words[j]) count++; }
+        if(count&gt;1){ cout &lt;&lt; words[i] &lt;&lt; " "; found=1; }
+    }
+    if(found==0) cout &lt;&lt; "No duplicate words";
+    cout &lt;&lt; "\n";
+    return 0;
+}
+    </pre>
+                <p class="output-title">OUTPUT</p>
+                <pre class="output-text">
+Enter a string: hello world hello
+Duplicate words are:
+hello
+    </pre>
+            </div>
+        </div>
+
+        <div class="ques-card">
+            <h3>Q22. Program to find the frequency of characters</h3>
+            <button class="toggle-btn">Show Code ↓</button>
+            <div class="code-output">
+                <pre class="code-area">
+#include &lt;iostream&gt;
+#include &lt;string&gt;
+using namespace std;
+
+int main(){
+    string text;
+    int freq[256]={0};
+    cout &lt;&lt; "Enter a string: ";
+    getline(cin,text);
+    for(int i=0;i&lt;(int)text.length();i++){ if(text[i]!=' ') freq[(int)text[i]]++; }
+    cout &lt;&lt; "Character frequencies are:\n";
+    for(int i=0;i&lt;256;i++){ if(freq[i]&gt;0) cout &lt;&lt; (char)i &lt;&lt; " -> " &lt;&lt; freq[i] &lt;&lt; "\n"; }
+    return 0;
+}
+    </pre>
+                <p class="output-title">OUTPUT</p>
+                <pre class="output-text">
+Enter a string: hello
+Character frequencies are:
+h -> 1
+e -> 1
+l -> 2
+o -> 1
+    </pre>
+            </div>
+        </div>
+        <!-- Q23, Q24, Q25 Cards Combined -->
+
+        <div class="ques-card">
+            <h3>Q23. Program to find the largest and smallest word in a string</h3>
+            <button class="toggle-btn">Show Code ↓</button>
+            <div class="code-output">
+                <pre class="code-area">
+#include &lt;iostream&gt;
+#include &lt;string&gt;
+using namespace std;
+
+int main(){
+    string text, smallest="", largest="";
+    cout &lt;&lt; "Enter a string: ";
+    getline(cin,text);
+    string current="";
+    for(int i=0;i&lt;=text.length();i++){
+        if(i&lt;text.length() &amp;&amp; text[i]!=' ') current+=text[i];
+        if(i==text.length() || text[i]==' '){
+            if(current.length()>0){
+                if(smallest.length()==0 || current.length()&lt;(int)smallest.length()) smallest=current;
+                if(current.length()&gt;(int)largest.length()) largest=current;
+                current="";
+            }
+        }
+    }
+    if(smallest.length()==0){
+        cout &lt;&lt; "No words found\n";
+        return 0;
+    }
+    cout &lt;&lt; "Smallest word: " &lt;&lt; smallest &lt;&lt; "\n";
+    cout &lt;&lt; "Largest word: " &lt;&lt; largest &lt;&lt; "\n";
+    return 0;
+}
+    </pre>
+            </div>
+        </div>
+
+        <div class="ques-card">
+            <h3>Q24. Program to find the longest repeating sequence in a string</h3>
+            <button class="toggle-btn">Show Code ↓</button>
+            <div class="code-output">
+                <pre class="code-area">
+#include &lt;iostream&gt;
+#include &lt;string&gt;
+using namespace std;
+
+int main(){
+    string text;
+    string longest="";
+    cout &lt;&lt; "Enter a string: ";
+    cin &gt;&gt; text;
+    int n = (int)text.length();
+
+    for(int len=1; len&lt;=n/2; len++){
+        for(int i=0; i+2*len &lt;= n; i++){
+            int same=1;
+            for(int j=0; j&lt;len; j++){
+                if(text[i+j] != text[i+len+j]){
+                    same=0;
+                    break;
+                }
+            }
+            if(same==1 &amp;&amp; len &gt; (int)longest.length()){
+                longest = text.substr(i,len);
+            }
+        }
+    }
+
+    if(longest.length()==0){
+        cout &lt;&lt; "No repeating sequence found\n";
+    } else {
+        cout &lt;&lt; "Longest repeating sequence: " &lt;&lt; longest &lt;&lt; "\n";
+    }
+    return 0;
+}
+    </pre>
+            </div>
+        </div>
+
+        <div class="ques-card">
+            <h3>Q25. Program to find the most repeated word in a text file</h3>
+            <button class="toggle-btn">Show Code ↓</button>
+            <div class="code-output">
+                <pre class="code-area">
+#include &lt;iostream&gt;
+#include &lt;string&gt;
+#include &lt;fstream&gt;
+using namespace std;
+
+int main(){
+    string fileName;
+    string words[1000];
+    int wordCount=0;
+
+    cout &lt;&lt; "Enter file name: ";
+    cin &gt;&gt; fileName;
+
+    ifstream file(fileName);
+    if(!file){
+        cout &lt;&lt; "Unable to open file\n";
+        return 0;
+    }
+
+    string word;
+    while(file &gt;&gt; word){
+        words[wordCount]=word;
+        wordCount++;
+        if(wordCount &gt;= 1000) break;
+    }
+    file.close();
+
+    if(wordCount==0){
+        cout &lt;&lt; "No words in file\n";
+        return 0;
+    }
+
+    int maxCount=0;
+    string maxWord="";
+
+    for(int i=0;i&lt;wordCount;i++){
+        int count=0;
+        for(int j=0;j&lt;wordCount;j++){
+            if(words[i]==words[j]) count++;
+        }
+        if(count&gt;maxCount){
+            maxCount=count;
+            maxWord=words[i];
+        }
+    }
+
+    cout &lt;&lt; "Most repeated word: " &lt;&lt; maxWord &lt;&lt; "\n";
+    cout &lt;&lt; "Frequency: " &lt;&lt; maxCount &lt;&lt; "\n";
+    return 0;
+}
+    </pre>
+            </div>
+        </div>
+        <!-- Q26 -->
+        <div class="ques-card">
+            <h3>Q26. Program to find the number of words in the given text file</h3>
+            <button class="toggle-btn">Show Code ↓</button>
+            <div class="code-output">
+                <pre class="code-area">
+#include &lt;iostream&gt;
+#include &lt;string&gt;
+#include &lt;fstream&gt;
+using namespace std;
+
+int main(){
+    string fileName;
+    int wordCount=0;
+    cout &lt;&lt; "Enter file name: ";
+    cin &gt;&gt; fileName;
+
+    ifstream file(fileName);
+    if(!file){
+        cout &lt;&lt; "Unable to open file\n";
+        return 0;
+    }
+
+    string word;
+    while(file &gt;&gt; word){
+        wordCount++;
+    }
+    file.close();
+
+    cout &lt;&lt; "Total words in file: " &lt;&lt; wordCount &lt;&lt; "\n";
+    return 0;
+}
+    </pre>
+            </div>
+        </div>
+
+        <!-- Q27 -->
+        <div class="ques-card">
+            <h3>Q27. Program to Get a Character From the Given String</h3>
+            <button class="toggle-btn">Show Code ↓</button>
+            <div class="code-output">
+                <pre class="code-area">
+#include &lt;iostream&gt;
+#include &lt;string&gt;
+using namespace std;
+
+int main(){
+    string text;
+    int index;
+    cout &lt;&lt; "Enter a string: ";
+    getline(cin,text);
+    cout &lt;&lt; "Enter index: ";
+    cin &gt;&gt; index;
+
+    if(index&lt;0 || index&gt;=text.length()){
+        cout &lt;&lt; "Invalid index\n";
+        return 0;
+    }
+
+    cout &lt;&lt; "Character at index " &lt;&lt; index &lt;&lt; " is: " &lt;&lt; text[index] &lt;&lt; "\n";
+    return 0;
+}
+    </pre>
+            </div>
+        </div>
+
+        <!-- Q28 -->
+        <div class="ques-card">
+            <h3>Q28. Program to Insert a string into another string</h3>
+            <button class="toggle-btn">Show Code ↓</button>
+            <div class="code-output">
+                <pre class="code-area">
+#include &lt;iostream&gt;
+#include &lt;string&gt;
+using namespace std;
+
+int main(){
+    string mainText, insertText;
+    int position;
+
+    cout &lt;&lt; "Enter main string: ";
+    getline(cin, mainText);
+    cout &lt;&lt; "Enter string to insert: ";
+    getline(cin, insertText);
+    cout &lt;&lt; "Enter position: ";
+    cin &gt;&gt; position;
+
+    if(position&lt;0 || position&gt;mainText.length()){
+        cout &lt;&lt; "Invalid position\n";
+        return 0;
+    }
+
+    string result = "";
+    for(int i=0;i&lt;position;i++) result+=mainText[i];
+    result += insertText;
+    for(int i=position;i&lt;mainText.length();i++) result+=mainText[i];
+
+    cout &lt;&lt; "Result string: " &lt;&lt; result &lt;&lt; "\n";
+    return 0;
+}
+    </pre>
+            </div>
+        </div>
+
+        <!-- Q29 -->
+        <div class="ques-card">
+            <h3>Q29. Program to Print a New Line in String (Each word in newline)</h3>
+            <button class="toggle-btn">Show Code ↓</button>
+            <div class="code-output">
+                <pre class="code-area">
+#include &lt;iostream&gt;
+#include &lt;string&gt;
+using namespace std;
+
+int main(){
+    string text;
+    cout &lt;&lt; "Enter a string: ";
+    getline(cin,text);
+
+    string current="";
+    for(int i=0;i&lt;=text.length();i++){
+        if(i&lt;text.length() &amp;&amp; text[i]!=' ') current+=text[i];
+        if(i==text.length() || text[i]==' '){
+            if(current.length()>0){
+                cout &lt;&lt; current &lt;&lt; "\n";
+                current="";
+            }
+        }
+    }
+    return 0;
+}
+    </pre>
+            </div>
+        </div>
+
+        <!-- Q30 -->
+        <div class="ques-card">
+            <h3>Q30. Program to Print even length words</h3>
+            <button class="toggle-btn">Show Code ↓</button>
+            <div class="code-output">
+                <pre class="code-area">
+#include &lt;iostream&gt;
+#include &lt;string&gt;
+using namespace std;
+
+int main(){
+    string text;
+    cout &lt;&lt; "Enter a string: ";
+    getline(cin,text);
+    cout &lt;&lt; "Even length words are:\n";
+
+    string current="";
+    for(int i=0;i&lt;=text.length();i++){
+        if(i&lt;text.length() &amp;&amp; text[i]!=' ') current+=text[i];
+        if(i==text.length() || text[i]==' '){
+            if(current.length()>0){
+                if(current.length()%2==0) cout &lt;&lt; current &lt;&lt; "\n";
+                current="";
+            }
+        }
+    }
+    return 0;
+}
+    </pre>
+            </div>
+        </div>
+
+        <!-- Q31 -->
+        <div class="ques-card">
+            <h3>Q31. Program to print smallest and biggest possible palindrome word in a given string</h3>
+            <button class="toggle-btn">Show Code ↓</button>
+            <div class="code-output">
+                <pre class="code-area">
+#include &lt;iostream&gt;
+#include &lt;string&gt;
+using namespace std;
+
+bool isPalindromeWord(string word){
+    int left=0, right=word.length()-1;
+    while(left&lt;right){
+        if(word[left]!=word[right]) return false;
+        left++; right--;
+    }
+    return true;
+}
+
+int main(){
+    string text, smallest="", biggest="";
+    cout &lt;&lt; "Enter a string: ";
+    getline(cin,text);
+
+    string current="";
+    for(int i=0;i&lt;=text.length();i++){
+        if(i&lt;text.length() &amp;&amp; text[i]!=' ') current+=text[i];
+        if(i==text.length() || text[i]==' '){
+            if(current.length()>0){
+                if(isPalindromeWord(current)){
+                    if(smallest.length()==0 || current.length()&lt;smallest.length()) smallest=current;
+                    if(current.length()>biggest.length()) biggest=current;
+                }
+                current="";
+            }
+        }
+    }
+
+    if(smallest.length()==0){
+        cout &lt;&lt; "No palindrome word found\n";
+        return 0;
+    }
+
+    cout &lt;&lt; "Smallest palindrome word: " &lt;&lt; smallest &lt;&lt; "\n";
+    cout &lt;&lt; "Biggest palindrome word: " &lt;&lt; biggest &lt;&lt; "\n";
+    return 0;
+}
+    </pre>
+            </div>
+        </div>
+
+        <!-- Q32 -->
+        <div class="ques-card">
+            <h3>Q32. Program to remove all the white spaces from a string</h3>
+            <button class="toggle-btn">Show Code ↓</button>
+            <div class="code-output">
+                <pre class="code-area">
+#include &lt;iostream&gt;
+#include &lt;string&gt;
+using namespace std;
+
+int main(){
+    string text, result="";
+    cout &lt;&lt; "Enter a string: ";
+    getline(cin,text);
+
+    for(int i=0;i&lt;text.length();i++){
+        if(text[i]!=' ' &amp;&amp; text[i]!='\t' &amp;&amp; text[i]!='\n') result+=text[i];
+    }
+
+    cout &lt;&lt; "String without spaces: " &lt;&lt; result &lt;&lt; "\n";
+    return 0;
+}
+    </pre>
+            </div>
+        </div>
+
+        <!-- Q33 -->
+        <div class="ques-card">
+            <h3>Q33. Program to replace lower-case characters with upper-case and vice-versa</h3>
+            <button class="toggle-btn">Show Code ↓</button>
+            <div class="code-output">
+                <pre class="code-area">
+#include &lt;iostream&gt;
+#include &lt;string&gt;
+using namespace std;
+
+int main(){
+    string text;
+    cout &lt;&lt; "Enter a string: ";
+    getline(cin,text);
+
+    for(int i=0;i&lt;text.length();i++){
+        if(text[i]>='a' &amp;&amp; text[i]<='z') text[i]-=32;
+        else if(text[i]>='A' &amp;&amp; text[i]<='Z') text[i]+=32;
+    }
+
+    cout &lt;&lt; "Updated string: " &lt;&lt; text &lt;&lt; "\n";
+    return 0;
+}
+    </pre>
+            </div>
+        </div>
+
+        <!-- Q34 -->
+        <div class="ques-card">
+            <h3>Q34. Program to replace the spaces of a string with a specific character</h3>
+            <button class="toggle-btn">Show Code ↓</button>
+            <div class="code-output">
+                <pre class="code-area">
+#include &lt;iostream&gt;
+#include &lt;string&gt;
+using namespace std;
+
+int main(){
+    string text;
+    char replaceChar;
+    cout &lt;&lt; "Enter a string: ";
+    getline(cin,text);
+    cout &lt;&lt; "Enter replacement character: ";
+    cin &gt;&gt; replaceChar;
+
+    for(int i=0;i&lt;text.length();i++){
+        if(text[i]==' ') text[i]=replaceChar;
+    }
+
+    cout &lt;&lt; "Updated string: " &lt;&lt; text &lt;&lt; "\n";
+    return 0;
+}
+    </pre>
+            </div>
+        </div>
+
+        <!-- Q35 -->
+        <div class="ques-card">
+            <h3>Q35. Program to separate the Individual Characters from a String</h3>
+            <button class="toggle-btn">Show Code ↓</button>
+            <div class="code-output">
+                <pre class="code-area">
+#include &lt;iostream&gt;
+#include &lt;string&gt;
+using namespace std;
+
+int main(){
+    string text;
+    cout &lt;&lt; "Enter a string: ";
+    getline(cin,text);
+
+    cout &lt;&lt; "Individual characters are:\n";
+    for(int i=0;i&lt;text.length();i++) cout &lt;&lt; text[i] &lt;&lt; "\n";
+    return 0;
+}
+    </pre>
+            </div>
+        </div>
+
+        <!-- Q36 -->
+        <div class="ques-card">
+            <h3>Q36. Program to Splitting into a number of sub-strings</h3>
+            <button class="toggle-btn">Show Code ↓</button>
+            <div class="code-output">
+                <pre class="code-area">
+#include &lt;iostream&gt;
+#include &lt;string&gt;
+using namespace std;
+
+int main(){
+    string text;
+    int parts;
+    cout &lt;&lt; "Enter a string: ";
+    cin &gt;&gt; text;
+    cout &lt;&lt; "Enter number of sub-strings: ";
+    cin &gt;&gt; parts;
+
+    if(parts&lt;=0){ cout &lt;&lt; "Invalid number\n"; return 0; }
+    if(text.length()%parts!=0){ cout &lt;&lt; "Cannot split equally\n"; return 0; }
+
+    int each=text.length()/parts;
+    cout &lt;&lt; "Sub-strings are:\n";
+    for(int i=0;i&lt;text.length();i+=each){
+        for(int j=0;j&lt;each;j++) cout &lt;&lt; text[i+j];
+        cout &lt;&lt; "\n";
+    }
+    return 0;
+}
+    </pre>
+            </div>
+        </div>
+
+        <!-- Q37 -->
+        <div class="ques-card">
+            <h3>Q37. Program to swap two string variables without using third or temp variable</h3>
+            <button class="toggle-btn">Show Code ↓</button>
+            <div class="code-output">
+                <pre class="code-area">
+#include &lt;iostream&gt;
+#include &lt;string&gt;
+using namespace std;
+
+int main(){
+    string first, second;
+    cout &lt;&lt; "Enter first string: ";
+    cin &gt;&gt; first;
+    cout &lt;&lt; "Enter second string: ";
+    cin &gt;&gt; second;
+
+    first = first + second;
+    second = first.substr(0, first.length() - second.length());
+    first = first.substr(second.length());
+
+    cout &lt;&lt; "After swap first: " &lt;&lt; first &lt;&lt; "\n";
+    cout &lt;&lt; "After swap second: " &lt;&lt; second &lt;&lt; "\n";
+    return 0;
+}
+    </pre>
+            </div>
+        </div>
+
+        <!-- Q38 -->
+        <div class="ques-card">
+            <h3>Q38. Read two String user input and check if first contains second</h3>
+            <button class="toggle-btn">Show Code ↓</button>
+            <div class="code-output">
+                <pre class="code-area">
+#include &lt;iostream&gt;
+#include &lt;string&gt;
+using namespace std;
+
+bool containsText(string text, string pattern){
+    if(pattern.length() &gt; text.length()) return false;
+    for(int i=0;i&lt;=text.length()-pattern.length();i++){
+        int match=1;
+        for(int j=0;j&lt;pattern.length();j++){
+            if(text[i+j]!=pattern[j]){ match=0; break; }
+        }
+        if(match==1) return true;
+    }
+    return false;
+}
+
+int main(){
+    string first, second;
+    cout &lt;&lt; "Enter first string: ";
+    getline(cin,first);
+    cout &lt;&lt; "Enter second string: ";
+    getline(cin,second);
+
+    if(containsText(first,second)) cout &lt;&lt; "First string contains second\n";
+    else cout &lt;&lt; "First string does not contain second\n";
+    return 0;
+}
+    </pre>
+            </div>
+        </div>
+
+        <!-- Q39 -->
+        <div class="ques-card">
+            <h3>Q39. Reverse String Word by Word</h3>
+            <button class="toggle-btn">Show Code ↓</button>
+            <div class="code-output">
+                <pre class="code-area">
+#include &lt;iostream&gt;
+#include &lt;string&gt;
+using namespace std;
+
+int main(){
+    string text, words[200];
+    int wordCount=0;
+    cout &lt;&lt; "Enter a string: ";
+    getline(cin,text);
+
+    string current="";
+    for(int i=0;i&lt;=text.length();i++){
+        if(i&lt;text.length() &amp;&amp; text[i]!=' ') current+=text[i];
+        if(i==text.length() || text[i]==' '){
+            if(current.length()>0){ words[wordCount]=current; wordCount++; current=""; }
+        }
+    }
+
+    cout &lt;&lt; "Reversed word order string: ";
+    for(int i=wordCount-1;i&gt;=0;i--){
+        cout &lt;&lt; words[i];
+        if(i!=0) cout &lt;&lt; " ";
+    }
+    cout &lt;&lt; "\n";
+    return 0;
+}
+    </pre>
+            </div>
+        </div>
+
+        <!-- Q40 -->
+        <div class="ques-card">
+            <h3>Q40. Write a program to check if two Strings are created with same characters</h3>
+            <button class="toggle-btn">Show Code ↓</button>
+            <div class="code-output">
+                <pre class="code-area">
+#include &lt;iostream&gt;
+#include &lt;string&gt;
+using namespace std;
+
+bool sameCharacters(string first, string second){
+    if(first.length()!=second.length()) return false;
+    int freq[256]={0};
+    for(int i=0;i&lt;first.length();i++){ freq[(int)first[i]]++; freq[(int)second[i]]--; }
+    for(int i=0;i&lt;256;i++) if(freq[i]!=0) return false;
+    return true;
+}
+
+int main(){
+    string first, second;
+    cout &lt;&lt; "Enter first string: ";
+    cin &gt;&gt; first;
+    cout &lt;&lt; "Enter second string: ";
+    cin &gt;&gt; second;
+
+    if(sameCharacters(first,second)) cout &lt;&lt; "Both are created with same characters\n";
+    else cout &lt;&lt; "Both are not created with same characters\n";
+    return 0;
+}
+    </pre>
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <!-- Q41 -->
+        <div class="ques-card">
+            <h3>Q41. Write a program to find out first non repeated character from input String</h3>
+            <button class="toggle-btn">Show Code ↓</button>
+            <div class="code-output">
+                <pre class="code-area">
+#include &lt;iostream&gt;
+#include &lt;string&gt;
+using namespace std;
+
+int main(){
+    string text;
+    int freq[256] = {0};
+
+    cout &lt;&lt; "Enter a string: ";
+    getline(cin, text);
+
+    for (int i = 0; i &lt; (int)text.length(); i++) freq[(int)text[i]]++;
+
+    for (int i = 0; i &lt; (int)text.length(); i++){
+        if (freq[(int)text[i]] == 1){
+            cout &lt;&lt; "First non repeated character: " &lt;&lt; text[i] &lt;&lt; "\n";
+            return 0;
+        }
+    }
+
+    cout &lt;&lt; "No non repeated character found\n";
+    return 0;
+}
+    </pre>
+            </div>
+        </div>
+
+        <!-- Q42 -->
+        <div class="ques-card">
+            <h3>Q42. Write a C++ method to count all words in a string</h3>
+            <button class="toggle-btn">Show Code ↓</button>
+            <div class="code-output">
+                <pre class="code-area">
+#include &lt;iostream&gt;
+#include &lt;string&gt;
+using namespace std;
+
+int countWords(string text){
+    int words = 0, insideWord = 0;
+    for (int i = 0; i &lt; (int)text.length(); i++){
+        if (text[i] != ' ' &amp;&amp; text[i] != '\t' &amp;&amp; text[i] != '\n'){
+            if (insideWord == 0){ words++; insideWord = 1; }
+        }
+        if (text[i] == ' ' || text[i] == '\t' || text[i] == '\n') insideWord = 0;
+    }
+    return words;
+}
+
+int main(){
+    string text;
+    cout &lt;&lt; "Enter a string: ";
+    getline(cin, text);
+    cout &lt;&lt; "Total words: " &lt;&lt; countWords(text) &lt;&lt; "\n";
+    return 0;
+}
+    </pre>
+            </div>
+        </div>
+
+        <!-- Q43 -->
+        <div class="ques-card">
+            <h3>Q43. Write a C++ method to count all vowels in a string</h3>
+            <button class="toggle-btn">Show Code ↓</button>
+            <div class="code-output">
+                <pre class="code-area">
+#include &lt;iostream&gt;
+#include &lt;string&gt;
+using namespace std;
+
+int countVowels(string text){
+    int vowels = 0;
+    for (int i = 0; i &lt; (int)text.length(); i++){
+        char ch = text[i];
+        if (ch=='a'||ch=='e'||ch=='i'||ch=='o'||ch=='u'||ch=='A'||ch=='E'||ch=='I'||ch=='O'||ch=='U') vowels++;
+    }
+    return vowels;
+}
+
+int main(){
+    string text;
+    cout &lt;&lt; "Enter a string: ";
+    getline(cin, text);
+    cout &lt;&lt; "Total vowels: " &lt;&lt; countVowels(text) &lt;&lt; "\n";
+    return 0;
+}
+    </pre>
+            </div>
+        </div>
+
+        <!-- Q44 -->
+        <div class="ques-card">
+            <h3>Q44. Write a C++ Program to Sort Names in an Alphabetical Order</h3>
+            <button class="toggle-btn">Show Code ↓</button>
+            <div class="code-output">
+                <pre class="code-area">
+#include &lt;iostream&gt;
+#include &lt;string&gt;
+using namespace std;
+
+int main(){
+    int n; string names[100];
+    cout &lt;&lt; "Enter number of names: "; cin &gt;&gt; n;
+    if (n&lt;=0 || n&gt;100){ cout &lt;&lt; "Invalid size\n"; return 0; }
+
+    cout &lt;&lt; "Enter names:\n";
+    for(int i=0;i&lt;n;i++) cin &gt;&gt; names[i];
+
+    for(int i=0;i&lt;n-1;i++){
+        for(int j=0;j&lt;n-i-1;j++){
+            if(names[j] &gt; names[j+1]){ string temp=names[j]; names[j]=names[j+1]; names[j+1]=temp; }
+        }
+    }
+
+    cout &lt;&lt; "Names in alphabetical order:\n";
+    for(int i=0;i&lt;n;i++) cout &lt;&lt; names[i] &lt;&lt; "\n";
+    return 0;
+}
+    </pre>
+            </div>
+        </div>
+
+        <!-- Q45 -->
+        <div class="ques-card">
+            <h3>Q45. Write a C++ method to count all the words in a string</h3>
+            <button class="toggle-btn">Show Code ↓</button>
+            <div class="code-output">
+                <pre class="code-area">
+#include &lt;iostream&gt;
+#include &lt;string&gt;
+using namespace std;
+
+int countWords(string text){
+    int words = 0, insideWord = 0;
+    for(int i=0;i&lt;(int)text.length();i++){
+        if(text[i]!=' ' &amp;&amp; text[i]!='\t' &amp;&amp; text[i]!='\n'){
+            if(insideWord==0){ words++; insideWord=1; }
+        }
+        if(text[i]==' ' || text[i]=='\t' || text[i]=='\n') insideWord=0;
+    }
+    return words;
+}
+
+int main(){
+    string text;
+    cout &lt;&lt; "Enter a string: "; getline(cin,text);
+    cout &lt;&lt; "Total words: " &lt;&lt; countWords(text) &lt;&lt; "\n";
+    return 0;
+}
+    </pre>
+            </div>
+        </div>
+
+        <!-- Q46 -->
+        <div class="ques-card">
+            <h3>Q46. Write a C++ method to compute the future investment value at a given interest rate for a specified
+                number of years</h3>
+            <button class="toggle-btn">Show Code ↓</button>
+            <div class="code-output">
+                <pre class="code-area">
+#include &lt;iostream&gt;
+using namespace std;
+
+int futureValue(int investment,int yearlyRate,int years){
+    int value=investment;
+    for(int i=0;i&lt;years;i++) value=value+(value*yearlyRate)/100;
+    return value;
+}
+
+int main(){
+    int investment, rate, years;
+    cout &lt;&lt; "Enter investment amount: "; cin &gt;&gt; investment;
+    cout &lt;&lt; "Enter yearly interest rate (in %): "; cin &gt;&gt; rate;
+    cout &lt;&lt; "Enter number of years: "; cin &gt;&gt; years;
+
+    if(investment&lt;0 || rate&lt;0 || years&lt;0){ cout &lt;&lt; "Invalid input\n"; return 0; }
+
+    cout &lt;&lt; "Future investment value: " &lt;&lt; futureValue(investment,rate,years) &lt;&lt; "\n";
+    return 0;
+}
+    </pre>
+            </div>
+        </div>
+
+        <!-- Q47 -->
+        <div class="ques-card">
+            <h3>Q47. Write a C++ method to print characters between two characters (i.e. A to P)</h3>
+            <button class="toggle-btn">Show Code ↓</button>
+            <div class="code-output">
+                <pre class="code-area">
+#include &lt;iostream&gt;
+using namespace std;
+
+void printBetween(char first,char second){
+    if(first &lt;= second) for(char ch=first;ch&lt;=second;ch++) cout &lt;&lt; ch &lt;&lt; " ";
+    else for(char ch=first;ch&gt;=second;ch--) cout &lt;&lt; ch &lt;&lt; " ";
+}
+
+int main(){
+    char first, second;
+    cout &lt;&lt; "Enter first character: "; cin &gt;&gt; first;
+    cout &lt;&lt; "Enter second character: "; cin &gt;&gt; second;
+
+    printBetween(first,second);
+    cout &lt;&lt; "\n";
+    return 0;
+}
+    </pre>
+            </div>
+        </div>
+
+        <!-- Q48 -->
+        <div class="ques-card">
+            <h3>Q48. Write a C++ method to check whether a string is a valid password</h3>
+            <button class="toggle-btn">Show Code ↓</button>
+            <div class="code-output">
+                <pre class="code-area">
+#include &lt;iostream&gt;
+#include &lt;string&gt;
+using namespace std;
+
+bool validPassword(string password){
+    if((int)password.length()&lt;8) return false;
+    int hasUpper=0, hasLower=0, hasDigit=0, hasSpecial=0;
+    for(int i=0;i&lt;(int)password.length();i++){
+        char ch=password[i];
+        if(ch&gt;='A' &amp;&amp; ch&lt;='Z') hasUpper=1;
+        else if(ch&gt;='a' &amp;&amp; ch&lt;='z') hasLower=1;
+        else if(ch&gt;='0' &amp;&amp; ch&lt;='9') hasDigit=1;
+        else hasSpecial=1;
+    }
+    return hasUpper &amp;&amp; hasLower &amp;&amp; hasDigit &amp;&amp; hasSpecial;
+}
+
+int main(){
+    string password;
+    cout &lt;&lt; "Enter password: "; cin &gt;&gt; password;
+    if(validPassword(password)) cout &lt;&lt; "Valid password\n";
+    else cout &lt;&lt; "Invalid password\n";
+    return 0;
+}
+    </pre>
+            </div>
+        </div>
+
+        <!-- Q49 -->
+        <div class="ques-card">
+            <h3>Q49. Write a C++ method to display the current date and time</h3>
+            <button class="toggle-btn">Show Code ↓</button>
+            <div class="code-output">
+                <pre class="code-area">
+#include &lt;iostream&gt;
+using namespace std;
+
+void showCurrentDateTime(){
+    cout &lt;&lt; "Current date: " &lt;&lt; __DATE__ &lt;&lt; "\n";
+    cout &lt;&lt; "Current time: " &lt;&lt; __TIME__ &lt;&lt; "\n";
+}
+
+int main(){
+    showCurrentDateTime();
+    return 0;
+}
+    </pre>
+            </div>
+        </div>
+
+        <!-- Q50 -->
+        <div class="ques-card">
+            <h3>Q50. Write a C++ method that accepts three integers and returns true if one is the middle point between
+                the other two integers, otherwise false</h3>
+            <button class="toggle-btn">Show Code ↓</button>
+            <div class="code-output">
+                <pre class="code-area">
+#include &lt;iostream&gt;
+using namespace std;
+
+bool isMiddlePoint(int a,int b,int c){
+    if((a+b)%2==0 &amp;&amp; c==(a+b)/2) return true;
+    if((a+c)%2==0 &amp;&amp; b==(a+c)/2) return true;
+    if((b+c)%2==0 &amp;&amp; a==(b+c)/2) return true;
+    return false;
+}
+
+int main(){
+    int a,b,c;
+    cout &lt;&lt; "Enter three integers: "; cin &gt;&gt; a &gt;&gt; b &gt;&gt; c;
+    if(isMiddlePoint(a,b,c)) cout &lt;&lt; "true\n";
+    else cout &lt;&lt; "false\n";
+    return 0;
+}
+    </pre>
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+  <!-- Footer -->
+  <footer>
+    © 2026 C Programming Hub
+  </footer>
+
+
+
+
+
+
+    </div>
+    <script>
+        const toggleButtons = document.querySelectorAll('.toggle-btn');
+
+        toggleButtons.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const card = btn.parentElement;
+                card.classList.toggle('active');
+                const output = card.querySelector('.code-output');
+
+                if (card.classList.contains('active')) {
+                    output.style.display = 'flex';
+                    btn.textContent = "Hide Code ↑";
+                } else {
+                    output.style.display = 'none';
+                    btn.textContent = "Show Code ↓";
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
+

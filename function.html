@@ -1,0 +1,357 @@
+    
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C Programming Hub</title>
+    <link rel="stylesheet" href="style_c_site.css">
+    </head>
+    <body>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <h1>C Programming Hub</h1>
+        <ul>
+        <li><a href="home.html">Home</a></li>
+        <li><a href="index.html">Topics</a></li>
+        <li><a href="https://youtube.com/playlist?list=PLk05cwASVVZsVc37eoI49N4fgJGLnOxI2&si=zacrxO4BEJYDkRt3">Tutorials</a></li>
+        <li><a href="ask.html">Ask Questions</a></li>
+        </ul>
+    </nav>
+
+    <!-- Main Container -->
+    <div class="main-container">
+    <h2 style="color: #e0f7fa; text-align: center; margin-bottom: 25px; font-weight: 600;">
+        FUNCTIONS
+    </h2>
+        <!-- Question Card 1 -->
+
+
+
+
+
+
+
+
+
+        
+    <div class="ques-card">
+    <h3>Q1. Write a C++ program to find the smallest number among three numbers.</h3>
+    <button class="toggle-btn">Show Code ↓</button>
+    <div class="code-output">
+    
+        <pre class="code-area">
+    #include &lt;iostream&gt;
+    using namespace std;
+
+    int smallest(int a, int b, int c){
+        if(a &lt;= b && a &lt;= c)
+            return a;
+        else if(b &lt;= a && b &lt;= c)
+            return b;
+        else
+            return c;
+    }
+
+    int main(){
+        int a, b, c;
+        cout &lt;&lt; "Enter three numbers: ";
+        cin &gt;&gt; a &gt;&gt; b &gt;&gt; c;
+
+        cout &lt;&lt; "Smallest number is: " &lt;&lt; smallest(a, b, c);
+    }
+    </pre>
+
+    <p class="output-title">OUTPUT</p>
+
+    <pre class="output-text">
+    Enter three numbers: 10 5 8
+    Smallest number is: 5
+    </pre>
+
+    </div></div>
+
+
+
+    <div class="ques-card">
+    <h3>Q2. Write a C++ program to compute the average of three numbers.</h3>
+    <button class="toggle-btn">Show Code ↓</button>
+    <div class="code-output">
+    
+        <pre class="code-area">
+    #include &lt;iostream&gt;
+    using namespace std;
+
+    float average(int a, int b, int c){
+        return (a + b + c) / 3.0;
+    }
+
+    int main(){
+        int a, b, c;
+        cout &lt;&lt; "Enter three numbers: ";
+        cin &gt;&gt; a &gt;&gt; b &gt;&gt; c;
+
+        cout &lt;&lt; "Average is: " &lt;&lt; average(a, b, c);
+    }
+    </pre>
+
+    <p class="output-title">OUTPUT</p>
+
+    <pre class="output-text">
+    Enter three numbers: 10 20 30
+    Average is: 20
+    </pre>
+
+    </div></div>
+
+    <div class="ques-card">
+    <h3>Q3. Write a C++ program to display the middle character of a string.</h3>
+    <button class="toggle-btn">Show Code ↓</button>
+    <div class="code-output">
+    
+        <pre class="code-area">
+    #include &lt;iostream&gt;
+    #include &lt;cstring&gt;
+    using namespace std;
+
+    // Function to find middle character(s)
+    void findMiddle(char str[]) {
+        int len = strlen(str);
+
+        if (len % 2 == 0) {
+            cout &lt;&lt; "Middle characters are: " &lt;&lt; str[len/2 - 1] &lt;&lt; " and " &lt;&lt; str[len/2];
+        } else {
+            cout &lt;&lt; "Middle character is: " &lt;&lt; str[len/2];
+        }
+    }
+
+    int main() {
+        char str[100];
+
+        cout &lt;&lt; "Enter a string: ";
+        cin.getline(str, 100);
+
+        findMiddle(str);   
+        return 0;
+    }
+    </pre>
+
+    <p class="output-title">OUTPUT</p>
+
+    <pre class="output-text">
+    Enter a string: hello
+    Middle character is: l
+    </pre>
+
+    </div></div>
+    <div class="ques-card">
+    <h3>Q4. Write a C++ program to find all twin prime numbers less than 100.</h3>
+    <button class="toggle-btn">Show Code ↓</button>
+    <div class="code-output">
+    
+        <pre class="code-area">
+    #include &lt;iostream&gt;
+    using namespace std;
+
+    int is_prime(int n){
+        if(n &lt; 2) return 0;
+        for(int i = 2; i &lt; n/2; i++){
+            if(n % i == 0)
+                return 0;
+        }
+        return 1;
+    }
+    
+    int main(){
+        cout &lt;&lt; "Twin primes less than 100:\n";
+
+        for (int i = 2; i &lt; 100; i++) {
+            if (is_prime(i) && is_prime(i + 2)) {
+                cout &lt;&lt; "(" &lt;&lt; i &lt;&lt; ", " &lt;&lt; i + 2 &lt;&lt; ")" &lt;&lt; endl;
+            }
+        }
+
+        return 0;
+    }
+    </pre>
+
+    <p class="output-title">OUTPUT</p>
+
+    <pre class="output-text">
+    Twin primes less than 100:
+    (3, 5)
+    (5, 7)
+    (11, 13)
+    (17, 19)
+    (29, 31)
+    (41, 43)
+    (59, 61)
+    (71, 73)
+    </pre>
+
+    </div></div>
+    <div class="ques-card">
+    <h3>Q5. Write a C++ program to count the number of digits with value 2 in a non-negative integer.</h3>
+    <button class="toggle-btn">Show Code ↓</button>
+    <div class="code-output">
+    
+        <pre class="code-area">
+    #include &lt;iostream&gt;
+    using namespace std;
+
+    int countTwos(int n) {
+        int count = 0;
+        while (n > 0) {
+            if (n % 10 == 2)
+                count++;
+            n /= 10;
+        }
+        return count;
+    }
+
+    int main() {
+        int num;
+        cout &lt;&lt; "Enter a number: ";
+        cin &gt;&gt; num;
+
+        cout &lt;&lt; "Count of digit 2: " &lt;&lt; countTwos(num);
+        return 0;
+    }
+    </pre>
+
+    <p class="output-title">OUTPUT</p>
+
+    <pre class="output-text">
+    Enter a number: 22452
+    Count of digit 2: 3
+    </pre>
+
+    </div></div>
+    <div class="ques-card">
+    <h3>Q6. Write a C++ program that accepts three integers and checks whether they are consecutive or not.</h3>
+    <button class="toggle-btn">Show Code ↓</button>
+    <div class="code-output">
+    
+        <pre class="code-area">
+    #include &lt;iostream&gt;
+    using namespace std;
+
+    bool isConsecutive(int a, int b, int c) {
+        if ((a + 1 == b && b + 1 == c) || 
+            (a - 1 == b && b - 1 == c) ||
+            (b + 1 == a && a + 1 == c) ||
+            (b - 1 == a && a - 1 == c) ||
+            (c + 1 == a && a + 1 == b) ||
+            (c - 1 == a && a - 1 == b))
+            return true;
+        return false;
+    }
+
+    int main() {
+        int a, b, c;
+        cout &lt;&lt; "Enter three numbers: ";
+        cin &gt;&gt; a &gt;&gt; b &gt;&gt; c;
+
+        cout &lt;&lt; isConsecutive(a, b, c);
+        return 0;
+    }
+    </pre>
+
+    <p class="output-title">OUTPUT</p>
+
+    <pre class="output-text">
+    Enter three numbers: 5 6 7
+    1
+    </pre>
+
+    </div></div><div class="ques-card">
+    <h3>Q7. Write a C++ program to check whether all characters in a string are vowels or not.</h3>
+    <button class="toggle-btn">Show Code ↓</button>
+    <div class="code-output">
+    
+        <pre class="code-area">
+    #include &lt;iostream&gt;
+    #include &lt;cctype&gt;
+    using namespace std;
+
+    bool allVowels(char str[]) {
+        for (int i = 0; str[i] != '\0'; i++) {
+            char ch = tolower(str[i]);
+            if (!(ch=='a' || ch=='e' || ch=='i' || ch=='o' || ch=='u'))
+                return false;
+        }
+        return true;
+    }
+
+    int main() {
+        char str[100];
+
+        cout &lt;&lt; "Enter a string: ";
+        cin.getline(str, 100);
+
+        cout &lt;&lt; allVowels(str);
+        return 0;
+    }
+    </pre>
+
+    <p class="output-title">OUTPUT</p>
+
+    <pre class="output-text">
+    Enter a string: aeiou
+    1
+    </pre>
+
+    </div></div>
+
+
+
+
+
+
+  <!-- Footer -->
+  <footer>
+    © 2026 C Programming Hub
+  </footer>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+    <script>
+        const toggleButtons = document.querySelectorAll('.toggle-btn');
+
+        toggleButtons.forEach(btn => {
+        btn.addEventListener('click', () => {
+            const card = btn.parentElement;
+            card.classList.toggle('active');
+            const output = card.querySelector('.code-output');
+
+            if(card.classList.contains('active')) {
+            output.style.display = 'flex';
+            btn.textContent = "Hide Code ↑";
+            } else {
+            output.style.display = 'none';
+            btn.textContent = "Show Code ↓";
+            }
+        });
+        });
+    </script>
+    </body>
+    </html>
+
+
+
+        <!-- Questions Section -->

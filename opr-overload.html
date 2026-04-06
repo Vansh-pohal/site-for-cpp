@@ -1,0 +1,328 @@
+    
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C Programming Hub</title>
+    <link rel="stylesheet" href="style_c_site.css">
+    </head>
+    <body>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <h1>C Programming Hub</h1>
+        <ul>
+        <li><a href="home.html">Home</a></li>
+        <li><a href="index.html">Topics</a></li>
+        <li><a href="https://youtube.com/playlist?list=PLk05cwASVVZsVc37eoI49N4fgJGLnOxI2&si=zacrxO4BEJYDkRt3">Tutorials</a></li>
+        <li><a href="ask.html">Ask Questions</a></li>
+        </ul>
+    </nav>
+
+    <!-- Main Container -->
+    <div class="main-container">
+    <h2 style="color: #e0f7fa; text-align: center; margin-bottom: 25px; font-weight: 600;">
+        OPERATOR OVERLOADING
+    </h2>
+        <!-- Question Card 1 -->
+
+
+
+
+
+
+
+
+
+        <!-- Q5 String -->
+<div class="ques-card">
+<h3>Q4. Implement a class String to represent strings. Overload the + operator to concatenate two strings.</h3>
+<button class="toggle-btn">Show Code ↓</button>
+<div class="code-output">
+
+<pre class="code-area">
+#include &lt;iostream&gt;
+#include &lt;cstring&gt;
+using namespace std;
+
+class String {
+    char str[100];
+
+public:
+    void get() {
+        cin >> str;
+    }
+
+    String operator+(String s) {
+        String temp;
+        strcpy(temp.str, str);
+        strcat(temp.str, s.str);
+        return temp;
+    }
+
+    void show() {
+        cout << str;
+    }
+};
+
+int main() {
+    String s1, s2, s3;
+
+    s1.get();
+    s2.get();
+
+    s3 = s1 + s2;
+
+    s3.show();
+}
+</pre>
+
+<p class="output-title">OUTPUT</p>
+<pre class="output-text">
+Input: Hello World
+Output: HelloWorld
+</pre>
+
+</div>
+</div>
+
+<!-- Q6 Date -->
+<div class="ques-card">
+<h3>Q5. Define a class Date to represent dates. Overload the &lt; operator to compare two dates.</h3>
+<button class="toggle-btn">Show Code ↓</button>
+<div class="code-output">
+
+<pre class="code-area">
+#include &lt;iostream&gt;
+using namespace std;
+
+class Date {
+    int d, m, y;
+
+public:
+    void get() {
+        cin >> d >> m >> y;
+    }
+
+    bool operator<(Date dt) {
+        if(y &lt; dt.y) return true;
+        if(y == dt.y &amp;&amp; m &lt; dt.m) return true;
+        if(y == dt.y &amp;&amp; m == dt.m &amp;&amp; d &lt; dt.d) return true;
+        return false;
+    }
+};
+
+int main() {
+    Date d1, d2;
+
+    d1.get();
+    d2.get();
+
+    if(d1 &lt; d2)
+        cout &lt;&lt; "First date is earlier";
+    else
+        cout &lt;&lt; "Second date is earlier";
+}
+</pre>
+
+<p class="output-title">OUTPUT</p>
+<pre class="output-text">
+Input: 1 1 2020 and 5 1 2020
+Output: First date is earlier
+</pre>
+
+</div>
+</div>
+
+<!-- Q7 Money -->
+<div class="ques-card">
+<h3>Q6. Implement a class Money to represent money. Overload the + operator to add two amounts of money.</h3>
+<button class="toggle-btn">Show Code ↓</button>
+<div class="code-output">
+
+<pre class="code-area">
+#include &lt;iostream&gt;
+using namespace std;
+
+class Money {
+    int rupees, paisa;
+
+public:
+    void get() {
+        cin >> rupees >> paisa;
+    }
+
+    Money operator+(Money m) {
+        Money temp;
+        temp.paisa = paisa + m.paisa;
+        temp.rupees = rupees + m.rupees + temp.paisa / 100;
+        temp.paisa = temp.paisa % 100;
+        return temp;
+    }
+
+    void show() {
+        cout &lt;&lt; rupees &lt;&lt; " Rs " &lt;&lt; paisa &lt;&lt; " paisa";
+    }
+};
+
+int main() {
+    Money m1, m2, m3;
+
+    m1.get();
+    m2.get();
+
+    m3 = m1 + m2;
+
+    m3.show();
+}
+</pre>
+
+<p class="output-title">OUTPUT</p>
+<pre class="output-text">
+Input: 10 50 and 5 75
+Output: 16 Rs 25 paisa
+</pre>
+
+</div>
+</div>
+
+<!-- Q8 Rectangle -->
+<div class="ques-card">
+<h3>Q7. Create a class Rectangle to represent rectangles. Overload the == operator to check if two rectangles are equal.</h3>
+<button class="toggle-btn">Show Code ↓</button>
+<div class="code-output">
+
+<pre class="code-area">
+#include &lt;iostream&gt;
+using namespace std;
+
+class Rectangle {
+    int l, b;
+
+public:
+    void get() {
+        cin >> l >> b;
+    }
+
+    bool operator==(Rectangle r) {
+        return (l == r.l &amp;&amp; b == r.b);
+    }
+};
+
+int main() {
+    Rectangle r1, r2;
+
+    r1.get();
+    r2.get();
+
+    if(r1 == r2)
+        cout &lt;&lt; "Rectangles are equal";
+    else
+        cout &lt;&lt; "Not equal";
+}
+</pre>
+
+<p class="output-title">OUTPUT</p>
+<pre class="output-text">
+Input: 5 4 and 5 4
+Output: Rectangles are equal
+</pre>
+
+</div>
+</div>
+
+<!-- Q9 Time -->
+<div class="ques-card">
+<h3>Q8. Define a class Time to represent time. Overload the &lt;&lt; operator to display the time in HH:MM format.</h3>
+<button class="toggle-btn">Show Code ↓</button>
+<div class="code-output">
+
+<pre class="code-area">
+#include &lt;iostream&gt;
+using namespace std;
+
+class Time {
+    int h, m;
+
+public:
+    void get() {
+        cin >> h >> m;
+    }
+
+    friend ostream& operator<<(ostream &out, Time t) {
+        if(t.h &lt; 10) out &lt;&lt; "0";
+        out &lt;&lt; t.h &lt;&lt; ":";
+
+        if(t.m &lt; 10) out &lt;&lt; "0";
+        out &lt;&lt; t.m;
+
+        return out;
+    }
+};
+
+int main() {
+    Time t;
+    t.get();
+
+    cout &lt;&lt; t;
+}
+</pre>
+
+<p class="output-title">OUTPUT</p>
+<pre class="output-text">
+Input: 9 5
+Output: 09:05
+</pre>
+
+</div>
+</div>
+
+
+
+
+  <!-- Footer -->
+  <footer>
+    © 2026 C Programming Hub
+  </footer>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+    <script>
+        const toggleButtons = document.querySelectorAll('.toggle-btn');
+
+        toggleButtons.forEach(btn => {
+        btn.addEventListener('click', () => {
+            const card = btn.parentElement;
+            card.classList.toggle('active');
+            const output = card.querySelector('.code-output');
+
+            if(card.classList.contains('active')) {
+            output.style.display = 'flex';
+            btn.textContent = "Hide Code ↑";
+            } else {
+            output.style.display = 'none';
+            btn.textContent = "Show Code ↓";
+            }
+        });
+        });
+    </script>
+    </body>
+    </html>
+
+
+
+        <!-- Questions Section -->

@@ -1,0 +1,1242 @@
+ 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>C Programming Hub</title>
+<link rel="stylesheet" href="style_c_site.css">
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <h1>C Programming Hub</h1>
+    <ul>
+      <li><a href="home.html">Home</a></li>
+      <li><a href="index.html">Topics</a></li>
+      <li><a href="https://youtube.com/playlist?list=PLk05cwASVVZsVc37eoI49N4fgJGLnOxI2&si=zacrxO4BEJYDkRt3">Tutorials</a></li>
+      <li><a href="ask.html">Ask Questions</a></li>
+    </ul>
+  </nav>
+
+  <!-- Main Container -->
+  <div class="main-container">
+ <h2 style="color: #e0f7fa; text-align: center; margin-bottom: 25px; font-weight: 600;">
+    SINGLE DIMENSION ARRAYS
+  </h2>
+    <!-- Question Card 1 -->
+<!-- Question Card 1 (Updated) -->
+<div class="ques-card">
+  <h3>Q1. Program to copy all elements of one array into another array.</h3>
+  <button class="toggle-btn">Show Code ↓</button>
+  <div class="code-output">
+   
+    <pre class="code-area">
+#include &lt;iostream&gt;
+using namespace std;
+
+int main(){
+    int size;
+    cout&lt;&lt;"Size of array :";
+    cin&gt;&gt;size;
+
+    int arr[size], arr_2[size];
+
+    cout&lt;&lt;"Enter element of array ";
+    for(int i=0;i&lt;size;i++){
+        cin&gt;&gt;arr[i];
+    }
+
+    for(int i=0;i&lt;size;i++){
+        arr_2[i]=arr[i];
+    }
+
+    cout&lt;&lt;"ELEMENTS OF ARRAY 2 : ";
+    for(int i=0;i&lt;size;i++){
+        cout&lt;&lt;arr_2[i]&lt;&lt;" ";
+    }
+}
+</pre>
+
+    <!-- Text Output instead of image -->
+    <!-- Output Title -->
+<p class="output-title">OUTPUT</p>
+
+<pre class="output-text">
+Size of array : 5
+Enter element of array : 1 2 3 4 5
+ELEMENTS OF ARRAY 2 : 1 2 3 4 5
+</pre>
+
+  </div>
+</div>
+<div class="ques-card">
+  <h3>Q2. Program to find the frequency of each element in the array.</h3>
+  <button class="toggle-btn">Show Code ↓</button>
+  <div class="code-output">
+   
+    <pre class="code-area">
+#include &lt;iostream&gt;
+using namespace std;
+
+int main()
+{
+    int size;
+    cout &lt;&lt; "Size of array :";
+    cin &gt;&gt; size;
+
+    int arr[size], arr_2[size], count = 1;
+    
+    cout &lt;&lt; "Enter element of array ";
+    for (int i = 0; i &lt; size; i++)
+    {
+        cin &gt;&gt; arr[i];
+    }
+
+    for(int i = 0; i &lt; size; i++){
+        bool flag = false;
+        for(int j = 0; j &lt; i; j++){
+            if(arr[i] == arr[j]){
+                flag = true;
+                break;
+            }
+        }
+        if(flag) continue;
+
+        int count = 1;
+        for(int j = i + 1; j &lt; size; j++){
+            if(arr[i] == arr[j]) count++;
+        }
+
+        cout &lt;&lt; arr[i] &lt;&lt; " : " &lt;&lt; count &lt;&lt; endl;
+    }
+}
+</pre>
+
+    <!-- OUTPUT -->
+    <p class="output-title">OUTPUT</p>
+
+    <pre class="output-text">
+Size of array : 6
+Enter element of array : 1 2 2 3 1 2
+1 : 2
+2 : 3
+3 : 1
+    </pre>
+
+  </div>
+</div>    
+
+<div class="ques-card">
+  <h3>Q3. Program to left rotate the elements of an array.</h3>
+  <button class="toggle-btn">Show Code ↓</button>
+  <div class="code-output">
+    
+    <pre class="code-area">
+      #include &lt;iostream&gt;
+      using namespace std;
+      
+      int main(){
+        int size;
+        cout &lt;&lt; "Size of array :";
+        cin &gt;&gt; size;
+        
+        int arr[size];
+        
+        cout &lt;&lt; "Enter element of array ";
+        for(int i = 0; i &lt; size; i++){
+          cin &gt;&gt; arr[i];
+        }
+        
+        int temp = arr[0];
+        
+        for(int i = 0; i &lt; size - 1; i++){
+          arr[i] = arr[i + 1];
+        }
+        
+        arr[size - 1] = temp;
+        
+        for(int i = 0; i &lt; size; i++){
+          cout &lt;&lt; arr[i] &lt;&lt; " ";
+        }
+      }
+    </pre>
+    
+    <!-- OUTPUT -->
+    <p class="output-title">OUTPUT</p>
+    
+    <pre class="output-text">
+      Size of array : 5
+      Enter element of array : 1 2 3 4 5
+      2 3 4 5 1
+    </pre>
+    
+  </div>
+</div>
+<div class="ques-card">
+  <h3>Q4. Program to print the duplicate elements of an array.</h3>
+  <button class="toggle-btn">Show Code ↓</button>
+  <div class="code-output">
+    
+    <pre class="code-area">
+      #include &lt;iostream&gt;
+      using namespace std;
+      
+      int main(){
+        int size;
+        cout &lt;&lt; "Size of array :";
+        cin &gt;&gt; size;
+        
+        int arr[size];
+        
+        cout &lt;&lt; "Enter element of array ";
+        for(int i=0;i&lt;size;i++){cin&gt;&gt;arr[i];}
+        
+        for(int i=0;i&lt;size;i++){
+          for(int j=0;j&lt;i;j++){
+            if(arr[i]==arr[j]){
+              cout &lt;&lt; arr[i] &lt;&lt; " is repeated" &lt;&lt; endl;
+              break;
+            }
+          }
+        }
+      }
+    </pre>
+    
+    <p class="output-title">OUTPUT</p>
+    <pre class="output-text">
+      Size of array : 6
+      Enter element of array : 1 2 3 2 4 1
+      2 is repeated
+      1 is repeated
+    </pre>
+    
+  </div>
+  
+</div>
+<div class="ques-card">
+  <h3>Q5. Program to print the elements of an array.</h3>
+  <button class="toggle-btn">Show Code ↓</button>
+  <div class="code-output">
+    
+    <pre class="code-area">
+      #include &lt;iostream&gt;
+      using namespace std;
+      
+      int main(){
+        
+        int arr[10]={1,2,3,4,5,6,7,8,9,10};
+        cout<<"Elements Of Array : ";
+        for(int i=0;i<10;i++){
+          cout<<arr[i]<<"  ";
+        }
+      }
+    </pre>
+    
+    <p class="output-title">OUTPUT</p>
+    
+    <pre class="output-text">
+      Elements Of Array : 
+      1  2  3  4  5  6  7  8  9  10
+    </pre>
+    
+  </div>
+</div><div class="ques-card">
+  <h3>Q6. Program to print the elements of an array in reverse order.</h3>
+  <button class="toggle-btn">Show Code ↓</button>
+  <div class="code-output">
+
+    <pre class="code-area">
+      #include &lt;iostream&gt;
+      using namespace std;
+      
+      int main(){
+        int arr[]={1,2,3,4,5,6,7,8,9,10};
+        
+        cout &lt;&lt; "Elements Of Array In Reverse Order : ";
+        
+        for(int i=9;i&gt;=0;i--){
+          cout &lt;&lt; arr[i] &lt;&lt; " ";
+        }
+      }
+    </pre>
+    
+    <p class="output-title">OUTPUT</p>
+    <pre class="output-text">
+      Elements Of Array In Reverse Order : 
+      10 9 8 7 6 5 4 3 2 1
+    </pre>
+    
+  </div>
+</div><div class="ques-card">
+  <h3>Q7. Program to print the elements of an array present on even positions.</h3>
+  <button class="toggle-btn">Show Code ↓</button>
+  <div class="code-output">
+    
+    <pre class="code-area">
+      #include &lt;iostream&gt;
+      using namespace std;
+      
+      int main(){
+        
+        int arr[10]={1,2,3,4,5,6,7,8,9,10};
+        
+        cout &lt;&lt; "Even Positioned Elements Of Array : ";
+        
+        for(int i=0;i&lt;10;i++){
+          if(i%2==0){
+            cout &lt;&lt; arr[i] &lt;&lt; " ";
+          }
+        }
+      }
+    </pre>
+    
+    <p class="output-title">OUTPUT</p>
+    <pre class="output-text">
+      Even Positioned Elements Of Array : 
+      1 3 5 7 9
+    </pre>
+    
+  </div>
+</div>
+<div class="ques-card">
+  <h3>Q8. Program to print the elements of an array present on odd positions.</h3>
+  <button class="toggle-btn">Show Code ↓</button>
+  <div class="code-output">
+    
+    <pre class="code-area">
+      #include &lt;iostream&gt;
+      using namespace std;
+
+      int main(){
+
+    int arr[10]={1,2,3,4,5,6,7,8,9,10};
+    
+    cout &lt;&lt; "Odd Positioned Elements Of Array : ";
+    
+    for(int i=0;i&lt;10;i++){
+      if(i%2!=0){
+        cout &lt;&lt; arr[i] &lt;&lt; " ";
+      }
+    }
+  }
+</pre>
+
+<p class="output-title">OUTPUT</p>
+<pre class="output-text">
+  Odd Positioned Elements Of Array : 
+  2 4 6 8 10
+</pre>
+
+</div>
+</div>
+
+
+
+<div class="ques-card">
+  <h3>Q9. Program to print the largest element in an array.</h3>
+  <button class="toggle-btn">Show Code ↓</button>
+  <div class="code-output">
+    
+    <pre class="code-area">
+      #include &lt;iostream&gt;
+      using namespace std;
+      
+      int main(){
+        
+        int arr[10] = {12, 7, 45, 3, 29, 88, 14, 6, 50, 21};
+        
+        cout << "Elements Of Array : ";
+        for(int i = 0; i &lt; 10; i++){
+          cout &lt;&lt; arr[i] &lt;&lt; " ";
+        }
+        
+        int max=arr[0];
+        
+        for(int i = 1; i &lt; 10; i++){
+          if(max&lt;arr[i]){
+            max=arr[i];
+          }
+        }
+      <!-- </div> -->
+cout&lt;&lt;"\nMaximum value of the array is : "&lt;&lt;max;
+
+}
+</pre>
+
+<p class="output-title">OUTPUT</p>
+
+<pre class="output-text">
+Elements Of Array : 
+12 7 45 3 29 88 14 6 50 21
+Maximum value of the array is : 88
+</pre>
+
+  </div>
+</div>
+<div class="ques-card">
+  <h3>Q10. Program to print the smallest element in an array.</h3>
+  <button class="toggle-btn">Show Code ↓</button>
+  <div class="code-output">
+
+<pre class="code-area">
+#include &lt;iostream&gt;
+using namespace std;
+
+int main(){
+
+int arr[10] = {12, 7, 45, 3, 29, 88, 14, 6, 50, 21};
+
+cout << "Elements Of Array : ";
+for(int i = 0; i &lt; 10; i++){
+       cout &lt;&lt; arr[i] &lt;&lt; " ";
+}
+
+int min=arr[0];
+
+for(int i = 1; i &lt; 10; i++){
+   if(min&gt;arr[i]){
+         min=arr[i];
+       }
+}
+cout&lt;&lt;"\nSmallest value of the array is : "&lt;&lt;min;
+
+}
+</pre>
+
+<p class="output-title">OUTPUT</p>
+
+<pre class="output-text">
+Elements Of Array : 
+12 7 45 3 29 88 14 6 50 21
+Smallest value of the array is : 3
+</pre>
+
+  </div>
+</div>
+
+
+<div class="ques-card">
+  <h3>Q11. Program to print the number of elements present in an array.</h3>
+  <button class="toggle-btn">Show Code ↓</button>
+  <div class="code-output">
+
+<pre class="code-area">
+#include &lt;iostream&gt;
+using namespace std;
+
+int main(){
+
+int arr[10] = {12, 7, 45, 3, 29, 88, 14, 6, 50, 21};
+
+cout << "Elements Of Array : ";
+for(int i = 0; i &lt; 10; i++){
+       cout &lt;&lt; arr[i] &lt;&lt; " ";
+}
+
+cout&lt;&lt;"\nNumber of elements present in an array : "&lt;&lt;sizeof(arr)/sizeof(int);
+
+}
+</pre>
+
+<p class="output-title">OUTPUT</p>
+<pre class="output-text">
+Elements Of Array : 
+12 7 45 3 29 88 14 6 50 21
+Number of elements present in an array : 10
+</pre>
+
+  </div>
+</div><div class="ques-card">
+  <h3>Q12. Program to print the sum of all elements of an array.</h3>
+  <button class="toggle-btn">Show Code ↓</button>
+  <div class="code-output">
+
+<pre class="code-area">
+#include &lt;iostream&gt;
+using namespace std;
+
+int main(){
+
+int arr[10] = {12, 7, 45, 3, 29, 88, 14, 6, 50, 21};
+
+cout << "Elements Of Array : ";
+for(int i = 0; i &lt; 10; i++){
+       cout &lt;&lt; arr[i] &lt;&lt; " ";
+}
+
+int sum=0;
+
+for(int i = 0; i &lt; 10; i++){
+   sum+=arr[i];
+}
+cout&lt;&lt;"\nSum of All Element Value is  : "&lt;&lt;sum;
+
+}
+</pre>
+
+<p class="output-title">OUTPUT</p>
+<pre class="output-text">
+Elements Of Array : 
+12 7 45 3 29 88 14 6 50 21
+Sum of All Element Value is  : 275
+</pre>
+
+  </div>
+</div><div class="ques-card">
+  <h3>Q13. Program to right rotate the elements of an array.</h3>
+  <button class="toggle-btn">Show Code ↓</button>
+  <div class="code-output">
+
+<pre class="code-area">
+#include &lt;iostream&gt;
+using namespace std;
+
+int main(){
+    int size;
+cout<<"Size of array :";
+cin>>size;
+int arr[size];
+cout<<"Enter element of array ";
+for(int i=0;i<size;i++){cin>>arr[i];}
+
+int temp=arr[size-1];
+for(int i=size-1;i>0;i--){
+
+arr[i]=arr[i-1];
+}
+arr[0]=temp;
+
+for(int i=0;i<size;i++){cout<<arr[i]<<" ";}
+}
+</pre>
+
+<p class="output-title">OUTPUT</p>
+<pre class="output-text">
+Size of array : 5
+Enter element of array : 1 2 3 4 5
+5 1 2 3 4
+</pre>
+
+  </div>
+</div>
+
+
+<div class="ques-card">
+  <h3>Q14. Program to sort the elements of an array in ascending order.</h3>
+  <button class="toggle-btn">Show Code ↓</button>
+  <div class="code-output">
+
+<pre class="code-area">
+#include &lt;iostream&gt;
+using namespace std;
+
+int main(){
+
+int arr[10] = {12, 7, 45, 3, 29, 88, 14, 6, 50, 21};
+
+cout << "Elements Of Array : ";
+for(int i = 0; i &lt; 10; i++){
+       cout &lt;&lt; arr[i] &lt;&lt; " ";
+}
+
+int sum=0;
+
+for(int i = 0; i &lt; 10; i++){
+   for(int j=i+1;j&lt;10;j++){
+      if(arr[i]&gt;arr[j]){
+         int temp=arr[j];
+         arr[j]=arr[i];
+         arr[i]=temp;
+      }
+   }
+}
+
+cout&lt;&lt;"\nElements of an array in ascending order   :";
+for(int i = 0; i &lt; 10; i++){
+       cout &lt;&lt; arr[i] &lt;&lt; " ";
+}
+
+}
+</pre>
+
+<p class="output-title">OUTPUT</p>
+<pre class="output-text">
+Elements Of Array : 
+12 7 45 3 29 88 14 6 50 21
+Elements of an array in ascending order :
+3 6 7 12 14 21 29 45 50 88
+</pre>
+
+  </div>
+</div>
+<div class="ques-card">
+  <h3>Q15. Program to sort the elements of an array in descending order.</h3>
+  <button class="toggle-btn">Show Code ↓</button>
+  <div class="code-output">
+
+<pre class="code-area">
+#include &lt;iostream&gt;
+using namespace std;
+
+int main(){
+
+int arr[10] = {12, 7, 45, 3, 29, 88, 14, 6, 50, 21};
+
+cout << "Elements Of Array : ";
+for(int i = 0; i &lt; 10; i++){
+       cout &lt;&lt; arr[i] &lt;&lt; " ";
+}
+
+int sum=0;
+
+for(int i = 0; i &lt; 10; i++){
+   for(int j=i+1;j&lt;10;j++){
+      if(arr[i]&lt;arr[j]){
+         int temp=arr[j];
+         arr[j]=arr[i];
+         arr[i]=temp;
+      }
+   }
+}
+
+cout&lt;&lt;"\nElements of an array in ascending order   :";
+for(int i = 0; i &lt; 10; i++){
+       cout &lt;&lt; arr[i] &lt;&lt; " ";
+}
+
+}
+</pre>
+
+<p class="output-title">OUTPUT</p>
+<pre class="output-text">
+Elements Of Array : 
+12 7 45 3 29 88 14 6 50 21
+Elements of an array in ascending order :
+88 50 45 29 21 14 12 7 6 3
+</pre>
+
+  </div>
+</div>  
+
+<div class="ques-card">
+  <h3>Q16. Program to print the 2nd largest element in an array.</h3>
+  <button class="toggle-btn">Show Code ↓</button>
+  <div class="code-output">
+
+<pre class="code-area">
+#include &lt;iostream&gt;
+using namespace std;
+
+int main(){
+
+int arr[10] = {12, 7, 45, 3, 29, 88, 14, 6, 50, 21};
+
+cout << "Elements Of Array : ";
+for(int i = 0; i &lt; 10; i++){
+       cout &lt;&lt; arr[i] &lt;&lt; " ";
+}
+
+int max=arr[0],max_2;
+
+for(int i = 1; i &lt; 10; i++){
+   if(max&lt;arr[i]){
+       max_2=max;
+       max=arr[i];
+   }
+   else if(arr[i]&gt;max_2 && arr[i]!=max){
+       max_2=arr[i];
+   }   
+}
+cout&lt;&lt;"\n 2nd Laregst value of the array is : "&lt;&lt;max_2;
+
+}
+</pre>
+
+<p class="output-title">OUTPUT</p>
+<pre class="output-text">
+Elements Of Array : 
+12 7 45 3 29 88 14 6 50 21
+2nd Largest value of the array is : 50
+</pre>
+
+  </div>
+</div>
+
+<div class="ques-card">
+  <h3>Q17. Program to print the 3rd largest element in an array.</h3>
+  <button class="toggle-btn">Show Code ↓</button>
+  <div class="code-output">
+
+<pre class="code-area">
+#include &lt;iostream&gt;
+using namespace std;
+
+int main(){
+
+int arr[10] = {12, 7, 45, 3, 29, 88, 14, 6, 50, 21};
+
+cout << "Elements Of Array : ";
+for(int i = 0; i &lt; 10; i++){
+       cout &lt;&lt; arr[i] &lt;&lt; " ";
+}
+
+int max=arr[0],max_2=arr[0],max_3=arr[0];
+
+for(int i = 1; i &lt; 10; i++){
+   if(max&lt;arr[i]){
+       max_3=max_2;
+       max_2=max;
+       max=arr[i];
+   }
+   else if(arr[i] &gt; max_2 && arr[i] != max){
+       max_3 = max_2;
+       max_2 = arr[i];
+   }
+   else if(arr[i]&gt;max_3 && arr[i]!=max_2 && arr[i]!=max){
+       max_3=arr[i];
+   }
+}
+cout&lt;&lt;"\n 3rd Laregst value of the array is : "&lt;&lt;max_3;
+
+}
+</pre>
+
+<p class="output-title">OUTPUT</p>
+<pre class="output-text">
+Elements Of Array : 
+12 7 45 3 29 88 14 6 50 21
+3rd Largest value of the array is : 45
+</pre>
+
+  </div>
+</div>
+
+<div class="ques-card">
+  <h3>Q18. Program to find the 2nd smallest element in an array.</h3>
+  <button class="toggle-btn">Show Code ↓</button>
+  <div class="code-output">
+
+<pre class="code-area">
+#include &lt;iostream&gt;
+using namespace std;
+
+int main(){
+
+int arr[10] = {12, 7, 45, 3, 29, 88, 14, 6, 50, 21};
+
+cout << "Elements Of Array : ";
+for(int i = 0; i &lt; 10; i++){
+       cout &lt;&lt; arr[i] &lt;&lt; " ";
+}
+
+int min=arr[0],
+ min_2=arr[0];
+
+for(int i = 1; i &lt; 10; i++){
+   if(min&gt;arr[i]){
+       min_2=min;
+       min=arr[i];
+   }
+   else if(arr[i]&lt;min_2 && arr[i]!=min){
+       min_2=arr[i];
+   }
+}
+cout&lt;&lt;"\n2ndSmallest value of the array is : "&lt;&lt;min_2;
+
+}
+</pre>
+
+<p class="output-title">OUTPUT</p>
+<pre class="output-text">
+Elements Of Array : 12 7 45 3 29 88 14 6 50 21
+2ndSmallest value of the array is : 6
+</pre>
+
+  </div>
+</div>
+
+<div class="ques-card">
+  <h3>Q19. Program to remove duplicate elements in an array.</h3>
+  <button class="toggle-btn">Show Code ↓</button>
+  <div class="code-output">
+
+<pre class="code-area">
+#include &lt;iostream&gt;
+using namespace std;
+
+int main(){
+    int size;
+cout<<"Size of array :";
+cin>>size;
+int arr[size];
+cout<<"Enter element of array ";
+for(int i=0;i&lt;size;i++){cin>>arr[i];}
+
+for(int i=0;i&lt;size;i++){
+    bool flag=false;
+    for(int j=0;j&lt;i;j++ ){
+        if(arr[i]==arr[j]){
+            flag=true;
+        }
+    }
+    if(flag){continue;}
+    cout&lt;&lt;arr[i]<<"  ";
+}
+}
+</pre>
+
+<p class="output-title">OUTPUT</p>
+<pre class="output-text">
+Enter array: 1 2 2 3 4 4 5
+Output: 1 2 3 4 5
+</pre>
+
+  </div>
+</div><div class="ques-card">
+  <h3>Q20. Program to print odd and even index elements of an array.</h3>
+  <button class="toggle-btn">Show Code ↓</button>
+  <div class="code-output">
+
+<pre class="code-area">
+#include &lt;iostream&gt;
+using namespace std;
+
+int main()
+{
+
+    int arr[10] = {12, 7, 45, 3, 29, 88, 14, 6, 50, 21};
+
+    cout &lt;&lt; "Elements Of Array : ";
+
+    for (int i = 0; i &lt; 10; i++)
+    {
+        cout &lt;&lt; arr[i] &lt;&lt; " ";
+    }
+    cout &lt;&lt; "\nODD   :";
+    for (int i = 0; i &lt; 10; i++)
+    {
+        if (i % 2 != 0)
+            cout &lt;&lt; arr[i] &lt;&lt; " ";
+    }
+
+    cout &lt;&lt; "\nEVEN   :";
+    for (int i = 0; i &lt; 10; i++)
+    {
+        if (i % 2 == 0)
+            cout &lt;&lt; arr[i] &lt;&lt; " ";
+    }
+}
+</pre>
+
+<p class="output-title">OUTPUT</p>
+<pre class="output-text">
+ODD  : 7 3 88 6 21
+EVEN : 12 45 29 14 50
+</pre>
+
+  </div>
+</div><div class="ques-card">
+  <h3>Q21. Swap first and last elements and create new array.</h3>
+  <button class="toggle-btn">Show Code ↓</button>
+  <div class="code-output">
+
+<pre class="code-area">
+#include &lt;iostream&gt;
+using namespace std;
+
+int main(){
+    int size;
+cout<<"Size of array :";
+cin>>size;
+int arr[size],arr_2[size];
+cout<<"Enter element of array ";
+for(int i=0;i&lt;size;i++){cin>>arr[i];}
+for(int i=0;i&lt;size;i++){
+    arr_2[i]=arr[i];
+}
+arr_2[0]=arr[size-1];
+arr_2[size-1]=arr[0];
+cout<<"ELEMTS OF ARRAY 2 :";
+for(int i=0;i&lt;size;i++){cout&lt;&lt;arr_2[i]<<" ";}
+}
+</pre>
+
+<p class="output-title">OUTPUT</p>
+<pre class="output-text">
+Input: 1 2 3 4 5
+Output: 5 2 3 4 1
+</pre>
+
+  </div>
+</div><div class="ques-card">
+  <h3>Q22. Count number of odd and even index elements.</h3>
+  <button class="toggle-btn">Show Code ↓</button>
+  <div class="code-output">
+
+<pre class="code-area">
+#include &lt;iostream&gt;
+using namespace std;
+
+int main(){
+    int size;
+cout<<"Size of array :";
+cin>>size;
+int arr[size];
+cout<<"Enter element of array ";
+for(int i=0;i&lt;size;i++){cin>>arr[i];}
+int odd_count=0,even_count=0;
+
+for (int i = 0; i &lt; size; i++)
+{
+    if (i % 2 != 0){
+    odd_count++;}
+    else{
+        even_count++;
+    }
+}
+
+cout &lt;&lt; "\nODD    :"&lt;&lt;odd_count;
+cout &lt;&lt; "\nEVEN   :"&lt;&lt;even_count;
+
+}
+</pre>
+
+<p class="output-title">OUTPUT</p>
+<pre class="output-text">
+ODD : 5
+EVEN : 5
+</pre>
+
+  </div>
+</div><div class="ques-card">
+  <h3>Q23. Find index of a specific element.</h3>
+  <button class="toggle-btn">Show Code ↓</button>
+  <div class="code-output">
+
+<pre class="code-area">
+#include &lt;iostream&gt;
+using namespace std;
+
+int main()
+{
+
+    int arr[10] = {12, 7, 45, 3, 29, 88, 14, 6, 50, 21};
+
+    cout &lt;&lt; "Elements Of Array : ";
+
+    for (int i = 0; i &lt; 10; i++)
+    {
+        cout &lt;&lt; arr[i] &lt;&lt; " ";
+    }
+
+    int to_find;
+    cout&lt;&lt;"\nWhich Element's Index You Want To Find   :";
+    cin>>to_find;
+
+    for(int i=0;i&lt;sizeof(arr)/sizeof(int);i++){
+        if(arr[i]==to_find){
+            cout&lt;&lt;"The Index of"&lt;&lt;to_find&lt;&lt;" In Array Is  :"&lt;&lt;i;
+            break;
+        }
+    }
+}
+</pre>
+<p class="output-title">OUTPUT</p>
+<pre class="output-text">
+Elements Of Array : 12 7 45 3 29 88 14 6 50 21
+Which Element's Index You Want To Find   : 50
+The Index of 8 In Array Is  :8
+
+</pre>
+</div>
+</div>
+<div class="main-container">
+
+  <div class="ques-card">
+    <h3>Q24. Remove Duplicate Element in an Array</h3>
+    <button class="toggle-btn">Show Code ↓</button>
+    <div class="code-output">
+<pre class="code-area">
+// Program to Remove Duplicate Element in an array
+#include &lt;iostream&gt;
+using namespace std;
+
+int main(){
+    int size;
+    cout &lt;&lt; "Size of array :";
+    cin &gt;&gt; size;
+    int arr[size];
+    cout &lt;&lt; "Enter element of array ";
+    for(int i=0;i&lt;size;i++){cin &gt;&gt; arr[i];}
+
+    for(int i=0;i&lt;size;i++){
+        bool flag=false;
+        for(int j=0;j&lt;i;j++){
+            if(arr[i]==arr[j]){
+                flag=true;
+            }
+        }
+        if(flag){continue;}
+        cout &lt;&lt; arr[i] &lt;&lt; "  ";
+    }
+}
+</pre>
+<p class="output-title">OUTPUT</p>
+<pre class="output-text">
+1  2  3  4
+</pre>
+    </div>
+  </div>
+
+  <div class="ques-card">
+    <h3>Q25. Print Odd and Even Numbers from an Array</h3>
+    <button class="toggle-btn">Show Code ↓</button>
+    <div class="code-output">
+<pre class="code-area">
+// Program to Print Odd and Even Numbers from an array
+#include &lt;iostream&gt;
+using namespace std;
+
+int main()
+{
+    int arr[10] = {12, 7, 45, 3, 29, 88, 14, 6, 50, 21};
+    cout &lt;&lt; "Elements Of Array : ";
+    for (int i = 0; i &lt; 10; i++){cout &lt;&lt; arr[i] &lt;&lt; " ";}
+    
+    cout &lt;&lt; "\nODD   :";
+    for (int i = 0; i &lt; 10; i++){if (i % 2 != 0) cout &lt;&lt; arr[i] &lt;&lt; " ";}
+    
+    cout &lt;&lt; "\nEVEN   :";
+    for (int i = 0; i &lt; 10; i++){if (i % 2 == 0) cout &lt;&lt; arr[i] &lt;&lt; " ";}
+}
+</pre>
+<p class="output-title">OUTPUT</p>
+<pre class="output-text">
+Elements Of Array : 12 7 45 3 29 88 14 6 50 21
+ODD   :7 3 88 6 21
+EVEN   :12 45 29 14 50
+</pre>
+    </div>
+  </div>
+
+  <div class="ques-card">
+    <h3>Q26. Swap First and Last Elements into a New Array</h3>
+    <button class="toggle-btn">Show Code ↓</button>
+    <div class="code-output">
+<pre class="code-area">
+// Program to swap first and last elements into a new array
+#include &lt;iostream&gt;
+using namespace std;
+
+int main(){
+    int size;
+    cout &lt;&lt; "Size of array :";
+    cin &gt;&gt; size;
+    int arr[size], arr_2[size];
+    cout &lt;&lt; "Enter element of array ";
+    for(int i=0;i&lt;size;i++){cin &gt;&gt; arr[i];}
+    for(int i=0;i&lt;size;i++){arr_2[i]=arr[i];}
+    
+    arr_2[0]=arr[size-1];
+    arr_2[size-1]=arr[0];
+    
+    cout &lt;&lt; "ELEMTS OF ARRAY 2 :";
+    for(int i=0;i&lt;size;i++){cout &lt;&lt; arr_2[i] &lt;&lt; " ";}
+}
+</pre>
+<p class="output-title">OUTPUT</p>
+<pre class="output-text">
+Example input: 1 2 3 4 5
+ELEMTS OF ARRAY 2 :5 2 3 4 1
+</pre>
+    </div>
+  </div>
+
+  <div class="ques-card">
+    <h3>Q27. Count Number of Even and Odd Elements in an Array</h3>
+    <button class="toggle-btn">Show Code ↓</button>
+    <div class="code-output">
+<pre class="code-area">
+// Program to count number of even and odd elements in array
+#include &lt;iostream&gt;
+using namespace std;
+
+int main(){
+    int size;
+    cout &lt;&lt; "Size of array :";
+    cin &gt;&gt; size;
+    int arr[size];
+    cout &lt;&lt; "Enter element of array ";
+    for(int i=0;i&lt;size;i++){cin &gt;&gt; arr[i];}
+    
+    int odd_count=0, even_count=0;
+    for (int i = 0; i &lt; size; i++){
+        if (i % 2 != 0) odd_count++;
+        else even_count++;
+    }
+
+    cout &lt;&lt; "\nODD    :" &lt;&lt; odd_count;
+    cout &lt;&lt; "\nEVEN   :" &lt;&lt; even_count;
+}
+</pre>
+<p class="output-title">OUTPUT</p>
+<pre class="output-text">
+Example for size=5
+ODD    :2
+EVEN   :3
+</pre>
+    </div>
+  </div>
+
+</div>
+
+<div class="main-container">
+
+
+  <div class="ques-card">
+    <h3>Q28. Print Odd and Even Numbers from an Array</h3>
+    <button class="toggle-btn">Show Code ↓</button>
+    <div class="code-output"><pre class="code-area">
+// Program to Print Odd and Even Numbers from an array
+#include &lt;iostream&gt;
+using namespace std;
+
+int main()
+{
+    int arr[10] = {12, 7, 45, 3, 29, 88, 14, 6, 50, 21};
+    cout &lt;&lt; "Elements Of Array : ";
+    for (int i = 0; i &lt; 10; i++){cout &lt;&lt; arr[i] &lt;&lt; " ";}
+    
+    cout &lt;&lt; "\nODD   :";
+    for (int i = 0; i &lt; 10; i++){if (i % 2 != 0) cout &lt;&lt; arr[i] &lt;&lt; " ";}
+    
+    cout &lt;&lt; "\nEVEN   :";
+    for (int i = 0; i &lt; 10; i++){if (i % 2 == 0) cout &lt;&lt; arr[i] &lt;&lt; " ";}
+}</pre><p class="output-title">OUTPUT</p><pre class="output-text">
+Elements Of Array : 12 7 45 3 29 88 14 6 50 21
+ODD   :7 3 88 6 21
+EVEN   :12 45 29 14 50</pre>
+    </div>
+  </div>
+
+  <div class="ques-card">
+
+
+
+
+
+
+  <div class="ques-card">
+    <h3>Q29. Find the common elements between two arrays</h3>
+    <button class="toggle-btn">Show Code ↓</button>
+    <div class="code-output"><pre class="code-area">
+// Write a C++ program to find the common elements between two arrays
+#include &lt;iostream&gt;
+using namespace std;
+
+int main()
+{
+    int arr[10] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+    int arr2[10] = {5, 6, 7, 8, 11, 12, 13, 14, 15, 16};
+    int size = sizeof(arr) / sizeof(int);
+
+    cout &lt;&lt; "Elements Of Array 1 : ";
+    for (int i = 0; i &lt; size; i++)
+    {
+        cout &lt;&lt; arr[i] &lt;&lt; " ";
+    }
+    cout &lt;&lt; endl;
+    cout &lt;&lt; "Elements Of Array 2 : ";
+    for (int i = 0; i &lt; size; i++)
+    {
+        cout &lt;&lt; arr2[i] &lt;&lt; " ";
+    }
+
+    cout &lt;&lt; endl;
+    for (int i = 0; i &lt; size; i++)
+    {
+        for (int j = 0; j &lt; size; j++)
+        {
+            if (arr[i] == arr2[j])
+            {
+                cout &lt;&lt; arr[i] &lt;&lt; " is common in both array \n";
+                continue;
+            }
+        }
+    }
+}</pre><p class="output-title">OUTPUT</p><pre class="output-text">
+Elements Of Array 1 : 1 2 3 4 5 6 7 8 9 10 
+Elements Of Array 2 : 5 6 7 8 11 12 13 14 15 16 
+5 is common in both array 
+6 is common in both array 
+7 is common in both array 
+8 is common in both array </pre>
+    </div>
+  </div>
+  </div>
+  </div>
+  <div class="ques-card">
+    <h3>Q30. Segregate all 0s on left side and all 1s on right side</h3>
+    <button class="toggle-btn">Show Code ↓</button>
+    <div class="code-output"><pre class="code-area">
+// Write a C++ program to segregate all 0s on left side and all 1s on right side of a given array
+#include &lt;iostream&gt;
+using namespace std;
+
+int main()
+{
+    int arr[] = {0,1,1,0,1,0,0,1,1,0};
+    int size = sizeof(arr)/sizeof(int);
+
+    int count0 = 0;
+
+    for(int i = 0; i &lt; size; i++)
+        if(arr[i] == 0) count0++;
+
+    for(int i = 0; i &lt; count0; i++)
+        arr[i] = 0;
+
+    for(int i = count0; i &lt; size; i++)
+        arr[i] = 1;
+
+    cout &lt;&lt; "Array after segregation: ";
+    for(int i = 0; i &lt; size; i++)
+    {
+        cout &lt;&lt; arr[i] &lt;&lt; " ";
+    }
+}</pre><p class="output-title">OUTPUT</p><pre class="output-text">
+Array after segregation: 0 0 0 0 0 1 1 1 1 1 </pre>
+    </div>
+
+</div></div>
+  <!-- Footer -->
+  <footer>
+    © 2026 C Programming Hub
+  </footer>
+  <script>
+    const toggleButtons = document.querySelectorAll('.toggle-btn');
+
+    toggleButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const card = btn.parentElement;
+        card.classList.toggle('active');
+        const output = card.querySelector('.code-output');
+
+        if(card.classList.contains('active')) {
+          output.style.display = 'flex';
+          btn.textContent = "Hide Code ↑";
+        } else {
+          output.style.display = 'none';
+          btn.textContent = "Show Code ↓";
+        }
+      });
+    });
+  </script>
+</body>
+</html>
+
+
+
+    <!-- Questions Section -->

@@ -1,0 +1,1586 @@
+ 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>C Programming Hub</title>
+<link rel="stylesheet" href="style_c_site.css">
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <h1>C Programming Hub</h1>
+    <ul>
+      <li><a href="home.html">Home</a></li>
+      <li><a href="index.html">Topics</a></li>
+      <li><a href="https://youtube.com/playlist?list=PLk05cwASVVZsVc37eoI49N4fgJGLnOxI2&si=zacrxO4BEJYDkRt3">Tutorials</a></li>
+      <li><a href="ask.html">Ask Questions</a></li>
+    </ul>
+  </nav>
+
+  <!-- Main Container -->
+  <div class="main-container">
+ <h2 style="color: #e0f7fa; text-align: center; margin-bottom: 25px; font-weight: 600;">
+    OOPs (Object Oriented Programing Language )
+  </h2>
+    <!-- Question Card 1 -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="ques-card">
+  <h3>Q1. Write a C++ program to create a class called "Person" with a name and age attribute. Create two instances and print their details.</h3>
+  
+  <button class="toggle-btn">Show Code ↓</button>
+
+  <div class="code-output">
+    
+    <pre class="code-area">
+#include &lt;iostream&gt;
+#include &lt;cstring&gt;
+using namespace std;
+
+class person{
+    public :
+    char name[25];
+    int age;
+};
+
+int main() {
+    person p1,p2;
+
+    strcpy(p1.name, "sarthak");
+    strcpy(p2.name, "tiku");
+
+    p1.age=18;
+    p2.age=19;
+
+    cout&lt;&lt;"PERSON 1 : \t"&lt;&lt;p1.name&lt;&lt;" "&lt;&lt;p1.age;
+    cout&lt;&lt;"\nPERSON 2 : \t"&lt;&lt;p2.name&lt;&lt;" "&lt;&lt;p2.age;
+}
+    </pre>
+
+    <p class="output-title">OUTPUT</p>
+
+    <pre class="output-text">
+PERSON 1 :    sarthak 18
+PERSON 2 :    tiku 19
+    </pre>
+
+  </div>
+</div>
+
+
+
+<div class="ques-card">
+  <h3>Q2. Write a C++ program to create a class called "Dog" with name and breed. Modify using setters and print updated values.</h3>
+  
+  <button class="toggle-btn">Show Code ↓</button>
+
+  <div class="code-output">
+    
+    <pre class="code-area">
+#include &lt;iostream&gt;
+#include &lt;cstring&gt;
+using namespace std;
+
+class Dog{
+    char name[25];
+    char breed[25];
+
+public:
+    void setName(const char n[]){
+        strcpy(name, n);
+    }
+
+    void setBreed(const char b[]){
+        strcpy(breed, b);
+    }
+
+    void display(){
+        cout &lt;&lt; "Name: " &lt;&lt; name &lt;&lt; " | Breed: " &lt;&lt; breed &lt;&lt; endl;
+    }
+};
+
+int main() {
+    Dog d1, d2;
+
+    d1.setName("Tommy");
+    d1.setBreed("Labrador");
+
+    d2.setName("Rocky");
+    d2.setBreed("Pug");
+
+    cout &lt;&lt; "DOG 1 : ";
+    d1.display();
+
+    cout &lt;&lt; "DOG 2 : ";
+    d2.display();
+}
+    </pre>
+
+    <p class="output-title">OUTPUT</p>
+
+    <pre class="output-text">
+DOG 1 : Name: Tommy | Breed: Labrador
+DOG 2 : Name: Rocky | Breed: Pug
+    </pre>
+
+  </div>
+</div><div class="ques-card">
+  <h3>Q3. Write a C++ program to create a class called "Rectangle" and calculate area and perimeter.</h3>
+  
+  <button class="toggle-btn">Show Code ↓</button>
+  <div class="code-output">
+    
+    <pre class="code-area">
+#include &lt;iostream&gt;
+using namespace std;
+
+class Rectangle {
+    int length, width;
+
+public:
+    void setValues(int l, int w) {
+        length = l;
+        width = w;
+    }
+
+    int area() {
+        return length * width;
+    }
+
+    int perimeter() {
+        return 2 * (length + width);
+    }
+
+    void display() {
+        cout &lt;&lt; "Area: " &lt;&lt; area() &lt;&lt; endl;
+        cout &lt;&lt; "Perimeter: " &lt;&lt; perimeter() &lt;&lt; endl;
+    }
+};
+
+int main() {
+    Rectangle r;
+    r.setValues(10, 5);
+    r.display();
+}
+    </pre>
+
+    <p class="output-title">OUTPUT</p>
+    <pre class="output-text">
+Area: 50
+Perimeter: 30
+    </pre>
+
+  </div>
+</div>
+
+
+<div class="ques-card">
+  <h3>Q4. Write a C++ program to create a class called "Circle" and calculate area and circumference.</h3>
+  
+  <button class="toggle-btn">Show Code ↓</button>
+  <div class="code-output">
+    
+    <pre class="code-area">
+#include &lt;iostream&gt;
+using namespace std;
+
+class Circle {
+    float radius;
+
+public:
+    void setRadius(float r) {
+        radius = r;
+    }
+
+    float area() {
+        return 3.14 * radius * radius;
+    }
+
+    float circumference() {
+        return 2 * 3.14 * radius;
+    }
+
+    void display() {
+        cout &lt;&lt; "Area: " &lt;&lt; area() &lt;&lt; endl;
+        cout &lt;&lt; "Circumference: " &lt;&lt; circumference() &lt;&lt; endl;
+    }
+};
+
+int main() {
+    Circle c;
+    c.setRadius(7);
+    c.display();
+}
+    </pre>
+
+    <p class="output-title">OUTPUT</p>
+    <pre class="output-text">
+Area: 153.86
+Circumference: 43.96
+    </pre>
+
+  </div>
+</div>
+
+
+<div class="ques-card">
+  <h3>Q6. Write a C++ program to create a class called "Employee" with salary calculation methods.</h3>
+  
+  <button class="toggle-btn">Show Code ↓</button>
+  <div class="code-output">
+    
+    <pre class="code-area">
+#include &lt;iostream&gt;
+#include &lt;string&gt;
+using namespace std;
+
+class Employee {
+    string name;
+    float basic, hra, da, totalSalary;
+
+public:
+    void setDetails(string n, float b) {
+        name = n;
+        basic = b;
+    }
+
+    void calculateSalary() {
+        hra = 0.20 * basic;
+        da  = 0.10 * basic;
+        totalSalary = basic + hra + da;
+    }
+
+    void display() {
+        cout &lt;&lt; "Name: " &lt;&lt; name &lt;&lt; endl;
+        cout &lt;&lt; "Basic Salary: " &lt;&lt; basic &lt;&lt; endl;
+        cout &lt;&lt; "Total Salary: " &lt;&lt; totalSalary &lt;&lt; endl;
+    }
+};
+
+int main() {
+    Employee e;
+
+    e.setDetails("Sarthak", 20000);
+    e.calculateSalary();
+    e.display();
+}
+    </pre>
+
+    <p class="output-title">OUTPUT</p>
+    <pre class="output-text">
+Name: Sarthak
+Basic Salary: 20000
+Total Salary: 26000
+    </pre>
+
+  </div>
+</div>
+<div class="ques-card">
+  <h3>Q7. Write a C++ program to create a "Bank" and "Account" class for transactions.</h3>
+  
+  <button class="toggle-btn">Show Code ↓</button>
+  <div class="code-output">
+    
+    <pre class="code-area">
+#include &lt;iostream&gt;
+#include &lt;string&gt;
+using namespace std;
+
+class Account {
+    string name;
+    int accNo;
+    float balance;
+
+public:
+    void setDetails(string n, int a, float b) {
+        name = n;
+        accNo = a;
+        balance = b;
+    }
+
+    void deposit(float amt) {
+        balance += amt;
+        cout &lt;&lt; "Deposited: " &lt;&lt; amt &lt;&lt; endl;
+    }
+
+    void withdraw(float amt) {
+        if(amt &lt;= balance) {
+            balance -= amt;
+            cout &lt;&lt; "Withdrawn: " &lt;&lt; amt &lt;&lt; endl;
+        } else {
+            cout &lt;&lt; "Insufficient Balance\n";
+        }
+    }
+
+    void display() {
+        cout &lt;&lt; "Name: " &lt;&lt; name &lt;&lt; endl;
+        cout &lt;&lt; "Account No: " &lt;&lt; accNo &lt;&lt; endl;
+        cout &lt;&lt; "Balance: " &lt;&lt; balance &lt;&lt; endl;
+    }
+};
+
+class Bank {
+public:
+    void performTransaction(Account &a) {
+        a.deposit(1000);
+        a.withdraw(500);
+    }
+};
+
+int main() {
+    Account a1;
+    Bank b;
+
+    a1.setDetails("Sarthak", 101, 5000);
+
+    cout &lt;&lt; "Before Transaction:\n";
+    a1.display();
+
+    b.performTransaction(a1);
+
+    cout &lt;&lt; "\nAfter Transaction:\n";
+    a1.display();
+}
+    </pre>
+
+    <p class="output-title">OUTPUT</p>
+    <pre class="output-text">
+Before Transaction:
+Name: Sarthak
+Account No: 101
+Balance: 5000
+Deposited: 1000
+Withdrawn: 500
+
+After Transaction:
+Name: Sarthak
+Account No: 101
+Balance: 5500
+    </pre>
+
+  </div>
+</div>
+
+
+<div class="ques-card">
+  <h3>Q8. Write a C++ program to create a class called "TrafficLight" with color logic.</h3>
+  
+  <button class="toggle-btn">Show Code ↓</button>
+  <div class="code-output">
+    
+    <pre class="code-area">
+#include &lt;iostream&gt;
+#include &lt;string&gt;
+using namespace std;
+
+class TrafficLight {
+    string color;
+
+public:
+    void setColor(string c) {
+        color = c;
+    }
+
+    void checkSignal() {
+        if(color == "red")
+            cout &lt;&lt; "STOP\n";
+        else if(color == "yellow")
+            cout &lt;&lt; "READY\n";
+        else if(color == "green")
+            cout &lt;&lt; "GO\n";
+        else
+            cout &lt;&lt; "Invalid Color\n";
+    }
+};
+
+int main() {
+    TrafficLight t;
+
+    t.setColor("red");
+    t.checkSignal();
+
+    t.setColor("yellow");
+    t.checkSignal();
+
+    t.setColor("green");
+    t.checkSignal();
+}
+    </pre>
+
+    <p class="output-title">OUTPUT</p>
+    <pre class="output-text">
+STOP
+READY
+GO
+    </pre>
+
+  </div>
+</div>
+
+
+<div class="ques-card">
+  <h3>Q9. Write a C++ program to create an "Employee" class with years of service calculation.</h3>
+  
+  <button class="toggle-btn">Show Code ↓</button>
+  <div class="code-output">
+    
+    <pre class="code-area">
+#include &lt;iostream&gt;
+#include &lt;string&gt;
+using namespace std;
+
+class Employee {
+    string name;
+    int joiningYear;
+    int currentYear;
+
+public:
+    void setData(string n, int j, int c) {
+        name = n;
+        joiningYear = j;
+        currentYear = c;
+    }
+
+    int calculateService() {
+        return currentYear - joiningYear;
+    }
+
+    void display() {
+        cout &lt;&lt; "Name: " &lt;&lt; name &lt;&lt; endl;
+        cout &lt;&lt; "Years of Service: " &lt;&lt; calculateService() &lt;&lt; endl;
+    }
+};
+
+int main() {
+    Employee e;
+
+    e.setData("Sarthak", 2020, 2025);
+    e.display();
+}
+    </pre>
+
+    <p class="output-title">OUTPUT</p>
+    <pre class="output-text">
+Name: Sarthak
+Years of Service: 5
+    </pre>
+
+  </div>
+</div>
+
+
+<div class="ques-card">
+  <h3>Q11. Write a C++ program to create a "Library" class to manage books.</h3>
+  
+  <button class="toggle-btn">Show Code ↓</button>
+  <div class="code-output">
+    
+    <pre class="code-area">
+#include &lt;iostream&gt;
+#include &lt;string&gt;
+using namespace std;
+
+class Library {
+    string book[5];
+    int count;
+
+public:
+    Library() {
+        count = 0;
+    }
+
+    void addBook(string b) {
+        if(count &lt; 5) {
+            book[count] = b;
+            count++;
+        } else {
+            cout &lt;&lt; "Library Full\n";
+        }
+    }
+
+    void displayBooks() {
+        cout &lt;&lt; "Books in Library:\n";
+        for(int i = 0; i &lt; count; i++) {
+            cout &lt;&lt; i+1 &lt;&lt; ". " &lt;&lt; book[i] &lt;&lt; endl;
+        }
+    }
+};
+
+int main() {
+    Library lib;
+
+    lib.addBook("C++ Basics");
+    lib.addBook("OOP Concepts");
+    lib.addBook("Data Structures");
+
+    lib.displayBooks();
+}
+    </pre>
+
+    <p class="output-title">OUTPUT</p>
+    <pre class="output-text">
+Books in Library:
+1. C++ Basics
+2. OOP Concepts
+3. Data Structures
+    </pre>
+
+  </div>
+</div>
+
+
+<div class="ques-card">
+  <h3>Q12. Write a C++ program to create an "Airplane" class with flight tracking.</h3>
+  
+  <button class="toggle-btn">Show Code ↓</button>
+  <div class="code-output">
+    
+    <pre class="code-area">
+#include &lt;iostream&gt;
+#include &lt;string&gt;
+using namespace std;
+
+class Airplane {
+    string flightNo;
+    string destination;
+    string status;
+
+public:
+    void setDetails(string f, string d, string s) {
+        flightNo = f;
+        destination = d;
+        status = s;
+    }
+
+    void updateStatus(string s) {
+        status = s;
+    }
+
+    void display() {
+        cout &lt;&lt; "Flight No: " &lt;&lt; flightNo &lt;&lt; endl;
+        cout &lt;&lt; "Destination: " &lt;&lt; destination &lt;&lt; endl;
+        cout &lt;&lt; "Status: " &lt;&lt; status &lt;&lt; endl;
+    }
+};
+
+int main() {
+    Airplane a;
+
+    a.setDetails("AI101", "Delhi", "On Time");
+
+    cout &lt;&lt; "Before Update:\n";
+    a.display();
+
+    a.updateStatus("Delayed");
+
+    cout &lt;&lt; "\nAfter Update:\n";
+    a.display();
+}
+    </pre>
+
+    <p class="output-title">OUTPUT</p>
+    <pre class="output-text">
+Before Update:
+Flight No: AI101
+Destination: Delhi
+Status: On Time
+
+After Update:
+Flight No: AI101
+Destination: Delhi
+Status: Delayed
+    </pre>
+
+  </div>
+</div>
+
+<div class="ques-card">
+  <h3>Q13. Write a C++ program to create an "Inventory" class for product tracking.</h3>
+  <button class="toggle-btn">Show Code ↓</button>
+  <div class="code-output">
+    <pre class="code-area">
+#include &lt;iostream&gt;
+#include &lt;string&gt;
+using namespace std;
+
+class Inventory {
+    string productName;
+    int quantity;
+    float price;
+
+public:
+    void setDetails(string n, int q, float p) {
+        productName = n;
+        quantity = q;
+        price = p;
+    }
+
+    void updateStock(int q) {
+        quantity += q;
+    }
+
+    void display() {
+        cout &lt;&lt; "Product: " &lt;&lt; productName &lt;&lt; endl;
+        cout &lt;&lt; "Quantity: " &lt;&lt; quantity &lt;&lt; endl;
+        cout &lt;&lt; "Price: " &lt;&lt; price &lt;&lt; endl;
+    }
+};
+
+int main() {
+    Inventory item;
+
+    item.setDetails("Laptop", 10, 50000);
+
+    cout &lt;&lt; "Before Update:\n";
+    item.display();
+
+    item.updateStock(5);
+
+    cout &lt;&lt; "\nAfter Update:\n";
+    item.display();
+}
+    </pre>
+
+    <p class="output-title">OUTPUT</p>
+    <pre class="output-text">
+Before Update:
+Product: Laptop
+Quantity: 10
+Price: 50000
+
+After Update:
+Product: Laptop
+Quantity: 15
+Price: 50000
+    </pre>
+  </div>
+</div>
+
+
+<div class="ques-card">
+  <h3>Q14. Write a C++ program to create a "School" class with students and teachers.</h3>
+  <button class="toggle-btn">Show Code ↓</button>
+  <div class="code-output">
+    <pre class="code-area">
+#include &lt;iostream&gt;
+#include &lt;string&gt;
+using namespace std;
+
+class School {
+    string students[5];
+    string teachers[5];
+    int sCount, tCount;
+
+public:
+    School() {
+        sCount = 0;
+        tCount = 0;
+    }
+
+    void addStudent(string s) {
+        if(sCount &lt; 5) students[sCount++] = s;
+    }
+
+    void addTeacher(string t) {
+        if(tCount &lt; 5) teachers[tCount++] = t;
+    }
+
+    void display() {
+        cout &lt;&lt; "Students:\n";
+        for(int i = 0; i &lt; sCount; i++)
+            cout &lt;&lt; i+1 &lt;&lt; ". " &lt;&lt; students[i] &lt;&lt; endl;
+
+        cout &lt;&lt; "\nTeachers:\n";
+        for(int i = 0; i &lt; tCount; i++)
+            cout &lt;&lt; i+1 &lt;&lt; ". " &lt;&lt; teachers[i] &lt;&lt; endl;
+    }
+};
+
+int main() {
+    School sc;
+
+    sc.addStudent("Sarthak");
+    sc.addStudent("Aman");
+
+    sc.addTeacher("Mr. Sharma");
+    sc.addTeacher("Ms. Gupta");
+
+    sc.display();
+}
+    </pre>
+
+    <p class="output-title">OUTPUT</p>
+    <pre class="output-text">
+Students:
+1. Sarthak
+2. Aman
+
+Teachers:
+1. Mr. Sharma
+2. Ms. Gupta
+    </pre>
+  </div>
+</div>
+
+
+<div class="ques-card">
+  <h3>Q15. Write a C++ program to create a "MusicLibrary" class.</h3>
+  <button class="toggle-btn">Show Code ↓</button>
+  <div class="code-output">
+    <pre class="code-area">
+#include &lt;iostream&gt;
+#include &lt;string&gt;
+using namespace std;
+
+class MusicLibrary {
+    string songs[5];
+    int count;
+
+public:
+    MusicLibrary() { count = 0; }
+
+    void addSong(string s) {
+        if(count &lt; 5) songs[count++] = s;
+    }
+
+    void displaySongs() {
+        cout &lt;&lt; "Songs in Library:\n";
+        for(int i = 0; i &lt; count; i++)
+            cout &lt;&lt; i+1 &lt;&lt; ". " &lt;&lt; songs[i] &lt;&lt; endl;
+    }
+};
+
+int main() {
+    MusicLibrary m;
+
+    m.addSong("Shape of You");
+    m.addSong("Believer");
+    m.addSong("Perfect");
+
+    m.displaySongs();
+}
+    </pre>
+
+    <p class="output-title">OUTPUT</p>
+    <pre class="output-text">
+Songs in Library:
+1. Shape of You
+2. Believer
+3. Perfect
+    </pre>
+  </div>
+</div>
+
+
+<div class="ques-card">
+  <h3>Q16. Write a C++ program using abstract "Shape" class and derived classes.</h3>
+  <button class="toggle-btn">Show Code ↓</button>
+  <div class="code-output">
+    <pre class="code-area">
+#include &lt;iostream&gt;
+using namespace std;
+
+class Shape {
+public:
+    virtual void area() = 0;
+};
+
+class Circle : public Shape {
+    float r;
+public:
+    Circle(float radius) { r = radius; }
+
+    void area() {
+        cout &lt;&lt; "Area of Circle: " &lt;&lt; 3.14 * r * r &lt;&lt; endl;
+    }
+};
+
+class Rectangle : public Shape {
+    float l, b;
+public:
+    Rectangle(float length, float breadth) {
+        l = length;
+        b = breadth;
+    }
+
+    void area() {
+        cout &lt;&lt; "Area of Rectangle: " &lt;&lt; l * b &lt;&lt; endl;
+    }
+};
+
+int main() {
+    Shape *s;
+    Circle c(5);
+    Rectangle r(4, 6);
+
+    s = &c;
+    s->area();
+
+    s = &r;
+    s->area();
+}
+    </pre>
+
+    <p class="output-title">OUTPUT</p>
+    <pre class="output-text">
+Area of Circle: 78.5
+Area of Rectangle: 24
+    </pre>
+  </div>
+</div>
+
+
+<div class="ques-card">
+  <h3>Q17. Write a C++ program to create a "Movie" class with reviews.</h3>
+  <button class="toggle-btn">Show Code ↓</button>
+  <div class="code-output">
+    <pre class="code-area">
+#include &lt;iostream&gt;
+#include &lt;string&gt;
+using namespace std;
+
+class Movie {
+    string name;
+    string reviews[5];
+    int count;
+
+public:
+    Movie(string n) {
+        name = n;
+        count = 0;
+    }
+
+    void addReview(string r) {
+        if (count &lt; 5) reviews[count++] = r;
+    }
+
+    void displayReviews() {
+        cout &lt;&lt; "Movie: " &lt;&lt; name &lt;&lt; endl;
+        cout &lt;&lt; "Reviews:\n";
+        for (int i = 0; i &lt; count; i++)
+            cout &lt;&lt; i + 1 &lt;&lt; ". " &lt;&lt; reviews[i] &lt;&lt; endl;
+    }
+};
+
+int main() {
+    Movie m("Inception");
+
+    m.addReview("Excellent movie!");
+    m.addReview("Mind-blowing concept");
+    m.addReview("Great visuals");
+
+    m.displayReviews();
+}
+    </pre>
+
+    <p class="output-title">OUTPUT</p>
+    <pre class="output-text">
+Movie: Inception
+Reviews:
+1. Excellent movie!
+2. Mind-blowing concept
+3. Great visuals
+    </pre>
+  </div>
+</div>
+
+
+<div class="ques-card">
+  <h3>Q18. Write a C++ program to create a "Restaurant" class with ratings.</h3>
+  <button class="toggle-btn">Show Code ↓</button>
+  <div class="code-output">
+    <pre class="code-area">
+#include &lt;iostream&gt;
+#include &lt;string&gt;
+using namespace std;
+
+class Restaurant {
+    string name;
+    int ratings[5];
+    int count;
+
+public:
+    Restaurant(string n) {
+        name = n;
+        count = 0;
+    }
+
+    void addRating(int r) {
+        if (count &lt; 5) ratings[count++] = r;
+    }
+
+    void displayRatings() {
+        cout &lt;&lt; "Restaurant: " &lt;&lt; name &lt;&lt; endl;
+        cout &lt;&lt; "Ratings:\n";
+        for (int i = 0; i &lt; count; i++)
+            cout &lt;&lt; i + 1 &lt;&lt; ". " &lt;&lt; ratings[i] &lt;&lt; endl;
+    }
+
+    void averageRating() {
+        int sum = 0;
+        for (int i = 0; i &lt; count; i++) sum += ratings[i];
+        cout &lt;&lt; "Average Rating: " &lt;&lt; (float)sum / count &lt;&lt; endl;
+    }
+};
+
+int main() {
+    Restaurant r("Dominos");
+
+    r.addRating(5);
+    r.addRating(4);
+    r.addRating(3);
+
+    r.displayRatings();
+    r.averageRating();
+}
+    </pre>
+
+    <p class="output-title">OUTPUT</p>
+    <pre class="output-text">
+Restaurant: Dominos
+Ratings:
+1. 5
+2. 4
+3. 3
+Average Rating: 4
+    </pre>
+  </div>
+</div>
+
+
+<div class="ques-card">
+  <h3>Q19. Write a C++ program for booking flights and hotels.</h3>
+  <button class="toggle-btn">Show Code ↓</button>
+  <div class="code-output">
+    <pre class="code-area">
+#include &lt;iostream&gt;
+#include &lt;string&gt;
+using namespace std;
+
+class Booking {
+    string name;
+    int seats;
+    int rooms;
+
+public:
+    Booking(string n) {
+        name = n;
+        seats = 0;
+        rooms = 0;
+    }
+
+    void bookFlight(int s) {
+        seats = s;
+        cout &lt;&lt; seats &lt;&lt; " flight seat(s) booked successfully.\n";
+    }
+
+    void bookHotel(int r) {
+        rooms = r;
+        cout &lt;&lt; rooms &lt;&lt; " hotel room(s) booked successfully.\n";
+    }
+
+    void displayDetails() {
+        cout &lt;&lt; "\nCustomer Name: " &lt;&lt; name &lt;&lt; endl;
+        cout &lt;&lt; "Flight Seats Booked: " &lt;&lt; seats &lt;&lt; endl;
+        cout &lt;&lt; "Hotel Rooms Booked: " &lt;&lt; rooms &lt;&lt; endl;
+    }
+};
+
+int main() {
+    Booking b("Sarthak");
+
+    b.bookFlight(2);
+    b.bookHotel(1);
+
+    b.displayDetails();
+}
+    </pre>
+
+    <p class="output-title">OUTPUT</p>
+    <pre class="output-text">
+2 flight seat(s) booked successfully.
+1 hotel room(s) booked successfully.
+
+Customer Name: Sarthak
+Flight Seats Booked: 2
+Hotel Rooms Booked: 1
+    </pre>
+  </div>
+</div>
+
+
+<div class="ques-card">
+  <h3>Q20. Create a class showing default constructor.</h3>
+  <button class="toggle-btn">Show Code ↓</button>
+  <div class="code-output">
+    <pre class="code-area">
+#include &lt;iostream&gt;
+#include &lt;string&gt;
+using namespace std;
+
+class Student {
+    string name;
+    int age;
+
+public:
+    Student() {
+        name = "Unknown";
+        age = 0;
+        cout &lt;&lt; "Default Constructor Called\n";
+    }
+
+    void display() {
+        cout &lt;&lt; "Name: " &lt;&lt; name &lt;&lt; endl;
+        cout &lt;&lt; "Age: " &lt;&lt; age &lt;&lt; endl;
+    }
+};
+
+int main() {
+    Student s;
+    s.display();
+}
+    </pre>
+
+    <p class="output-title">OUTPUT</p>
+    <pre class="output-text">
+Default Constructor Called
+Name: Unknown
+Age: 0
+    </pre>
+  </div>
+</div>
+
+<div class="ques-card">
+  <h3>Q21. Create a class showing parameterized constructor.</h3>
+  <button class="toggle-btn">Show Code ↓</button>
+  <div class="code-output">
+    <pre class="code-area">
+#include &lt;iostream&gt;
+#include &lt;string&gt;
+using namespace std;
+
+class Student {
+    string name;
+    int age;
+
+public:
+    Student(string n, int a) {
+        name = n;
+        age = a;
+        cout &lt;&lt; "Parameterized Constructor Called" &lt;&lt; endl;
+    }
+
+    void display() {
+        cout &lt;&lt; "Name: " &lt;&lt; name &lt;&lt; endl;
+        cout &lt;&lt; "Age: " &lt;&lt; age &lt;&lt; endl;
+    }
+};
+
+int main() {
+    Student s("Sarthak", 18);
+    s.display();
+}
+    </pre>
+
+    <p class="output-title">OUTPUT</p>
+    <pre class="output-text">
+Parameterized Constructor Called
+Name: Sarthak
+Age: 18
+    </pre>
+  </div>
+</div>
+
+
+<div class="ques-card">
+  <h3>Q22. Create a class showing copy constructor.</h3>
+  <button class="toggle-btn">Show Code ↓</button>
+  <div class="code-output">
+    <pre class="code-area">
+#include &lt;iostream&gt;
+#include &lt;string&gt;
+using namespace std;
+
+class Student {
+    string name;
+    int age;
+
+public:
+    Student(string n, int a) {
+        name = n;
+        age = a;
+    }
+
+    Student(const Student &s) {
+        name = s.name;
+        age = s.age;
+        cout &lt;&lt; "Copy Constructor Called" &lt;&lt; endl;
+    }
+
+    void display() {
+        cout &lt;&lt; "Name: " &lt;&lt; name &lt;&lt; endl;
+        cout &lt;&lt; "Age: " &lt;&lt; age &lt;&lt; endl;
+    }
+};
+
+int main() {
+    Student s1("Sarthak", 18);
+    Student s2 = s1;
+
+    s2.display();
+}
+    </pre>
+
+    <p class="output-title">OUTPUT</p>
+    <pre class="output-text">
+Copy Constructor Called
+Name: Sarthak
+Age: 18
+    </pre>
+  </div>
+</div>
+
+
+<div class="ques-card">
+  <h3>Q23. Create a class to auto-generate roll numbers for students.</h3>
+  <button class="toggle-btn">Show Code ↓</button>
+  <div class="code-output">
+    <pre class="code-area">
+#include &lt;iostream&gt;
+#include &lt;string&gt;
+using namespace std;
+
+class Student {
+    string name;
+    int rollNo;
+    static int counter;
+
+public:
+    Student(string n) {
+        name = n;
+        counter++;
+        rollNo = counter;
+    }
+
+    void display() {
+        cout &lt;&lt; "Name: " &lt;&lt; name &lt;&lt; endl;
+        cout &lt;&lt; "Roll No: " &lt;&lt; rollNo &lt;&lt; endl;
+    }
+};
+
+int Student::counter = 0;
+
+int main() {
+    Student s1("Sarthak"), s2("Rahul"), s3("Aman");
+
+    s1.display(); cout &lt;&lt; endl;
+    s2.display(); cout &lt;&lt; endl;
+    s3.display();
+}
+    </pre>
+
+    <p class="output-title">OUTPUT</p>
+    <pre class="output-text">
+Name: Sarthak
+Roll No: 1
+
+Name: Rahul
+Roll No: 2
+
+Name: Aman
+Roll No: 3
+    </pre>
+  </div>
+</div>
+
+
+<div class="ques-card">
+  <h3>Q24. Create a class showing method overloading for area.</h3>
+  <button class="toggle-btn">Show Code ↓</button>
+  <div class="code-output">
+    <pre class="code-area">
+#include &lt;iostream&gt;
+using namespace std;
+
+class Area {
+public:
+    void calculate(int side) {
+        cout &lt;&lt; "Area of Square: " &lt;&lt; side * side &lt;&lt; endl;
+    }
+
+    void calculate(int l, int b) {
+        cout &lt;&lt; "Area of Rectangle: " &lt;&lt; l * b &lt;&lt; endl;
+    }
+
+    void calculate(double r) {
+        cout &lt;&lt; "Area of Circle: " &lt;&lt; 3.14 * r * r &lt;&lt; endl;
+    }
+};
+
+int main() {
+    Area a;
+    a.calculate(4);
+    a.calculate(5,6);
+    a.calculate(3.5);
+}
+    </pre>
+
+    <p class="output-title">OUTPUT</p>
+    <pre class="output-text">
+Area of Square: 16
+Area of Rectangle: 30
+Area of Circle: 38.465
+    </pre>
+  </div>
+</div>
+
+
+<div class="ques-card">
+  <h3>Q25. Create a "Person" class with private variables and getters/setters.</h3>
+  <button class="toggle-btn">Show Code ↓</button>
+  <div class="code-output">
+    <pre class="code-area">
+#include &lt;iostream&gt;
+#include &lt;string&gt;
+using namespace std;
+
+class Person {
+private:
+    string name;
+    int age;
+
+public:
+    void setName(string n) { name = n; }
+    void setAge(int a) { age = a; }
+
+    string getName() { return name; }
+    int getAge() { return age; }
+};
+
+int main() {
+    Person p;
+    p.setName("Sarthak");
+    p.setAge(18);
+
+    cout &lt;&lt; "Name: " &lt;&lt; p.getName() &lt;&lt; endl;
+    cout &lt;&lt; "Age: " &lt;&lt; p.getAge() &lt;&lt; endl;
+}
+    </pre>
+
+    <p class="output-title">OUTPUT</p>
+    <pre class="output-text">
+Name: Sarthak
+Age: 18
+    </pre>
+  </div>
+</div>
+
+
+<div class="ques-card">
+  <h3>Q26. Create a "BankAccount" class with encapsulation.</h3>
+  <button class="toggle-btn">Show Code ↓</button>
+  <div class="code-output">
+    <pre class="code-area">
+#include &lt;iostream&gt;
+#include &lt;string&gt;
+using namespace std;
+
+class BankAccount {
+private:
+    string name;
+    double balance;
+
+public:
+    void setDetails(string n, double b) {
+        name = n;
+        balance = b;
+    }
+
+    void deposit(double a) { balance += a; }
+
+    void withdraw(double a) {
+        if(a &lt;= balance) balance -= a;
+        else cout &lt;&lt; "Insufficient Balance\n";
+    }
+
+    string getName() { return name; }
+    double getBalance() { return balance; }
+};
+
+int main() {
+    BankAccount b;
+    b.setDetails("Sarthak",1000);
+    b.deposit(500);
+    b.withdraw(300);
+
+    cout &lt;&lt; "Account Holder: " &lt;&lt; b.getName() &lt;&lt; endl;
+    cout &lt;&lt; "Balance: " &lt;&lt; b.getBalance() &lt;&lt; endl;
+}
+    </pre>
+
+    <p class="output-title">OUTPUT</p>
+    <pre class="output-text">
+Account Holder: Sarthak
+Balance: 1200
+    </pre>
+  </div>
+</div>
+
+
+<div class="ques-card">
+  <h3>Q27. Create a "Rectangle" class with private variables.</h3>
+  <button class="toggle-btn">Show Code ↓</button>
+  <div class="code-output">
+    <pre class="code-area">
+#include &lt;iostream&gt;
+using namespace std;
+
+class Rectangle {
+private:
+    int l,b;
+
+public:
+    void setDimensions(int x,int y){ l=x; b=y; }
+
+    int getLength(){ return l; }
+    int getBreadth(){ return b; }
+
+    int area(){ return l*b; }
+};
+
+int main() {
+    Rectangle r;
+    r.setDimensions(5,4);
+
+    cout &lt;&lt; "Length: " &lt;&lt; r.getLength() &lt;&lt; endl;
+    cout &lt;&lt; "Breadth: " &lt;&lt; r.getBreadth() &lt;&lt; endl;
+    cout &lt;&lt; "Area: " &lt;&lt; r.area() &lt;&lt; endl;
+}
+    </pre>
+
+    <p class="output-title">OUTPUT</p>
+    <pre class="output-text">
+Length: 5
+Breadth: 4
+Area: 20
+    </pre>
+  </div>
+</div>
+
+
+<div class="ques-card">
+  <h3>Q28. Create an "Employee" class with formatted salary getter.</h3>
+  <button class="toggle-btn">Show Code ↓</button>
+  <div class="code-output">
+    <pre class="code-area">
+#include &lt;iostream&gt;
+#include &lt;string&gt;
+using namespace std;
+
+class Employee {
+private:
+    string name;
+    double salary;
+
+public:
+    void setDetails(string n,double s){ name=n; salary=s; }
+
+    string getName(){ return name; }
+
+    void getFormattedSalary(){
+        cout &lt;&lt; "Salary: Rs. " &lt;&lt; salary &lt;&lt; endl;
+    }
+};
+
+int main() {
+    Employee e;
+    e.setDetails("Sarthak",50000);
+
+    cout &lt;&lt; "Employee Name: " &lt;&lt; e.getName() &lt;&lt; endl;
+    e.getFormattedSalary();
+}
+    </pre>
+
+    <p class="output-title">OUTPUT</p>
+    <pre class="output-text">
+Employee Name: Sarthak
+Salary: Rs. 50000
+    </pre>
+  </div>
+</div>
+
+
+<div class="ques-card">
+  <h3>Q29. Create a "Circle" class with area and perimeter methods.</h3>
+  <button class="toggle-btn">Show Code ↓</button>
+  <div class="code-output">
+    <pre class="code-area">
+#include &lt;iostream&gt;
+using namespace std;
+
+class Circle {
+    double r;
+public:
+    void setRadius(double x){ r=x; }
+
+    double area(){ return 3.14*r*r; }
+    double perimeter(){ return 2*3.14*r; }
+};
+
+int main() {
+    Circle c;
+    c.setRadius(5);
+
+    cout &lt;&lt; "Area of Circle: " &lt;&lt; c.area() &lt;&lt; endl;
+    cout &lt;&lt; "Perimeter of Circle: " &lt;&lt; c.perimeter() &lt;&lt; endl;
+}
+    </pre>
+
+    <p class="output-title">OUTPUT</p>
+    <pre class="output-text">
+Area of Circle: 78.5
+Perimeter of Circle: 31.4
+    </pre>
+  </div>
+</div>
+
+
+<div class="ques-card">
+  <h3>Q30. Create a "Car" class with controlled access to mileage.</h3>
+  <button class="toggle-btn">Show Code ↓</button>
+  <div class="code-output">
+    <pre class="code-area">
+#include &lt;iostream&gt;
+#include &lt;string&gt;
+using namespace std;
+
+class Car {
+    string model;
+    double mileage;
+
+public:
+    void setModel(string m){ model=m; }
+
+    void setMileage(double m){
+        if(m&gt;=0) mileage=m;
+        else cout &lt;&lt; "Invalid mileage!" &lt;&lt; endl;
+    }
+
+    string getModel(){ return model; }
+    double getMileage(){ return mileage; }
+};
+
+int main() {
+    Car c;
+    c.setModel("Honda City");
+    c.setMileage(18.5);
+
+    cout &lt;&lt; "Car Model: " &lt;&lt; c.getModel() &lt;&lt; endl;
+    cout &lt;&lt; "Mileage: " &lt;&lt; c.getMileage() &lt;&lt; " km/l" &lt;&lt; endl;
+}
+    </pre>
+
+    <p class="output-title">OUTPUT</p>
+    <pre class="output-text">
+Car Model: Honda City
+Mileage: 18.5 km/l
+    </pre>
+  </div>
+</div>
+
+
+<div class="ques-card">
+  <h3>Q31. Create a "Student" class with grade validation.</h3>
+  <button class="toggle-btn">Show Code ↓</button>
+  <div class="code-output">
+    <pre class="code-area">
+#include &lt;iostream&gt;
+#include &lt;string&gt;
+using namespace std;
+
+class Student {
+    string name;
+    char grade;
+
+public:
+    void setName(string n){ name=n; }
+
+    void setGrade(char g){
+        if(g&gt;='A' &amp;&amp; g&lt;='F') grade=g;
+        else cout &lt;&lt; "Invalid Grade!" &lt;&lt; endl;
+    }
+
+    string getName(){ return name; }
+    char getGrade(){ return grade; }
+};
+
+int main() {
+    Student s;
+    s.setName("Sarthak");
+    s.setGrade('A');
+
+    cout &lt;&lt; "Name: " &lt;&lt; s.getName() &lt;&lt; endl;
+    cout &lt;&lt; "Grade: " &lt;&lt; s.getGrade() &lt;&lt; endl;
+}
+    </pre>
+
+    <p class="output-title">OUTPUT</p>
+    <pre class="output-text">
+Name: Sarthak
+Grade: A
+    </pre>
+  </div>
+</div>
+
+
+  <!-- Footer -->
+  <footer>
+    © 2026 C Programming Hub
+  </footer>
+
+
+
+
+  </div>
+  <script>
+    const toggleButtons = document.querySelectorAll('.toggle-btn');
+
+    toggleButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const card = btn.parentElement;
+        card.classList.toggle('active');
+        const output = card.querySelector('.code-output');
+
+        if(card.classList.contains('active')) {
+          output.style.display = 'flex';
+          btn.textContent = "Hide Code ↑";
+        } else {
+          output.style.display = 'none';
+          btn.textContent = "Show Code ↓";
+        }
+      });
+    });
+  </script>
+</body>
+</html>
+
+
+
+    <!-- Questions Section -->

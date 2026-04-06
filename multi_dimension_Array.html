@@ -1,0 +1,788 @@
+ 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>C Programming Hub</title>
+<link rel="stylesheet" href="style_c_site.css">
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <h1>C Programming Hub</h1>
+    <ul>
+      <li><a href="home.html">Home</a></li>
+      <li><a href="index.html">Topics</a></li>
+      <li><a href="https://youtube.com/playlist?list=PLk05cwASVVZsVc37eoI49N4fgJGLnOxI2&si=zacrxO4BEJYDkRt3">Tutorials</a></li>
+      <li><a href="ask.html">Ask Questions</a></li>
+    </ul>
+  </nav>
+
+  <!-- Main Container -->
+  <div class="main-container">
+ <h2 style="color: #e0f7fa; text-align: center; margin-bottom: 25px; font-weight: 600;">
+    MULTI DIMENSION ARRAYS
+  </h2>
+    <!-- Question Card 1 -->
+
+<div class="ques-card">
+  <h3>Q1. Program to enter a matrix of user-defined rows and columns and print it in matrix format.</h3>
+  <button class="toggle-btn">Show Code ↓</button>
+
+  <div class="code-output">
+
+    <pre class="code-area">
+#include &lt;iostream&gt;
+using namespace std;
+
+int main(){
+    int x,y;
+    cout&lt;&lt;"Size of Multi Dimension Array (x axis | y axis) :";
+    cin&gt;&gt;x&gt;&gt;y;
+
+    int arr[x][y];
+
+    cout&lt;&lt;"ENTER ELEMENT OF ARRAY : ";
+    for(int i=0;i&lt;x;i++){
+        for(int j=0;j&lt;y;j++){
+            cin&gt;&gt;arr[i][j];
+        }
+    }
+
+    cout&lt;&lt;"ELEMENT OF ARRAY IN MATRIX FORMAT :\n";
+    for(int i=0;i&lt;x;i++){
+        for(int j=0;j&lt;y;j++){
+            cout&lt;&lt;arr[i][j]&lt;&lt;"  ";
+        }
+        cout&lt;&lt;endl;
+    }
+}
+</pre>
+
+    <!-- Output Title -->
+    <p class="output-title">OUTPUT</p>
+
+<pre class="output-text">
+Size of Multi Dimension Array (x axis | y axis) : 2 3
+ENTER ELEMENT OF ARRAY : 1 2 3 4 5 6
+ELEMENT OF ARRAY IN MATRIX FORMAT :
+1  2  3
+4  5  6
+</pre>
+
+  </div>
+</div>
+<div class="ques-card">
+  <h3>Q2. Program to add two matrices.</h3>
+  <button class="toggle-btn">Show Code ↓</button>
+
+  <div class="code-output">
+
+    <pre class="code-area">
+#include &lt;iostream&gt;
+using namespace std;
+
+int main(){
+
+    int arr[3][3]{{1,2,3},{4,5,6},{7,8,9}};
+    int arr_2[3][3]{{10,11,12},{13,14,15},{16,17,18}};
+    int sum[3][3];
+
+    cout&lt;&lt;"Elements of matrix 1\n";
+    for(int i=0;i&lt;3;i++){
+        for(int j=0;j&lt;3;j++){
+            cout&lt;&lt;"\t"&lt;&lt;arr[i][j]&lt;&lt;"  ";
+        }
+        cout&lt;&lt;endl;
+    }
+
+    cout&lt;&lt;endl&lt;&lt;endl;
+
+    cout&lt;&lt;"Elements of matrix 2 \n";
+    for(int i=0;i&lt;3;i++){
+        for(int j=0;j&lt;3;j++){
+            cout&lt;&lt;"\t"&lt;&lt;arr_2[i][j]&lt;&lt;"  ";
+            sum[i][j]=arr[i][j]+arr_2[i][j];
+        }
+        cout&lt;&lt;endl;
+    }
+
+    cout&lt;&lt;"Sum of Both Matrix :\n";
+    for(int i=0;i&lt;3;i++){
+        for(int j=0;j&lt;3;j++){
+            cout&lt;&lt;"\t"&lt;&lt;sum[i][j]&lt;&lt;"  ";
+        }
+        cout&lt;&lt;endl;
+    }
+}
+</pre>
+
+    <!-- Output Title -->
+    <p class="output-title">OUTPUT</p>
+
+<pre class="output-text">
+Elements of matrix 1
+    1  2  3
+    4  5  6
+    7  8  9
+
+Elements of matrix 2
+    10  11  12
+    13  14  15
+    16  17  18
+
+Sum of Both Matrix :
+    11  13  15
+    17  19  21
+    23  25  27
+</pre>
+
+  </div>
+</div>
+<div class="ques-card">
+  <h3>Q3. Program to multiply two matrices.</h3>
+  <button class="toggle-btn">Show Code ↓</button>
+
+  <div class="code-output">
+
+    <pre class="code-area">
+#include &lt;iostream&gt;
+using namespace std;
+
+int main(){
+
+    int arr[3][3]{{1,2,3},{4,5,6},{7,8,9}};
+    int arr_2[3][3]{{10,11,12},{13,14,15},{16,17,18}};
+    int multiply[3][3] = {0};
+
+    cout&lt;&lt;"Elements of matrix 1\n";
+    for(int i=0;i&lt;3;i++){
+        for(int j=0;j&lt;3;j++){
+            cout&lt;&lt;"\t"&lt;&lt;arr[i][j]&lt;&lt;"  ";
+        }
+        cout&lt;&lt;endl;
+    }
+
+    cout&lt;&lt;endl&lt;&lt;endl;
+
+    cout&lt;&lt;"Elements of matrix 2\n";
+    for(int i=0;i&lt;3;i++){
+        for(int j=0;j&lt;3;j++){
+            cout&lt;&lt;"\t"&lt;&lt;arr_2[i][j]&lt;&lt;"  ";
+        }
+        cout&lt;&lt;endl;
+    }
+
+    for(int i=0;i&lt;3;i++){
+        for(int j=0;j&lt;3;j++){
+            for(int k=0;k&lt;3;k++){
+                multiply[i][j] += arr[i][k] * arr_2[k][j];
+            }
+        }
+    }
+
+    cout&lt;&lt;"Multiply of Both Matrix :\n";
+    for(int i=0;i&lt;3;i++){
+        for(int j=0;j&lt;3;j++){
+            cout&lt;&lt;"\t"&lt;&lt;multiply[i][j]&lt;&lt;"  ";
+        }
+        cout&lt;&lt;endl;
+    }
+}
+</pre>
+
+    <!-- Output Title -->
+    <p class="output-title">OUTPUT</p>
+
+<pre class="output-text">
+Elements of matrix 1
+    1  2  3
+    4  5  6
+    7  8  9
+
+Elements of matrix 2
+    10  11  12
+    13  14  15
+    16  17  18
+
+Multiply of Both Matrix :
+    84  90  96
+    201 216 231
+    318 342 366
+</pre>
+
+  </div>
+</div>
+
+<div class="ques-card">
+  <h3>Q4. Program to subtract two matrices.</h3>
+  <button class="toggle-btn">Show Code ↓</button>
+
+  <div class="code-output">
+
+    <pre class="code-area">
+#include &lt;iostream&gt;
+using namespace std;
+
+int main(){
+
+    int arr[3][3]{{1,2,3},{4,5,6},{7,8,9}};
+    int arr_2[3][3]{{10,11,12},{13,14,15},{16,17,18}};
+    int Subract[3][3];
+
+    cout&lt;&lt;"Elements of matrix 1\n";
+    for(int i=0;i&lt;3;i++){
+        for(int j=0;j&lt;3;j++){
+            cout&lt;&lt;"\t"&lt;&lt;arr[i][j]&lt;&lt;"  ";
+        }
+        cout&lt;&lt;endl;
+    }
+
+    cout&lt;&lt;endl&lt;&lt;endl;
+
+    cout&lt;&lt;"Elements of matrix 2 \n";
+    for(int i=0;i&lt;3;i++){
+        for(int j=0;j&lt;3;j++){
+            cout&lt;&lt;"\t"&lt;&lt;arr_2[i][j]&lt;&lt;"  ";
+            Subract[i][j] = arr_2[i][j] - arr[i][j];
+        }
+        cout&lt;&lt;endl;
+    }
+
+    cout&lt;&lt;"Subtraction of Both Matrix :\n";
+    for(int i=0;i&lt;3;i++){
+        for(int j=0;j&lt;3;j++){
+            cout&lt;&lt;"\t"&lt;&lt;Subract[i][j]&lt;&lt;"  ";
+        }
+        cout&lt;&lt;endl;
+    }
+}
+</pre>
+
+    <!-- Output Title -->
+    <p class="output-title">OUTPUT</p>
+
+<pre class="output-text">
+Elements of matrix 1
+    1  2  3
+    4  5  6
+    7  8  9
+
+Elements of matrix 2
+    10  11  12
+    13  14  15
+    16  17  18
+
+Subtraction of Both Matrix :
+    9  9  9
+    9  9  9
+    9  9  9
+</pre>
+
+  </div>
+</div>
+
+<div class="ques-card">
+  <h3>Q5. Program to determine whether two matrices are equal.</h3>
+  <button class="toggle-btn">Show Code ↓</button>
+
+  <div class="code-output">
+
+    <pre class="code-area">
+#include &lt;iostream&gt;
+using namespace std;
+
+int main(){
+
+    int arr[3][3]{0};
+    int arr_2[3][3]{0};
+    int flag = true;
+
+    cout&lt;&lt;"Enter elements of matrix 1 ";
+    for(int i=0;i&lt;3;i++){
+        for(int j=0;j&lt;3;j++){
+            cin&gt;&gt;arr[i][j];
+        }
+    }
+
+    cout&lt;&lt;"Enter elements of matrix 2 : ";
+    for(int i=0;i&lt;3;i++){
+        for(int j=0;j&lt;3;j++){
+            cin&gt;&gt;arr_2[i][j];
+        }
+    }
+
+    for(int i=0;i&lt;3;i++){
+        for(int j=0;j&lt;3;j++){
+            if(arr[i][j] != arr_2[i][j]){
+                flag = false;
+                break;
+            }
+        }
+        if(!flag){
+            break;
+        }
+    }
+
+    if(flag) cout&lt;&lt;"BOTH ARE EQUAL";
+    else cout&lt;&lt;"NOT EQUAL";
+}
+</pre>
+
+    <!-- Output Title -->
+    <p class="output-title">OUTPUT</p>
+
+<pre class="output-text">
+Enter elements of matrix 1 : 
+1 2 3
+4 5 6
+7 8 9
+
+Enter elements of matrix 2 :
+1 2 3
+4 5 6
+7 8 9
+
+BOTH ARE EQUAL
+</pre>
+
+  </div>
+</div>
+<div class="ques-card">
+  <h3>Q6. Program to display the lower triangular matrix.</h3>
+  <button class="toggle-btn">Show Code ↓</button>
+
+  <div class="code-output">
+
+    <pre class="code-area">
+#include &lt;iostream&gt;
+using namespace std;
+
+int main(){
+
+    int arr[3][3]{{1,2,3},{4,5,6},{7,8,9}};
+
+    cout&lt;&lt;"Element Of Matrix :\n";
+    for(int i=0;i&lt;3;i++){
+        for(int j=0;j&lt;3;j++){
+            cout&lt;&lt;arr[i][j]&lt;&lt;" ";
+        }
+        cout&lt;&lt;endl;
+    }
+
+    cout&lt;&lt;"Lower Triangular Matrix :\n";
+    for(int i=0;i&lt;3;i++){
+        for(int j=0;j&lt;3;j++){
+            if(i &gt;= j)
+                cout&lt;&lt;arr[i][j]&lt;&lt;" ";
+            else
+                cout&lt;&lt;"0 ";
+        }
+        cout&lt;&lt;endl;
+    }
+}
+</pre>
+
+    <!-- Output Title -->
+    <p class="output-title">OUTPUT</p>
+
+<pre class="output-text">
+Element Of Matrix :
+1 2 3
+4 5 6
+7 8 9
+
+Lower Triangular Matrix :
+1 0 0
+4 5 0
+7 8 9
+</pre>
+
+  </div>
+</div>
+<div class="ques-card">
+  <h3>Q7. Program to display the upper triangular matrix.</h3>
+  <button class="toggle-btn">Show Code ↓</button>
+
+  <div class="code-output">
+
+    <pre class="code-area">
+#include &lt;iostream&gt;
+using namespace std;
+
+int main(){
+
+    int arr[3][3]{{1,2,3},{4,5,6},{7,8,9}};
+
+    cout&lt;&lt;"Element Of Matrix :\n";
+    for(int i=0;i&lt;3;i++){
+        for(int j=0;j&lt;3;j++){
+            cout&lt;&lt;arr[i][j]&lt;&lt;" ";
+        }
+        cout&lt;&lt;endl;
+    }
+
+    cout&lt;&lt;"Upper Triangular Matrix :\n";
+    for(int i=0;i&lt;3;i++){
+        for(int j=0;j&lt;3;j++){
+            if(i &lt;= j)
+                cout&lt;&lt;arr[i][j]&lt;&lt;" ";
+            else
+                cout&lt;&lt;"0 ";
+        }
+        cout&lt;&lt;endl;
+    }
+}
+</pre>
+
+    <!-- Output Title -->
+    <p class="output-title">OUTPUT</p>
+
+<pre class="output-text">
+Element Of Matrix :
+1 2 3
+4 5 6
+7 8 9
+
+Upper Triangular Matrix :
+1 2 3
+0 5 6
+0 0 9
+</pre>
+
+  </div>
+</div>
+
+<div class="ques-card">
+  <h3>Q8. Program to find the frequency of odd and even numbers in a matrix.</h3>
+  <button class="toggle-btn">Show Code ↓</button>
+
+  <div class="code-output">
+
+    <pre class="code-area">
+#include &lt;iostream&gt;
+using namespace std;
+
+int main(){
+
+    int arr[3][3]{{1,2,3},{4,5,6},{7,8,9}};
+    int odd_count = 0, even_count = 0;
+
+    cout&lt;&lt;"Element Of Matrix :\n";
+    for(int i=0;i&lt;3;i++){
+        for(int j=0;j&lt;3;j++){
+            cout&lt;&lt;arr[i][j]&lt;&lt;" ";
+            if(arr[i][j] % 2 == 0)
+                even_count++;
+            else
+                odd_count++;
+        }
+        cout&lt;&lt;endl;
+    }
+
+    cout&lt;&lt;"FREQUENCY OF ODD : "&lt;&lt;odd_count&lt;&lt;endl;
+    cout&lt;&lt;"FREQUENCY OF EVEN : "&lt;&lt;even_count;
+}
+</pre>
+
+    <!-- Output Title -->
+    <p class="output-title">OUTPUT</p>
+
+<pre class="output-text">
+Element Of Matrix :
+1 2 3
+4 5 6
+7 8 9
+
+FREQUENCY OF ODD : 5
+FREQUENCY OF EVEN : 4
+</pre>
+
+  </div>
+</div>
+<div class="ques-card">
+  <h3>Q9. Program to find the sum of each row and each column of a matrix.</h3>
+  <button class="toggle-btn">Show Code ↓</button>
+
+  <div class="code-output">
+
+    <pre class="code-area">
+#include &lt;iostream&gt;
+using namespace std;
+
+int main(){
+
+    int arr[3][3]{{1,2,3},{4,5,6},{7,8,9}};
+
+    cout&lt;&lt;"Elements of matrix\n";
+    for(int i=0;i&lt;3;i++){
+        for(int j=0;j&lt;3;j++){
+            cout&lt;&lt;"\t"&lt;&lt;arr[i][j]&lt;&lt;"  ";
+        }
+        cout&lt;&lt;endl;
+    }
+
+    // Row Sum
+    for(int i=0;i&lt;3;i++){
+        int sum = 0;
+        for(int j=0;j&lt;3;j++){
+            sum += arr[i][j];
+        }
+        cout&lt;&lt;"Sum Of Row "&lt;&lt;i+1&lt;&lt;" : "&lt;&lt;sum&lt;&lt;endl;
+    }
+
+    // Column Sum
+    for(int j=0;j&lt;3;j++){
+        int sum = 0;
+        for(int i=0;i&lt;3;i++){
+            sum += arr[i][j];
+        }
+        cout&lt;&lt;"Sum Of Column "&lt;&lt;j+1&lt;&lt;" : "&lt;&lt;sum&lt;&lt;endl;
+    }
+}
+</pre>
+
+    <!-- Output Title -->
+    <p class="output-title">OUTPUT</p>
+
+<pre class="output-text">
+Elements of matrix
+    1  2  3
+    4  5  6
+    7  8  9
+
+Sum Of Row 1 : 6
+Sum Of Row 2 : 15
+Sum Of Row 3 : 24
+
+Sum Of Column 1 : 12
+Sum Of Column 2 : 15
+Sum Of Column 3 : 18
+</pre>
+
+  </div>
+</div>
+<div class="ques-card">
+  <h3>Q10. Program to determine whether a given matrix is an identity matrix.</h3>
+  <button class="toggle-btn">Show Code ↓</button>
+
+  <div class="code-output">
+
+    <pre class="code-area">
+#include &lt;iostream&gt;
+using namespace std;
+
+int main(){
+
+    int arr[3][3]{{1,0,0},{0,1,0},{0,0,1}};
+
+    cout&lt;&lt;"Matrix :\n";
+    for(int i=0;i&lt;3;i++){
+        for(int j=0;j&lt;3;j++){
+            cout&lt;&lt;"\t"&lt;&lt;arr[i][j]&lt;&lt;"  ";
+        }
+        cout&lt;&lt;endl;
+    }
+
+    bool flag = true;
+
+    for(int i=0;i&lt;3;i++){
+        for(int j=0;j&lt;3;j++){
+            if(i == j &amp;&amp; arr[i][j] != 1){
+                flag = false;
+            }
+            if(i != j &amp;&amp; arr[i][j] != 0){
+                flag = false;
+            }
+        }
+    }
+
+    if(flag)
+        cout&lt;&lt;"Identity Matrix";
+    else
+        cout&lt;&lt;"Not Identity Matrix";
+}
+</pre>
+
+    <!-- Output Title -->
+    <p class="output-title">OUTPUT</p>
+
+<pre class="output-text">
+Matrix :
+    1  0  0
+    0  1  0
+    0  0  1
+
+Identity Matrix
+</pre>
+
+  </div>
+</div>
+<div class="ques-card">
+  <h3>Q11. Program to find the transpose of a matrix.</h3>
+  <button class="toggle-btn">Show Code ↓</button>
+
+  <div class="code-output">
+
+    <pre class="code-area">
+#include &lt;iostream&gt;
+using namespace std;
+
+int main(){
+
+    int x,y;
+    cout&lt;&lt;"Size of Multi Dimension Array (x axis | y axis) :";
+    cin&gt;&gt;x&gt;&gt;y;
+
+    int arr[x][y], transpose[y][x];
+
+    cout&lt;&lt;"ENTER ELEMENT OF ARRAY : ";
+    for(int i=0;i&lt;x;i++){
+        for(int j=0;j&lt;y;j++){
+            cin&gt;&gt;arr[i][j];
+            transpose[j][i] = arr[i][j];
+        }
+    }
+
+    cout&lt;&lt;"Transpose Matrix :\n";
+    for(int i=0;i&lt;y;i++){
+        for(int j=0;j&lt;x;j++){
+            cout&lt;&lt;transpose[i][j]&lt;&lt;"  ";
+        }
+        cout&lt;&lt;endl;
+    }
+}
+</pre>
+
+    <!-- Output Title -->
+    <p class="output-title">OUTPUT</p>
+
+<pre class="output-text">
+Size of Multi Dimension Array (x axis | y axis) : 2 3
+ENTER ELEMENT OF ARRAY : 1 2 3 4 5 6
+
+Transpose Matrix :
+1  4
+2  5
+3  6
+</pre>
+
+  </div>
+</div>
+<div class="ques-card">
+  <h3>Q12. Program to determine whether a given matrix is a sparse matrix.</h3>
+  <button class="toggle-btn">Show Code ↓</button>
+
+  <div class="code-output">
+
+    <pre class="code-area">
+#include &lt;iostream&gt;
+using namespace std;
+
+int main(){
+
+    int x,y;
+    cout&lt;&lt;"Size of Multi Dimension Array (x axis | y axis) :";
+    cin&gt;&gt;x&gt;&gt;y;
+
+    int arr[x][y], count = 0;
+
+    cout&lt;&lt;"ENTER ELEMENT OF ARRAY : ";
+    for(int i=0;i&lt;x;i++){
+        for(int j=0;j&lt;y;j++){
+            cin&gt;&gt;arr[i][j];
+            if(arr[i][j] == 0)
+                count++;
+        }
+    }
+
+    cout&lt;&lt;"Elements of matrix :\n";
+    for(int i=0;i&lt;x;i++){
+        for(int j=0;j&lt;y;j++){
+            cout&lt;&lt;"\t"&lt;&lt;arr[i][j]&lt;&lt;"  ";
+        }
+        cout&lt;&lt;endl;
+    }
+
+    if(count &gt; (x * y)/2)
+        cout&lt;&lt;"It is a Sparse Matrix";
+    else
+        cout&lt;&lt;"It is not a Sparse Matrix";
+}
+</pre>
+
+    <!-- Output Title -->
+    <p class="output-title">OUTPUT</p>
+
+<pre class="output-text">
+Size of Multi Dimension Array (x axis | y axis) : 3 3
+ENTER ELEMENT OF ARRAY : 
+1 0 0
+0 0 2
+0 0 0
+
+Elements of matrix :
+    1  0  0
+    0  0  2
+    0  0  0
+
+It is a Sparse Matrix
+</pre>
+
+  </div>
+</div>
+
+
+
+
+  <!-- Footer -->
+  <footer>
+    © 2026 C Programming Hub
+  </footer>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+  <script>
+    const toggleButtons = document.querySelectorAll('.toggle-btn');
+
+    toggleButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const card = btn.parentElement;
+        card.classList.toggle('active');
+        const output = card.querySelector('.code-output');
+
+        if(card.classList.contains('active')) {
+          output.style.display = 'flex';
+          btn.textContent = "Hide Code ↑";
+        } else {
+          output.style.display = 'none';
+          btn.textContent = "Show Code ↓";
+        }
+      });
+    });
+  </script>
+</body>
+</html>
+
+
+
+    <!-- Questions Section -->

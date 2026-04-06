@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ask Question</title>
+
+  <style>
+    /* ============================ Base Styles ============================ */
+    body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  background: radial-gradient(circle at top, #0b1220, #020617);
+  color: #e6edf3;
+  overflow-x: hidden;
+}
+
+    /* ============================ Navbar ============================ */
+    .navbar {
+  background: rgba(15, 23, 42, 0.6);
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 9px 60px;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+    }
+
+    .navbar h1 {
+  font-size: 24px;
+  background: linear-gradient(90deg, #38bdf8, #22c55e);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  cursor:default;
+}
+
+    .navbar ul {
+      list-style: none;
+      display: flex;
+      gap: 30px;
+      margin: 0;
+      padding: 0;
+    }
+
+    .navbar a {
+  color: #94a3b8;
+  text-decoration: none;
+  font-weight: 400;
+  position: relative;
+    }
+
+    .navbar a:hover {
+  color: #fff;
+}
+.navbar a::after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  background: #1dbbff;
+  left: 0;
+  bottom: -5px;
+  transition: 0.3s;
+}
+.navbar a:hover::after {
+  width: 100%;
+}
+    /* ============================ Heading Section ============================ */
+    .heading {
+      text-align: center;
+      padding: 20px;
+      border-radius: 10px;
+      width: 90%;
+      margin: 60px auto 20px;
+
+ background: linear-gradient(135deg, rgba(56,189,248,0.15), rgba(34,197,94,0.15));
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255,255,255,0.06);
+}
+
+    .heading p {
+  font-size: 30px;
+  margin: 0;
+  font-weight: 600;
+  background: linear-gradient(90deg, #38bdf8, #22c55e, #06b6d4);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  letter-spacing: 2px;
+}
+
+    /* ============================ Form Container ============================ */
+    .form-container {
+      width: 90%;
+      max-width: 700px;
+      margin: 20px auto 60px;
+      background: linear-gradient(145deg, #ffffff, #f3f4f6);
+      padding: 25px;
+      border-radius: 12px;
+      box-shadow: 0 8px 18px rgba(0, 0, 0, 0.08);
+    }
+
+    .form-container label {
+      font-weight: 500;
+      display: block;
+      margin-bottom: 8px;
+      color: #09394e;
+    }
+
+    .form-container textarea {
+      width: 100%;
+      height: 150px;
+      padding: 12px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      font-size: 14px;
+      resize: none;
+      outline: none;
+      transition: 0.3s;
+    }
+
+    .form-container textarea:focus {
+      border-color: #0097a7;
+      box-shadow: 0 0 8px rgba(0, 151, 167, 0.3);
+    }
+
+    /* ============================ Buttons ============================ */
+   .btn {
+  display: inline-block;
+  margin-top: 15px;
+  background: linear-gradient(135deg, #38bdf8, #22c55e);
+  color: #fff;
+  padding: 10px 18px;
+  border-radius: 999px;
+  text-decoration: none;
+  cursor: pointer;
+  font-weight: 500;
+  border: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 10px rgba(56, 189, 248, 0.4);
+}
+
+
+    .btn:hover {
+  background: linear-gradient(135deg, #0ea5e9, #16a34a);
+  transform: scale(1.08);
+  box-shadow: 0 0 20px rgba(56, 189, 248, 0.7);
+}
+
+  </style>
+</head>
+
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <h1>Programming Hub</h1>
+    <ul>
+      <li><a href="home.html">Home</a></li>
+      <li><a href="index.html">Questions</a></li>
+      <li><a href="ask.html">Ask</a></li>
+    </ul>
+  </nav>
+
+  <!-- Heading -->
+  <div class="heading">
+    <p>Ask Your Question</p>
+  </div>
+
+  <!-- Form -->
+  <div class="form-container">
+    <label for="question">Write your question:</label>
+    <textarea id="question" placeholder="Type your question here..."></textarea>
+
+    <button class="btn" onclick="submitQuestion()">Submit Question</button>
+  </div>
+
+  <script>
+    function submitQuestion() {
+      const question = document.getElementById("question").value;
+
+      if (question.trim() === "") {
+        alert("Please enter a question!");
+      } else {
+        alert("Question submitted successfully!");
+        document.getElementById("question").value = "";
+      }
+    }
+  </script>
+
+</body>
+</html>

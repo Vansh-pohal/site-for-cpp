@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>C Programming Hub</title>
+
+  <style>
+    body {
+  margin: 0;
+  font-family: Arial;
+  background-color: #020617;
+  color: #e6edf3;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Navbar */
+.navbar {
+  background: #0f172a;
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 9px 60px;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  border-bottom: 1px solid #1e293b;
+}
+
+.navbar h1 {
+  font-size: 24px;
+  background: linear-gradient(90deg, #38bdf8, #22c55e);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.navbar ul {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar a {
+  color: #94a3b8;
+  text-decoration: none;
+  font-weight: 400;
+  position: relative;
+}
+
+.navbar a::after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  background: #1dbbff;
+  left: 0;
+  bottom: -5px;
+  transition: 0.3s;
+}
+
+.navbar a:hover {
+  color: #fff;
+}
+
+.navbar a:hover::after {
+  width: 100%;
+}
+
+/* Hero Section */
+.hero {
+  text-align: center;
+  padding: 32px 20px;
+}
+
+.hero h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.hero p {
+  max-width: 600px;
+  margin: auto;
+  font-size: 16px;
+}
+
+.hero button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #38bdf8;
+  color: #020617;
+  border: none;
+  cursor: pointer;
+}
+
+.hero button:hover {
+  background-color: #0ea5e9;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 10px;
+  background-color: #0f172a;
+  color: white;
+  margin-bottom: 40px;
+  
+  
+}
+html,body{
+  margin: 0;
+  height: 100%;
+}
+main{
+  flex: 1;
+}
+.gif{
+  max-height: 50vh;
+  max-width: 50vw;
+  text-align: center;
+  margin: 20px auto;
+  display: block;
+}
+  </style>
+</head>
+
+<body>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <h1>C Programming Hub</h1>
+    <ul class="nav-links">
+      <li><a href="index.html">Topics</a></li>
+      <li><a href="ask.html">Ask Question</a></li>
+    </ul>
+  </nav>
+
+  <!-- Hero Section -->
+   <main>
+  <section class="hero">
+    <h2>Welcome to C Programming Hub</h2>
+    <p>
+      This website helps you learn C programming. 
+      You can explore topics, practice programs, and improve your coding skills.
+    </p>
+    <button onclick="window.location.href='index.html'"><b>Explore Topics</b></button>
+    
+  </section>
+  
+</main>
+<video class="gif" autoplay muted loop playsinline>
+  <source src="coding-gif.mp4"  type="video/mp4">
+</video>
+  <!-- Footer -->
+  <footer>
+    © 2026 C Programming Hub
+  </footer>
+
+</body>
+</html>

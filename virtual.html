@@ -1,0 +1,606 @@
+ 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>C Programming Hub</title>
+<link rel="stylesheet" href="style_c_site.css">
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <h1>C Programming Hub</h1>
+    <ul>
+      <li><a href="home.html">Home</a></li>
+      <li><a href="index.html">Topics</a></li>
+      <li><a href="https://youtube.com/playlist?list=PLk05cwASVVZsVc37eoI49N4fgJGLnOxI2&si=zacrxO4BEJYDkRt3">Tutorials</a></li>
+      <li><a href="ask.html">Ask Questions</a></li>
+    </ul>
+  </nav>
+
+  <!-- Main Container -->
+  <div class="main-container">
+ <h2 style="color: #e0f7fa; text-align: center; margin-bottom: 25px; font-weight: 600;">
+   VIRTUAL FUNCTION
+  </h2>
+    <!-- Question Card 1 -->
+
+
+
+
+
+
+
+
+
+    </div></div><div class="ques-card">
+  <h3>Q1. Write a C++ program to create an abstract class Animal with a sound() method. Derived classes: Lion & Tiger.</h3>
+  <button class="toggle-btn">Show Code ↓</button>
+  <div class="code-output">
+    <pre class="code-area">
+#include &lt;iostream&gt;
+using namespace std;
+
+class Animal {
+public:
+    virtual void sound() = 0;
+};
+
+class Lion : public Animal {
+public:
+    void sound() { cout &lt;&lt; "Lion roars" &lt;&lt; endl; }
+};
+
+class Tiger : public Animal {
+public:
+    void sound() { cout &lt;&lt; "Tiger growls" &lt;&lt; endl; }
+};
+
+int main() {
+    Lion l;
+    Tiger t;
+    l.sound();
+    t.sound();
+    return 0;
+}
+</pre>
+  </div>
+</div>
+
+<div class="ques-card">
+  <h3>Q2. Write a C++ program using an abstract Animal class with pointer example (sound() method).</h3>
+  <button class="toggle-btn">Show Code ↓</button>
+  <div class="code-output">
+    <pre class="code-area">
+#include &lt;iostream&gt;
+using namespace std;
+
+class Animal {
+public:
+    virtual void sound() = 0;
+};
+
+class Lion : public Animal {
+public:
+    void sound() { cout &lt;&lt; "Lion roars" &lt;&lt; endl; }
+};
+
+class Tiger : public Animal {
+public:
+    void sound() { cout &lt;&lt; "Tiger growls" &lt;&lt; endl; }
+};
+
+int main() {
+    Animal* a;
+    Lion l;
+    Tiger t;
+    a = &l; a-&gt;sound();
+    a = &t; a-&gt;sound();
+    return 0;
+}
+</pre>
+  </div>
+</div>
+
+<div class="ques-card">
+  <h3>Q3. Write a C++ program to create an abstract Shape class with calculateArea() and calculatePerimeter(). Derived: Circle & Triangle.</h3>
+  <button class="toggle-btn">Show Code ↓</button>
+  <div class="code-output">
+    <pre class="code-area">
+#include &lt;iostream&gt;
+#include &lt;cmath&gt;
+using namespace std;
+
+class Shape {
+public:
+    virtual void calculateArea() = 0;
+    virtual void calculatePerimeter() = 0;
+};
+
+class Circle : public Shape {
+    double r;
+public:
+    Circle(double radius) { r = radius; }
+    void calculateArea() { cout &lt;&lt; 3.14*r*r &lt;&lt; endl; }
+    void calculatePerimeter() { cout &lt;&lt; 2*3.14*r &lt;&lt; endl; }
+};
+
+class Triangle : public Shape {
+    double a,b,c;
+public:
+    Triangle(double x,double y,double z){a=x;b=y;c=z;}
+    void calculateArea() {
+        double s=(a+b+c)/2;
+        cout &lt;&lt; sqrt(s*(s-a)*(s-b)*(s-c)) &lt;&lt; endl;
+    }
+    void calculatePerimeter(){ cout &lt;&lt; a+b+c &lt;&lt; endl;}
+};
+
+int main(){
+    Circle c(5); c.calculateArea(); c.calculatePerimeter();
+    Triangle t(3,4,5); t.calculateArea(); t.calculatePerimeter();
+    return 0;
+}
+</pre>
+  </div>
+</div>
+
+<div class="ques-card">
+  <h3>Q4. Write a C++ program to create an abstract BankAccount class with deposit() & withdraw(). Derived: SavingsAccount & CurrentAccount.</h3>
+  <button class="toggle-btn">Show Code ↓</button>
+  <div class="code-output">
+    <pre class="code-area">
+#include &lt;iostream&gt;
+using namespace std;
+
+class BankAccount{
+public:
+    virtual void deposit(double)=0;
+    virtual void withdraw(double)=0;
+};
+
+class SavingsAccount: public BankAccount{
+    double bal=0;
+public:
+    void deposit(double a){ bal+=a; }
+    void withdraw(double a){ if(a&lt;=bal) bal-=a; }
+};
+
+class CurrentAccount: public BankAccount{
+    double bal=0;
+public:
+    void deposit(double a){ bal+=a; }
+    void withdraw(double a){ bal-=a; }
+};
+
+int main(){
+    SavingsAccount s; s.deposit(1000); s.withdraw(200);
+    CurrentAccount c; c.deposit(2000); c.withdraw(500);
+    return 0;
+}
+</pre>
+  </div>
+</div>
+
+<div class="ques-card">
+  <h3>Q5. Abstract class Animal with eat() & sleep() methods. Derived: Lion, Tiger, Deer with specific behavior.</h3>
+  <button class="toggle-btn">Show Code ↓</button>
+  <div class="code-output">
+    <pre class="code-area">
+#include &lt;iostream&gt;
+using namespace std;
+
+class Animal {
+public:
+    virtual void eat() = 0;
+    virtual void sleep() = 0;
+};
+
+class Lion: public Animal{
+public: void eat(){ cout &lt;&lt; "Lion eats meat\n"; }
+        void sleep(){ cout &lt;&lt; "Lion sleeps\n"; } };
+
+class Tiger: public Animal{
+public: void eat(){ cout &lt;&lt; "Tiger eats meat\n"; }
+        void sleep(){ cout &lt;&lt; "Tiger sleeps\n"; } };
+
+class Deer: public Animal{
+public: void eat(){ cout &lt;&lt; "Deer eats grass\n"; }
+        void sleep(){ cout &lt;&lt; "Deer sleeps\n"; } };
+
+int main(){
+    Lion l; Tiger t; Deer d;
+    l.eat(); l.sleep(); t.eat(); t.sleep(); d.eat(); d.sleep();
+    return 0;
+}
+</pre>
+  </div>
+</div>
+
+
+
+
+
+
+</div></div><div class="ques-card">
+  <h3>Q5. Write a C++ program to create an abstract class Animal with abstract methods eat() and sleep(). Create derived classes Lion, Tiger, and Deer.</h3>
+  <button class="toggle-btn">Show Code ↓</button>
+  <div class="code-output">
+    <pre class="code-area">
+#include &lt;iostream&gt;
+using namespace std;
+
+class Animal {
+public:
+    virtual void eat() = 0;
+    virtual void sleep() = 0;
+};
+
+class Lion: public Animal{
+public: void eat(){ cout &lt;&lt; "Lion eats meat\n"; }
+        void sleep(){ cout &lt;&lt; "Lion sleeps\n"; } };
+
+class Tiger: public Animal{
+public: void eat(){ cout &lt;&lt; "Tiger eats meat\n"; }
+        void sleep(){ cout &lt;&lt; "Tiger sleeps\n"; } };
+
+class Deer: public Animal{
+public: void eat(){ cout &lt;&lt; "Deer eats grass\n"; }
+        void sleep(){ cout &lt;&lt; "Deer sleeps\n"; } };
+
+int main(){
+    Lion l; Tiger t; Deer d;
+    l.eat(); l.sleep(); t.eat(); t.sleep(); d.eat(); d.sleep();
+    return 0;
+}
+</pre>
+  </div>
+</div>
+
+<div class="ques-card">
+  <h3>Q6. Write a C++ program to create an abstract class Employee with abstract methods calculateSalary() and displayInfo(). Derived classes: Manager & Programmer.</h3>
+  <button class="toggle-btn">Show Code ↓</button>
+  <div class="code-output">
+    <pre class="code-area">
+#include &lt;iostream&gt;
+using namespace std;
+
+class Employee {
+public:
+    virtual void calculateSalary() = 0;
+    virtual void displayInfo() = 0;
+};
+
+class Manager : public Employee {
+public:
+    void calculateSalary() { cout &lt;&lt; "Manager Salary: 80000\n"; }
+    void displayInfo() { cout &lt;&lt; "Manager\n"; }
+};
+
+class Programmer : public Employee {
+public:
+    void calculateSalary() { cout &lt;&lt; "Programmer Salary: 50000\n"; }
+    void displayInfo() { cout &lt;&lt; "Programmer\n"; }
+};
+
+int main() {
+    Manager m;
+    Programmer p;
+
+    m.displayInfo(); m.calculateSalary();
+    p.displayInfo(); p.calculateSalary();
+}
+</pre>
+  </div>
+</div>
+
+<div class="ques-card">
+  <h3>Q7. Write a C++ program to create an abstract class Shape3D with abstract methods calculateVolume() and calculateSurfaceArea(). Derived: Sphere & Cube.</h3>
+  <button class="toggle-btn">Show Code ↓</button>
+  <div class="code-output">
+    <pre class="code-area">
+#include &lt;iostream&gt;
+using namespace std;
+
+class Shape3D {
+public:
+    virtual void calculateVolume() = 0;
+    virtual void calculateSurfaceArea() = 0;
+};
+
+class Sphere : public Shape3D {
+    double r;
+public:
+    Sphere(double r) { this-&gt;r = r; }
+    void calculateVolume() { cout &lt;&lt; 4.0/3 * 3.14 * r*r*r &lt;&lt; endl; }
+    void calculateSurfaceArea() { cout &lt;&lt; 4*3.14*r*r &lt;&lt; endl; }
+};
+
+class Cube : public Shape3D {
+    double a;
+public:
+    Cube(double a) { this-&gt;a = a; }
+    void calculateVolume() { cout &lt;&lt; a*a*a &lt;&lt; endl; }
+    void calculateSurfaceArea() { cout &lt;&lt; 6*a*a &lt;&lt; endl; }
+};
+
+int main() {
+    Sphere s(3);
+    s.calculateVolume();
+    s.calculateSurfaceArea();
+
+    Cube c(4);
+    c.calculateVolume();
+    c.calculateSurfaceArea();
+}
+</pre>
+  </div>
+</div>
+
+<div class="ques-card">
+  <h3>Q8. Write a C++ program to create an abstract class Vehicle with abstract methods startEngine() and stopEngine(). Derived: Car & Motorcycle.</h3>
+  <button class="toggle-btn">Show Code ↓</button>
+  <div class="code-output">
+    <pre class="code-area">
+#include &lt;iostream&gt;
+using namespace std;
+
+class Vehicle {
+public:
+    virtual void startEngine() = 0;
+    virtual void stopEngine() = 0;
+};
+
+class Car : public Vehicle {
+public:
+    void startEngine() { cout &lt;&lt; "Car started\n"; }
+    void stopEngine() { cout &lt;&lt; "Car stopped\n"; }
+};
+
+class Motorcycle : public Vehicle {
+public:
+    void startEngine() { cout &lt;&lt; "Bike started\n"; }
+    void stopEngine() { cout &lt;&lt; "Bike stopped\n"; }
+};
+
+int main() {
+    Car c;
+    Motorcycle m;
+
+    c.startEngine(); c.stopEngine();
+    m.startEngine(); m.stopEngine();
+}
+</pre>
+  </div>
+</div>
+
+<div class="ques-card">
+  <h3>Q9. Write a C++ program to create an abstract class Person with abstract methods eat() and exercise(). Derived: Athlete & LazyPerson.</h3>
+  <button class="toggle-btn">Show Code ↓</button>
+  <div class="code-output">
+    <pre class="code-area">
+#include &lt;iostream&gt;
+using namespace std;
+
+class Person {
+public:
+    virtual void eat() = 0;
+    virtual void exercise() = 0;
+};
+
+class Athlete : public Person {
+public:
+    void eat() { cout &lt;&lt; "Healthy food\n"; }
+    void exercise() { cout &lt;&lt; "Daily exercise\n"; }
+};
+
+class LazyPerson : public Person {
+public:
+    void eat() { cout &lt;&lt; "Junk food\n"; }
+    void exercise() { cout &lt;&lt; "No exercise\n"; }
+};
+
+int main() {
+    Athlete a;
+    LazyPerson l;
+
+    a.eat(); a.exercise();
+    l.eat(); l.exercise();
+}
+</pre>
+  </div>
+</div>
+
+<div class="ques-card">
+  <h3>Q10. Write a C++ program to create an abstract class Instrument with abstract methods play() and tune(). Derived: Glockenspiel & Violin.</h3>
+  <button class="toggle-btn">Show Code ↓</button>
+  <div class="code-output">
+    <pre class="code-area">
+#include &lt;iostream&gt;
+using namespace std;
+
+class Instrument {
+public:
+    virtual void play() = 0;
+    virtual void tune() = 0;
+};
+
+class Glockenspiel : public Instrument {
+public:
+    void play() { cout &lt;&lt; "Playing Glockenspiel\n"; }
+    void tune() { cout &lt;&lt; "Tuning Glockenspiel\n"; }
+};
+
+class Violin : public Instrument {
+public:
+    void play() { cout &lt;&lt; "Playing Violin\n"; }
+    void tune() { cout &lt;&lt; "Tuning Violin\n"; }
+};
+
+int main() {
+    Glockenspiel g;
+    Violin v;
+
+    g.play(); g.tune();
+    v.play(); v.tune();
+}
+</pre>
+  </div>
+</div>
+
+<div class="ques-card">
+  <h3>Q11. Write a C++ program to create an abstract class Shape2D with abstract methods draw() and resize(). Derived: Rectangle & Circle.</h3>
+  <button class="toggle-btn">Show Code ↓</button>
+  <div class="code-output">
+    <pre class="code-area">
+#include &lt;iostream&gt;
+using namespace std;
+
+class Shape2D {
+public:
+    virtual void draw() = 0;
+    virtual void resize() = 0;
+};
+
+class Rectangle : public Shape2D {
+public:
+    void draw() { cout &lt;&lt; "Draw Rectangle\n"; }
+    void resize() { cout &lt;&lt; "Resize Rectangle\n"; }
+};
+
+class Circle : public Shape2D {
+public:
+    void draw() { cout &lt;&lt; "Draw Circle\n"; }
+    void resize() { cout &lt;&lt; "Resize Circle\n"; }
+};
+
+int main() {
+    Rectangle r;
+    Circle c;
+
+    r.draw(); r.resize();
+    c.draw(); c.resize();
+}
+</pre>
+  </div>
+</div>
+
+<div class="ques-card">
+  <h3>Q12. Write a C++ program to create an abstract class GeometricShape with abstract methods area() and perimeter(). Derived: Triangle & Square.</h3>
+  <button class="toggle-btn">Show Code ↓</button>
+  <div class="code-output">
+    <pre class="code-area">
+#include &lt;iostream&gt;
+using namespace std;
+
+class GeometricShape {
+public:
+    virtual void area() = 0;
+    virtual void perimeter() = 0;
+};
+
+class Triangle : public GeometricShape {
+public:
+    void area() { cout &lt;&lt; "Triangle Area\n"; }
+    void perimeter() { cout &lt;&lt; "Triangle Perimeter\n"; }
+};
+
+class Square : public GeometricShape {
+public:
+    void area() { cout &lt;&lt; "Square Area\n"; }
+    void perimeter() { cout &lt;&lt; "Square Perimeter\n"; }
+};
+
+int main() {
+    Triangle t;
+    Square s;
+
+    t.area(); t.perimeter();
+    s.area(); s.perimeter();
+}
+</pre>
+  </div>
+</div>
+
+<div class="ques-card">
+  <h3>Q13. Write a C++ program to create an abstract class Bird with abstract methods fly() and makeSound(). Derived: Eagle & Hawk.</h3>
+  <button class="toggle-btn">Show Code ↓</button>
+  <div class="code-output">
+    <pre class="code-area">
+#include &lt;iostream&gt;
+using namespace std;
+
+class Bird {
+public:
+    virtual void fly() = 0;
+    virtual void makeSound() = 0;
+};
+
+class Eagle : public Bird {
+public:
+    void fly() { cout &lt;&lt; "Eagle flies high\n"; }
+    void makeSound() { cout &lt;&lt; "Eagle sound\n"; }
+};
+
+class Hawk : public Bird {
+public:
+    void fly() { cout &lt;&lt; "Hawk glides\n"; }
+    void makeSound() { cout &lt;&lt; "Hawk sound\n"; }
+};
+
+int main() {
+    Eagle e;
+    Hawk h;
+
+    e.fly(); e.makeSound();
+    h.fly(); h.makeSound();
+}
+</pre>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+  <!-- Footer -->
+  <footer>
+    © 2026 C Programming Hub
+  </footer>
+
+
+
+
+
+
+  </div></body>
+  <script>
+    const toggleButtons = document.querySelectorAll('.toggle-btn');
+
+    toggleButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const card = btn.parentElement;
+        card.classList.toggle('active');
+        const output = card.querySelector('.code-output');
+
+        if(card.classList.contains('active')) {
+          output.style.display = 'flex';
+          btn.textContent = "Hide Code ↑";
+        } else {
+          output.style.display = 'none';
+          btn.textContent = "Show Code ↓";
+        }
+      });
+    });
+  </script>
+
+</html>
+
+
+
+    <!-- Questions Section -->

@@ -1,0 +1,2734 @@
+ 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>C Programming Hub</title>
+<link rel="stylesheet" href="style_c_site.css">
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <h1>C Programming Hub</h1>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="homee.html">Topics</a></li>
+      <li><a href="https://youtube.com/playlist?list=PLk05cwASVVZsVc37eoI49N4fgJGLnOxI2&si=zacrxO4BEJYDkRt3">Tutorials</a></li>
+      <li><a href="ask.html">Ask Questions</a></li>
+    </ul>
+  </nav>
+
+  <!-- Main Container -->
+  <div class="main-container">
+ <h2 style="color: #e0f7fa; text-align: center; margin-bottom: 25px; font-weight: 600;">
+   BASIC PROGRAMMING CONSTRUCTS
+  </h2>
+    <!-- Question Card 1 -->
+
+
+
+<div class="ques-card">
+<h3>Q1. Write a C++ program to print ‘Hello World!’ on screen</h3>
+<button class="toggle-btn">Show Code ↓</button>
+<div class="code-output">
+<pre class="code-area">
+#include &lt;iostream&gt;
+using namespace std;
+
+int main(){
+    cout &lt;&lt; "Hello World!\n";
+    return 0;
+}
+</pre>
+
+<p class="output-title">OUTPUT</p>
+<pre class="output-text">
+Hello World!
+</pre>
+</div>
+</div>
+
+<div class="ques-card">
+<h3>Q2. Write a C++ program to print the sum of two numbers</h3>
+<button class="toggle-btn">Show Code ↓</button>
+<div class="code-output">
+<pre class="code-area">
+#include &lt;iostream&gt;
+using namespace std;
+
+int main(){
+    int a, b;
+    cout &lt;&lt; "Enter two numbers: ";
+    cin &gt;&gt; a &gt;&gt; b;
+    cout &lt;&lt; "Sum is: " &lt;&lt; a + b;
+    return 0;
+}
+</pre>
+
+<p class="output-title">OUTPUT</p>
+<pre class="output-text">
+Enter two numbers: 5 7
+Sum is: 12
+</pre>
+</div>
+</div>
+
+<div class="ques-card">
+<h3>Q3. Write a C++ program to display the product of two numbers</h3>
+<button class="toggle-btn">Show Code ↓</button>
+<div class="code-output">
+<pre class="code-area">
+#include &lt;iostream&gt;
+using namespace std;
+
+int main(){
+    int a, b;
+    cout &lt;&lt; "Enter two numbers: ";
+    cin &gt;&gt; a &gt;&gt; b;
+    cout &lt;&lt; "Product is: " &lt;&lt; a * b;
+    return 0;
+}
+</pre>
+
+<p class="output-title">OUTPUT</p>
+<pre class="output-text">
+Enter two numbers: 4 6
+Product is: 24
+</pre>
+</div>
+</div>
+
+<div class="ques-card">
+<h3>Q4. Write a C++ program to perform basic operations</h3>
+<button class="toggle-btn">Show Code ↓</button>
+<div class="code-output">
+<pre class="code-area">
+#include &lt;iostream&gt;
+using namespace std;
+
+int main(){
+    int a, b;
+    cout &lt;&lt; "Enter two numbers: ";
+    cin &gt;&gt; a &gt;&gt; b;
+
+    cout &lt;&lt; "Sum: " &lt;&lt; a + b &lt;&lt; endl;
+    cout &lt;&lt; "Multiply: " &lt;&lt; a * b &lt;&lt; endl;
+    cout &lt;&lt; "Subtract: " &lt;&lt; a - b &lt;&lt; endl;
+
+    if(b != 0){
+        cout &lt;&lt; "Divide: " &lt;&lt; a / b &lt;&lt; endl;
+        cout &lt;&lt; "Remainder: " &lt;&lt; a % b;
+    } else {
+        cout &lt;&lt; "Division not possible";
+    }
+
+    return 0;
+}
+</pre>
+
+<p class="output-title">OUTPUT</p>
+<pre class="output-text">
+Enter two numbers: 10 5
+Sum: 15
+Multiply: 50
+Subtract: 5
+Divide: 2
+Remainder: 0
+</pre>
+</div>
+</div>
+
+<div class="ques-card">
+<h3>Q5. Write a C++ program to find average of five numbers</h3>
+<button class="toggle-btn">Show Code ↓</button>
+<div class="code-output">
+<pre class="code-area">
+#include &lt;iostream&gt;
+using namespace std;
+
+int main(){
+    int a,b,c,d,e;
+    cout &lt;&lt; "Enter five numbers: ";
+    cin &gt;&gt; a &gt;&gt; b &gt;&gt; c &gt;&gt; d &gt;&gt; e;
+
+    cout &lt;&lt; "Average is: " &lt;&lt; (a+b+c+d+e)/5;
+    return 0;
+}
+</pre>
+
+<p class="output-title">OUTPUT</p>
+<pre class="output-text">
+Enter five numbers: 10 20 30 40 50
+Average is: 30
+</pre>
+</div>
+</div>
+
+<div class="ques-card">
+<h3>Q6. Write a C++ program to swap two variables</h3>
+<button class="toggle-btn">Show Code ↓</button>
+<div class="code-output">
+<pre class="code-area">
+#include &lt;iostream&gt;
+using namespace std;
+
+int main(){
+    int first, second;
+    cout &lt;&lt; "Enter two numbers: ";
+    cin &gt;&gt; first &gt;&gt; second;
+
+    int temp = first;
+    first = second;
+    second = temp;
+
+    cout &lt;&lt; "After swap: " &lt;&lt; first &lt;&lt; " " &lt;&lt; second;
+    return 0;
+}
+</pre>
+
+<p class="output-title">OUTPUT</p>
+<pre class="output-text">
+Enter two numbers: 3 7
+After swap: 7 3
+</pre>
+</div>
+</div>
+
+<div class="ques-card">
+<h3>Q7. Write a C++ program to convert decimal to binary</h3>
+<button class="toggle-btn">Show Code ↓</button>
+<div class="code-output">
+<pre class="code-area">
+#include &lt;iostream&gt;
+using namespace std;
+
+int main(){
+    int decimal, arr[64], i=0;
+    cout &lt;&lt; "Enter decimal number: ";
+    cin &gt;&gt; decimal;
+
+    while(decimal>0){
+        arr[i++] = decimal % 2;
+        decimal /= 2;
+    }
+
+    cout &lt;&lt; "Binary: ";
+    for(int j=i-1;j>=0;j--) cout &lt;&lt; arr[j];
+
+    return 0;
+}
+</pre>
+
+<p class="output-title">OUTPUT</p>
+<pre class="output-text">
+Enter decimal number: 10
+Binary: 1010
+</pre>
+</div>
+</div>
+
+<div class="ques-card">
+<h3>Q8. Write a C++ program to convert binary to decimal</h3>
+<button class="toggle-btn">Show Code ↓</button>
+<div class="code-output">
+<pre class="code-area">
+#include &lt;iostream&gt;
+using namespace std;
+
+int main(){
+    int n, decimal=0, base=1;
+    cout &lt;&lt; "Enter binary number: ";
+    cin &gt;&gt; n;
+
+    while(n>0){
+        int digit = n%10;
+        decimal += digit*base;
+        base*=2;
+        n/=10;
+    }
+
+    cout &lt;&lt; "Decimal: " &lt;&lt; decimal;
+    return 0;
+}
+</pre>
+
+<p class="output-title">OUTPUT</p>
+<pre class="output-text">
+Enter binary number: 1010
+Decimal: 10
+</pre>
+</div>
+</div>
+
+<div class="ques-card">
+<h3>Q9. Check whether C++ is installed</h3>
+<button class="toggle-btn">Show Code ↓</button>
+<div class="code-output">
+<pre class="code-area">
+#include &lt;iostream&gt;
+using namespace std;
+
+int main(){
+    cout &lt;&lt; "C++ is installed!";
+    return 0;
+}
+</pre>
+
+<p class="output-title">OUTPUT</p>
+<pre class="output-text">
+C++ is installed!
+</pre>
+</div>
+</div>
+
+<div class="ques-card">
+<h3>Q10. Write a C++ program to find sum of digits</h3>
+<button class="toggle-btn">Show Code ↓</button>
+<div class="code-output">
+<pre class="code-area">
+#include &lt;iostream&gt;
+using namespace std;
+
+int main(){
+    int n, sum=0;
+    cout &lt;&lt; "Enter number: ";
+    cin &gt;&gt; n;
+
+    while(n>0){
+        sum += n%10;
+        n/=10;
+    }
+
+    cout &lt;&lt; "Sum of digits: " &lt;&lt; sum;
+    return 0;
+}
+</pre>
+
+<p class="output-title">OUTPUT</p>
+<pre class="output-text">
+Enter number: 1234
+Sum of digits: 10
+</pre>
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+<div class="ques-card">
+<h3>Q11. Write a C++ program to compare two numbers</h3>
+<button class="toggle-btn">Show Code ↓</button>
+<div class="code-output">
+<pre class="code-area">
+#include &lt;iostream&gt;
+using namespace std;
+
+int main(){
+    int first, second;
+    cout &lt;&lt; "Enter two numbers: ";
+    cin &gt;&gt; first &gt;&gt; second;
+
+    if(first &gt; second)
+        cout &lt;&lt; first &lt;&lt; " is greater than " &lt;&lt; second;
+    else if(first &lt; second)
+        cout &lt;&lt; second &lt;&lt; " is greater than " &lt;&lt; first;
+    else
+        cout &lt;&lt; "Both numbers are equal";
+
+    return 0;
+}
+</pre>
+
+<p class="output-title">OUTPUT</p>
+<pre class="output-text">
+Enter two numbers: 5 9
+9 is greater than 5
+</pre>
+</div>
+</div>
+
+<div class="ques-card">
+<h3>Q12. Count letters, spaces, numbers and other characters</h3>
+<button class="toggle-btn">Show Code ↓</button>
+<div class="code-output">
+<pre class="code-area">
+#include &lt;iostream&gt;
+#include &lt;string&gt;
+using namespace std;
+
+int main(){
+    string text;
+    int letters=0, spaces=0, numbers=0, others=0;
+
+    cout &lt;&lt; "Enter a string: ";
+    getline(cin, text);
+
+    for(char ch : text){
+        if(isalpha(ch)) letters++;
+        else if(ch==' ') spaces++;
+        else if(isdigit(ch)) numbers++;
+        else others++;
+    }
+
+    cout &lt;&lt; "Letters: " &lt;&lt; letters &lt;&lt; endl;
+    cout &lt;&lt; "Spaces: " &lt;&lt; spaces &lt;&lt; endl;
+    cout &lt;&lt; "Numbers: " &lt;&lt; numbers &lt;&lt; endl;
+    cout &lt;&lt; "Others: " &lt;&lt; others;
+
+    return 0;
+}
+</pre>
+
+<p class="output-title">OUTPUT</p>
+<pre class="output-text">
+Enter a string: Hello 123!
+Letters: 5
+Spaces: 1
+Numbers: 3
+Others: 1
+</pre>
+</div>
+</div>
+
+<div class="ques-card">
+<h3>Q13. Print ASCII value of a character</h3>
+<button class="toggle-btn">Show Code ↓</button>
+<div class="code-output">
+<pre class="code-area">
+#include &lt;iostream&gt;
+using namespace std;
+
+int main(){
+    char ch;
+    cout &lt;&lt; "Enter a character: ";
+    cin &gt;&gt; ch;
+
+    cout &lt;&lt; "ASCII value: " &lt;&lt; (int)ch;
+    return 0;
+}
+</pre>
+
+<p class="output-title">OUTPUT</p>
+<pre class="output-text">
+Enter a character: A
+ASCII value: 65
+</pre>
+</div>
+</div>
+
+<div class="ques-card">
+<h3>Q14. Compute n + nn + nnn</h3>
+<button class="toggle-btn">Show Code ↓</button>
+<div class="code-output">
+<pre class="code-area">
+#include &lt;iostream&gt;
+using namespace std;
+
+int main(){
+    int n;
+    cout &lt;&lt; "Enter n: ";
+    cin &gt;&gt; n;
+
+    int result = n + (n*10+n) + (n*100+n*10+n);
+    cout &lt;&lt; "Result: " &lt;&lt; result;
+
+    return 0;
+}
+</pre>
+
+<p class="output-title">OUTPUT</p>
+<pre class="output-text">
+Enter n: 5
+Result: 615
+</pre>
+</div>
+</div>
+
+<div class="ques-card">
+<h3>Q15. Display system date and time</h3>
+<button class="toggle-btn">Show Code ↓</button>
+<div class="code-output">
+<pre class="code-area">
+#include &lt;iostream&gt;
+using namespace std;
+
+int main(){
+    cout &lt;&lt; __DATE__ &lt;&lt; endl;
+    cout &lt;&lt; __TIME__;
+    return 0;
+}
+</pre>
+
+<p class="output-title">OUTPUT</p>
+<pre class="output-text">
+Apr 3 2026
+12:30:00
+</pre>
+</div>
+</div>
+
+<div class="ques-card">
+<h3>Q16. Print odd numbers from 1 to 20</h3>
+<button class="toggle-btn">Show Code ↓</button>
+<div class="code-output">
+<pre class="code-area">
+#include &lt;iostream&gt;
+using namespace std;
+
+int main(){
+    for(int i=1;i&lt;=20;i++)
+        if(i%2!=0) cout &lt;&lt; i &lt;&lt; " ";
+    return 0;
+}
+</pre>
+
+<p class="output-title">OUTPUT</p>
+<pre class="output-text">
+1 3 5 7 9 11 13 15 17 19
+</pre>
+</div>
+</div>
+
+<div class="ques-card">
+<h3>Q17. Print even numbers from 1 to 20</h3>
+<button class="toggle-btn">Show Code ↓</button>
+<div class="code-output">
+<pre class="code-area">
+#include &lt;iostream&gt;
+using namespace std;
+
+int main(){
+    for(int i=1;i&lt;=20;i++)
+        if(i%2==0) cout &lt;&lt; i &lt;&lt; " ";
+    return 0;
+}
+</pre>
+
+<p class="output-title">OUTPUT</p>
+<pre class="output-text">
+2 4 6 8 10 12 14 16 18 20
+</pre>
+</div>
+</div>
+
+<div class="ques-card">
+<h3>Q18. Convert string to integer</h3>
+<button class="toggle-btn">Show Code ↓</button>
+<div class="code-output">
+<pre class="code-area">
+#include &lt;iostream&gt;
+using namespace std;
+
+int main(){
+    string s;
+    cout &lt;&lt; "Enter string: ";
+    cin &gt;&gt; s;
+
+    cout &lt;&lt; "Integer: " &lt;&lt; stoi(s);
+    return 0;
+}
+</pre>
+
+<p class="output-title">OUTPUT</p>
+<pre class="output-text">
+Enter string: 123
+Integer: 123
+</pre>
+</div>
+</div>
+
+<div class="ques-card">
+<h3>Q19. Convert seconds to time</h3>
+<button class="toggle-btn">Show Code ↓</button>
+<div class="code-output">
+<pre class="code-area">
+#include &lt;iostream&gt;
+using namespace std;
+
+int main(){
+    int s;
+    cout &lt;&lt; "Enter seconds: ";
+    cin &gt;&gt; s;
+
+    cout &lt;&lt; s/3600 &lt;&lt; "h "
+         &lt;&lt; (s%3600)/60 &lt;&lt; "m "
+         &lt;&lt; s%60 &lt;&lt; "s";
+
+    return 0;
+}
+</pre>
+
+<p class="output-title">OUTPUT</p>
+<pre class="output-text">
+Enter seconds: 3661
+1h 1m 1s
+</pre>
+</div>
+</div>
+
+<div class="ques-card">
+<h3>Q20. Sum of first 100 prime numbers</h3>
+<button class="toggle-btn">Show Code ↓</button>
+<div class="code-output">
+<pre class="code-area">
+#include &lt;iostream&gt;
+using namespace std;
+
+int main(){
+    int count=0, num=2, sum=0;
+
+    while(count&lt;100){
+        bool prime=true;
+
+        for(int i=2;i*i&lt;=num;i++){
+            if(num%i==0){
+                prime=false;
+                break;
+            }
+        }
+
+        if(prime){
+            sum+=num;
+            count++;
+        }
+
+        num++;
+    }
+
+    cout &lt;&lt; sum;
+    return 0;
+}
+</pre>
+
+<p class="output-title">OUTPUT</p>
+<pre class="output-text">
+24133
+</pre>
+</div>
+
+
+
+</div>
+
+
+
+<div class="ques-card">
+<h3>Q21. Square root (integer)</h3>
+<button class="toggle-btn">Show Code ↓</button>
+<div class="code-output">
+<pre class="code-area">
+#include &lt;iostream&gt;
+using namespace std;
+
+int main(){
+    int n,root=0;
+    cin >> n;
+
+    while((root+1)*(root+1) <= n)
+        root++;
+
+    cout << root;
+}
+</pre>
+<p class="output-title">OUTPUT</p>
+<pre class="output-text">
+Input: 10
+Output: 3
+</pre>
+</div>
+</div>
+
+<div class="ques-card">
+<h3>Q22. Palindrome number</h3>
+<button class="toggle-btn">Show Code ↓</button>
+<div class="code-output">
+<pre class="code-area">
+#include &lt;iostream&gt;
+using namespace std;
+
+int main(){
+    int n,rev=0,x;
+    cin >> n;
+    x=n;
+
+    while(n>0){
+        rev = rev*10 + n%10;
+        n/=10;
+    }
+
+    if(x==rev) cout<<"Palindrome";
+    else cout<<"Not Palindrome";
+}
+</pre>
+<p class="output-title">OUTPUT</p>
+<pre class="output-text">
+Input: 121
+Output: Palindrome
+</pre>
+</div>
+</div>
+
+<div class="ques-card">
+<h3>Q23. Add without arithmetic operators</h3>
+<button class="toggle-btn">Show Code ↓</button>
+<div class="code-output">
+<pre class="code-area">
+#include &lt;iostream&gt;
+using namespace std;
+
+int main(){
+    int a,b;
+    cin >> a >> b;
+
+    while(b!=0){
+        int carry=a&b;
+        a=a^b;
+        b=carry&lt;&lt;1;
+    }
+
+    cout << a;
+}
+</pre>
+<p class="output-title">OUTPUT</p>
+<pre class="output-text">
+Input: 5 3
+Output: 8
+</pre>
+</div>
+</div>
+
+<div class="ques-card">
+<h3>Q24. Sum of digits</h3>
+<button class="toggle-btn">Show Code ↓</button>
+<div class="code-output">
+<pre class="code-area">
+#include &lt;iostream&gt;
+using namespace std;
+
+int main(){
+    int n,sum=0;
+    cin >> n;
+
+    while(n>0){
+        sum += n%10;
+        n/=10;
+    }
+
+    cout << sum;
+}
+</pre>
+<p class="output-title">OUTPUT</p>
+<pre class="output-text">
+Input: 123
+Output: 6
+</pre>
+</div>
+</div>
+
+<div class="ques-card">
+<h3>Q25. Area of circle</h3>
+<button class="toggle-btn">Show Code ↓</button>
+<div class="code-output">
+<pre class="code-area">
+#include &lt;iostream&gt;
+using namespace std;
+
+int main(){
+    int r;
+    cin >> r;
+    cout << (22*r*r)/7;
+}
+</pre>
+<p class="output-title">OUTPUT</p>
+<pre class="output-text">
+Input: 7
+Output: 154
+</pre>
+</div>
+</div>
+
+<div class="ques-card">
+<h3>Q26. Area of rectangle</h3>
+<button class="toggle-btn">Show Code ↓</button>
+<div class="code-output">
+<pre class="code-area">
+#include &lt;iostream&gt;
+using namespace std;
+
+int main(){
+    int l,b;
+    cin >> l >> b;
+    cout << l*b;
+}
+</pre>
+<p class="output-title">OUTPUT</p>
+<pre class="output-text">
+Input: 4 5
+Output: 20
+</pre>
+</div>
+</div>
+
+<div class="ques-card">
+<h3>Q27. Area of triangle</h3>
+<button class="toggle-btn">Show Code ↓</button>
+<div class="code-output">
+<pre class="code-area">
+#include &lt;iostream&gt;
+using namespace std;
+
+int main(){
+    int b,h;
+    cin >> b >> h;
+    cout << (b*h)/2;
+}
+</pre>
+<p class="output-title">OUTPUT</p>
+<pre class="output-text">
+Input: 4 6
+Output: 12
+</pre>
+</div>
+</div>
+
+<div class="ques-card">
+<h3>Q28. Area of equilateral triangle</h3>
+<button class="toggle-btn">Show Code ↓</button>
+<div class="code-output">
+<pre class="code-area">
+#include &lt;iostream&gt;
+using namespace std;
+
+int main(){
+    int a;
+    cin >> a;
+    cout << (433*a*a)/1000;
+}
+</pre>
+<p class="output-title">OUTPUT</p>
+<pre class="output-text">
+Input: 5
+Output: 10
+</pre>
+</div>
+</div>
+
+<div class="ques-card">
+<h3>Q29. Area of rhombus</h3>
+<button class="toggle-btn">Show Code ↓</button>
+<div class="code-output">
+<pre class="code-area">
+#include &lt;iostream&gt;
+using namespace std;
+
+int main(){
+    int d1,d2;
+    cin >> d1 >> d2;
+    cout << (d1*d2)/2;
+}
+</pre>
+<p class="output-title">OUTPUT</p>
+<pre class="output-text">
+Input: 6 8
+Output: 24
+</pre>
+</div>
+</div>
+
+<div class="ques-card">
+<h3>Q30. Area of parallelogram</h3>
+<button class="toggle-btn">Show Code ↓</button>
+<div class="code-output">
+<pre class="code-area">
+#include &lt;iostream&gt;
+using namespace std;
+
+int main(){
+    int b,h;
+    cin >> b >> h;
+    cout << b*h;
+}
+</pre>
+<p class="output-title">OUTPUT</p>
+<pre class="output-text">
+Input: 5 6
+Output: 30
+</pre>
+</div>
+</div>
+
+
+
+
+<div class="ques-card">
+<h3>Q31. Volume of Prism</h3>
+<button class="toggle-btn">Show Code ↓</button>
+<div class="code-output">
+<pre class="code-area">
+#include &lt;iostream&gt;
+using namespace std;
+
+int main(){
+    int baseArea, height;
+    cin >> baseArea >> height;
+
+    cout << "Volume: " << baseArea * height;
+}
+</pre>
+<p class="output-title">OUTPUT</p>
+<pre class="output-text">
+Input: 10 5
+Volume: 50
+</pre>
+</div>
+</div>
+
+<div class="ques-card">
+<h3>Q32. Volume of Sphere</h3>
+<button class="toggle-btn">Show Code ↓</button>
+<div class="code-output">
+<pre class="code-area">
+#include &lt;iostream&gt;
+using namespace std;
+
+int main(){
+    int r;
+    cin >> r;
+    cout << (4*22*r*r*r)/(3*7);
+}
+</pre>
+<p class="output-title">OUTPUT</p>
+<pre class="output-text">
+Input: 3
+Output: 113
+</pre>
+</div>
+</div>
+
+<div class="ques-card">
+<h3>Q33. Volume of Cylinder</h3>
+<button class="toggle-btn">Show Code ↓</button>
+<div class="code-output">
+<pre class="code-area">
+#include &lt;iostream&gt;
+using namespace std;
+
+int main(){
+    int r,h;
+    cin >> r >> h;
+    cout << (22*r*r*h)/7;
+}
+</pre>
+<p class="output-title">OUTPUT</p>
+<pre class="output-text">
+Input: 3 5
+Output: 141
+</pre>
+</div>
+</div>
+
+<div class="ques-card">
+<h3>Q34. Volume of Cuboid</h3>
+<button class="toggle-btn">Show Code ↓</button>
+<div class="code-output">
+<pre class="code-area">
+#include &lt;iostream&gt;
+using namespace std;
+
+int main(){
+    int l,b,h;
+    cin >> l >> b >> h;
+    cout << l*b*h;
+}
+</pre>
+<p class="output-title">OUTPUT</p>
+<pre class="output-text">
+Input: 2 3 4
+Output: 24
+</pre>
+</div>
+</div>
+
+<div class="ques-card">
+<h3>Q35. Volume of Cone</h3>
+<button class="toggle-btn">Show Code ↓</button>
+<div class="code-output">
+<pre class="code-area">
+#include &lt;iostream&gt;
+using namespace std;
+
+int main(){
+    int r,h;
+    cin >> r >> h;
+    cout << (22*r*r*h)/(3*7);
+}
+</pre>
+<p class="output-title">OUTPUT</p>
+<pre class="output-text">
+Input: 3 5
+Output: 47
+</pre>
+</div>
+</div>
+
+<div class="ques-card">
+<h3>Q36. Surface Area of Cuboid</h3>
+<button class="toggle-btn">Show Code ↓</button>
+<div class="code-output">
+<pre class="code-area">
+#include &lt;iostream&gt;
+using namespace std;
+
+int main(){
+    int l,b,h;
+    cin >> l >> b >> h;
+    cout << 2*(l*b + b*h + l*h);
+}
+</pre>
+<p class="output-title">OUTPUT</p>
+<pre class="output-text">
+Input: 2 3 4
+Output: 52
+</pre>
+</div>
+</div>
+
+<div class="ques-card">
+<h3>Q37. Surface Area of Cylinder</h3>
+<button class="toggle-btn">Show Code ↓</button>
+<div class="code-output">
+<pre class="code-area">
+#include &lt;iostream&gt;
+using namespace std;
+
+int main(){
+    int r,h;
+    cin >> r >> h;
+    cout << (2*22*r*(r+h))/7;
+}
+</pre>
+<p class="output-title">OUTPUT</p>
+<pre class="output-text">
+Input: 3 5
+Output: 150
+</pre>
+</div>
+</div>
+
+<div class="ques-card">
+<h3>Q38. Surface Area of Cube</h3>
+<button class="toggle-btn">Show Code ↓</button>
+<div class="code-output">
+<pre class="code-area">
+#include &lt;iostream&gt;
+using namespace std;
+
+int main(){
+    int a;
+    cin >> a;
+    cout << 6*a*a;
+}
+</pre>
+<p class="output-title">OUTPUT</p>
+<pre class="output-text">
+Input: 4
+Output: 96
+</pre>
+</div>
+</div>
+
+<div class="ques-card">
+<h3>Q39. Average Marks</h3>
+<button class="toggle-btn">Show Code ↓</button>
+<div class="code-output">
+<pre class="code-area">
+#include &lt;iostream&gt;
+using namespace std;
+
+int main(){
+    int n,x,sum=0;
+    cin >> n;
+
+    for(int i=0;i<n;i++){
+        cin >> x;
+        sum += x;
+    }
+
+    cout << sum/n;
+}
+</pre>
+<p class="output-title">OUTPUT</p>
+<pre class="output-text">
+Input: 3 → 60 70 80
+Output: 70
+</pre>
+</div>
+</div>
+
+<div class="ques-card">
+<h3>Q40. Vowel or Consonant</h3>
+<button class="toggle-btn">Show Code ↓</button>
+<div class="code-output">
+<pre class="code-area">
+#include &lt;iostream&gt;
+using namespace std;
+
+int main(){
+    char ch;
+    cin >> ch;
+
+    if(ch=='a'||ch=='e'||ch=='i'||ch=='o'||ch=='u'||ch=='A'||ch=='E'||ch=='I'||ch=='O'||ch=='U')
+        cout << "Vowel";
+    else
+        cout << "Consonant";
+}
+</pre>
+<p class="output-title">OUTPUT</p>
+<pre class="output-text">
+Input: a
+Output: Vowel
+</pre>
+</div>
+</div>
+<div class="ques-card">
+<h3>Q41. Sum of N numbers</h3>
+<button class="toggle-btn">Show Code ↓</button>
+<div class="code-output">
+<pre class="code-area">
+#include &lt;iostream&gt;
+using namespace std;
+
+int main(){
+    int n,x,sum=0;
+    cin >> n;
+
+    for(int i=0;i<n;i++){
+        cin >> x;
+        sum += x;
+    }
+
+    cout << sum;
+}
+</pre>
+<p class="output-title">OUTPUT</p>
+<pre class="output-text">
+Input: 3 → 5 10 15
+Output: 30
+</pre>
+</div>
+</div>
+
+<div class="ques-card">
+<h3>Q42. Factorial of a number</h3>
+<button class="toggle-btn">Show Code ↓</button>
+<div class="code-output">
+<pre class="code-area">
+#include &lt;iostream&gt;
+using namespace std;
+
+int main(){
+    int n,f=1;
+    cin >> n;
+
+    for(int i=1;i<=n;i++)
+        f*=i;
+
+    cout << f;
+}
+</pre>
+<p class="output-title">OUTPUT</p>
+<pre class="output-text">
+Input: 5
+Output: 120
+</pre>
+</div>
+</div>
+
+<div class="ques-card">
+<h3>Q43. Electricity bill</h3>
+<button class="toggle-btn">Show Code ↓</button>
+<div class="code-output">
+<pre class="code-area">
+#include &lt;iostream&gt;
+using namespace std;
+
+int main(){
+    int u,b;
+
+    cin >> u;
+
+    if(u<=100) b=u*5;
+    else if(u<=300) b=100*5+(u-100)*7;
+    else b=100*5+200*7+(u-300)*10;
+
+    cout << b;
+}
+</pre>
+<p class="output-title">OUTPUT</p>
+<pre class="output-text">
+Input: 150
+Output: 850
+</pre>
+</div>
+</div>
+
+<div class="ques-card">
+<h3>Q44. (Skipped in original set)</h3>
+<button class="toggle-btn">Show Code ↓</button>
+<div class="code-output">
+<pre class="code-area">
+/* No question provided */
+</pre>
+<p class="output-title">OUTPUT</p>
+<pre class="output-text">
+N/A
+</pre>
+</div>
+</div>
+
+<div class="ques-card">
+<h3>Q45. Compound interest</h3>
+<button class="toggle-btn">Show Code ↓</button>
+<div class="code-output">
+<pre class="code-area">
+#include &lt;iostream&gt;
+using namespace std;
+
+int main(){
+    int p,r,t,a;
+
+    cin >> p >> r >> t;
+    a = p;
+
+    for(int i=0;i<t;i++)
+        a += (a*r)/100;
+
+    cout << "CI: " << a-p << endl;
+    cout << "Amount: " << a;
+}
+</pre>
+<p class="output-title">OUTPUT</p>
+<pre class="output-text">
+Input: 1000 10 2
+CI: 210
+Amount: 1210
+</pre>
+</div>
+</div>
+
+<div class="ques-card">
+<h3>Q46. Batting average</h3>
+<button class="toggle-btn">Show Code ↓</button>
+<div class="code-output">
+<pre class="code-area">
+#include &lt;iostream&gt;
+using namespace std;
+
+int main(){
+    int runs,inn,no;
+
+    cin >> runs >> inn >> no;
+
+    cout << runs/(inn-no);
+}
+</pre>
+<p class="output-title">OUTPUT</p>
+<pre class="output-text">
+Input: 500 10 2
+Output: 62
+</pre>
+</div>
+</div>
+
+<div class="ques-card">
+<h3>Q47. (Skipped in original set)</h3>
+<button class="toggle-btn">Show Code ↓</button>
+<div class="code-output">
+<pre class="code-area">
+/* No question provided */
+</pre>
+<p class="output-title">OUTPUT</p>
+<pre class="output-text">
+N/A
+</pre>
+</div>
+</div>
+
+<div class="ques-card">
+<h3>Q48. Distance between two points</h3>
+<button class="toggle-btn">Show Code ↓</button>
+<div class="code-output">
+<pre class="code-area">
+#include &lt;iostream&gt;
+using namespace std;
+
+int main(){
+    int x1,y1,x2,y2;
+    cin >> x1 >> y1 >> x2 >> y2;
+
+    int dx=x2-x1, dy=y2-y1;
+    int d=0;
+
+    while((d+1)*(d+1) <= dx*dx+dy*dy)
+        d++;
+
+    cout << d;
+}
+</pre>
+<p class="output-title">OUTPUT</p>
+<pre class="output-text">
+Input: 0 0 3 4
+Output: 5
+</pre>
+</div>
+</div>
+
+<div class="ques-card">
+<h3>Q49. Power of a number</h3>
+<button class="toggle-btn">Show Code ↓</button>
+<div class="code-output">
+<pre class="code-area">
+#include &lt;iostream&gt;
+using namespace std;
+
+int main(){
+    int b,e,res=1;
+    cin >> b >> e;
+
+    for(int i=1;i<=e;i++)
+        res*=b;
+
+    cout << res;
+}
+</pre>
+<p class="output-title">OUTPUT</p>
+<pre class="output-text">
+Input: 2 3
+Output: 8
+</pre>
+</div>
+</div>
+
+<div class="ques-card">
+<h3>Q51. Number of days in a month</h3>
+<button class="toggle-btn">Show Code ↓</button>
+<div class="code-output">
+<pre class="code-area">
+#include &lt;iostream&gt;
+using namespace std;
+
+int main(){
+    int m,y;
+    cin >> m >> y;
+
+    if(m==2){
+        if((y%400==0)||(y%4==0 && y%100!=0))
+            cout << 29;
+        else cout << 28;
+    }
+    else if(m==4||m==6||m==9||m==11)
+        cout << 30;
+    else
+        cout << 31;
+}
+</pre>
+<p class="output-title">OUTPUT</p>
+<pre class="output-text">
+Input: 2 2024
+Output: 29
+</pre>
+</div>
+</div>
+
+<div class="ques-card">
+<h3>Q52. Check positive or negative</h3>
+<button class="toggle-btn">Show Code ↓</button>
+<div class="code-output">
+<pre class="code-area">
+#include &lt;iostream&gt;
+using namespace std;
+
+int main(){
+    int n;
+    cin >> n;
+
+    if(n>0) cout << "Positive";
+    else if(n&lt;0) cout << "Negative";
+    else cout << "Zero";
+}
+</pre>
+<p class="output-title">OUTPUT</p>
+<pre class="output-text">
+Input: -5
+Output: Negative
+</pre>
+</div>
+</div>
+
+<div class="ques-card">
+<h3>Q53. Print day name</h3>
+<button class="toggle-btn">Show Code ↓</button>
+<div class="code-output">
+<pre class="code-area">
+#include &lt;iostream&gt;
+using namespace std;
+
+int main(){
+    int d;
+    cin >> d;
+
+    if(d==1) cout<<"Monday";
+    else if(d==2) cout<<"Tuesday";
+    else if(d==3) cout<<"Wednesday";
+    else if(d==4) cout<<"Thursday";
+    else if(d==5) cout<<"Friday";
+    else if(d==6) cout<<"Saturday";
+    else if(d==7) cout<<"Sunday";
+    else cout<<"Invalid";
+}
+</pre>
+<p class="output-title">OUTPUT</p>
+<pre class="output-text">
+Input: 3
+Output: Wednesday
+</pre>
+</div>
+</div>
+
+<div class="ques-card">
+<h3>Q54. Leap year check</h3>
+<button class="toggle-btn">Show Code ↓</button>
+<div class="code-output">
+<pre class="code-area">
+#include &lt;iostream&gt;
+using namespace std;
+
+int main(){
+    int y;
+    cin >> y;
+
+    if((y%400==0)||(y%4==0 && y%100!=0))
+        cout<<"Leap year";
+    else
+        cout<<"Not leap year";
+}
+</pre>
+<p class="output-title">OUTPUT</p>
+<pre class="output-text">
+Input: 2024
+Output: Leap year
+</pre>
+</div>
+</div>
+
+<div class="ques-card">
+<h3>Q55. Sum and average of 5 numbers</h3>
+<button class="toggle-btn">Show Code ↓</button>
+<div class="code-output">
+<pre class="code-area">
+#include &lt;iostream&gt;
+using namespace std;
+
+int main(){
+    int a,b,c,d,e;
+    cin >> a >> b >> c >> d >> e;
+
+    int sum = a+b+c+d+e;
+    cout << "Sum: " << sum << endl;
+    cout << "Average: " << sum/5;
+}
+</pre>
+<p class="output-title">OUTPUT</p>
+<pre class="output-text">
+Input: 1 2 3 4 5
+Sum: 15
+Average: 3
+</pre>
+</div>
+</div>
+
+<div class="ques-card">
+<h3>Q56. First 5 natural numbers</h3>
+<button class="toggle-btn">Show Code ↓</button>
+<div class="code-output">
+<pre class="code-area">
+#include &lt;iostream&gt;
+using namespace std;
+
+int main(){
+    for(int i=1;i&lt;=5;i++)
+        cout << i << " ";
+}
+</pre>
+<p class="output-title">OUTPUT</p>
+<pre class="output-text">
+1 2 3 4 5
+</pre>
+</div>
+</div>
+
+<div class="ques-card">
+<h3>Q57. Vowel or consonant</h3>
+<button class="toggle-btn">Show Code ↓</button>
+<div class="code-output">
+<pre class="code-area">
+#include &lt;iostream&gt;
+using namespace std;
+
+int main(){
+    char ch;
+    cin >> ch;
+
+    if(ch=='a'||ch=='e'||ch=='i'||ch=='o'||ch=='u'||ch=='A'||ch=='E'||ch=='I'||ch=='O'||ch=='U')
+        cout<<"Vowel";
+    else
+        cout<<"Consonant";
+}
+</pre>
+<p class="output-title">OUTPUT</p>
+<pre class="output-text">
+Input: b
+Output: Consonant
+</pre>
+</div>
+</div>
+
+<div class="ques-card">
+<h3>Q58. Cube up to n</h3>
+<button class="toggle-btn">Show Code ↓</button>
+<div class="code-output">
+<pre class="code-area">
+#include &lt;iostream&gt;
+using namespace std;
+
+int main(){
+    int n;
+    cin >> n;
+
+    for(int i=1;i&lt;=n;i++)
+        cout << i*i*i << endl;
+}
+</pre>
+<p class="output-title">OUTPUT</p>
+<pre class="output-text">
+Input: 3
+1
+8
+27
+</pre>
+</div>
+</div>
+
+<div class="ques-card">
+<h3>Q59. Odd numbers and sum</h3>
+<button class="toggle-btn">Show Code ↓</button>
+<div class="code-output">
+<pre class="code-area">
+#include &lt;iostream&gt;
+using namespace std;
+
+int main(){
+    int n,sum=0;
+    cin >> n;
+
+    for(int i=1;i&lt;=n;i++){
+        int x=2*i-1;
+        cout << x << " ";
+        sum+=x;
+    }
+
+    cout << endl << "Sum: " << sum;
+}
+</pre>
+<p class="output-title">OUTPUT</p>
+<pre class="output-text">
+Input: 3
+1 3 5
+Sum: 9
+</pre>
+</div>
+</div>
+
+<div class="ques-card">
+<h3>Q60. Multiplication table</h3>
+<button class="toggle-btn">Show Code ↓</button>
+<div class="code-output">
+<pre class="code-area">
+#include &lt;iostream&gt;
+using namespace std;
+
+int main(){
+    int n;
+    cin >> n;
+
+    for(int i=1;i&lt;=10;i++)
+        cout << n << " x " << i << " = " << n*i << endl;
+}
+</pre>
+<p class="output-title">OUTPUT</p>
+<pre class="output-text">
+Input: 2
+2 x 1 = 2
+...
+2 x 10 = 20
+</pre>
+</div>
+</div>
+
+
+
+
+
+   
+
+
+
+<div class="ques-card">
+<h3>Q61. Check whether number is positive, negative or zero</h3>
+<button class="toggle-btn">Show Code ↓</button>
+<div class="code-output">
+<pre class="code-area">
+#include &lt;iostream&gt;
+using namespace std;
+
+int main(){
+    int number;
+    cin >> number;
+
+    if(number > 0) cout << "Positive";
+    else if(number < 0) cout << "Negative";
+    else cout << "Zero";
+}
+</pre>
+<p class="output-title">OUTPUT</p>
+<pre class="output-text">
+Input: 5
+Output: Positive
+</pre>
+</div>
+</div>
+
+<div class="ques-card">
+<h3>Q62. Count number of digits</h3>
+<button class="toggle-btn">Show Code ↓</button>
+<div class="code-output">
+<pre class="code-area">
+#include &lt;iostream&gt;
+using namespace std;
+
+int main(){
+    int n,count=0;
+    cin >> n;
+
+    if(n==0) count=1;
+    while(n>0){
+        count++;
+        n/=10;
+    }
+
+    cout << count;
+}
+</pre>
+<p class="output-title">OUTPUT</p>
+<pre class="output-text">
+Input: 1234
+Output: 4
+</pre>
+</div>
+</div>
+
+<div class="ques-card">
+<h3>Q63. Check all numbers are equal</h3>
+<button class="toggle-btn">Show Code ↓</button>
+<div class="code-output">
+<pre class="code-area">
+#include &lt;iostream&gt;
+using namespace std;
+
+int main(){
+    int a,b,c;
+    cin >> a >> b >> c;
+
+    if(a==b && b==c) cout << "Equal";
+    else cout << "Not Equal";
+}
+</pre>
+<p class="output-title">OUTPUT</p>
+<pre class="output-text">
+Input: 5 5 5
+Output: Equal
+</pre>
+</div>
+</div>
+
+<div class="ques-card">
+<h3>Q64. Check increasing or decreasing order</h3>
+<button class="toggle-btn">Show Code ↓</button>
+<div class="code-output">
+<pre class="code-area">
+#include &lt;iostream&gt;
+using namespace std;
+
+int main(){
+    int a,b,c;
+    cin >> a >> b >> c;
+
+    if(a&lt;b && b&lt;c) cout << "Increasing";
+    else if(a&gt;b && b&gt;c) cout << "Decreasing";
+    else cout << "Neither";
+}
+</pre>
+<p class="output-title">OUTPUT</p>
+<pre class="output-text">
+Input: 1 2 3
+Output: Increasing
+</pre>
+</div>
+</div>
+
+<div class="ques-card">
+<h3>Q65. Student grade</h3>
+<button class="toggle-btn">Show Code ↓</button>
+<div class="code-output">
+<pre class="code-area">
+#include &lt;iostream&gt;
+using namespace std;
+
+int main(){
+    int m;
+    cin >> m;
+
+    if(m>=90) cout << "A";
+    else if(m>=80) cout << "B";
+    else if(m>=70) cout << "C";
+    else if(m>=60) cout << "D";
+    else cout << "F";
+}
+</pre>
+<p class="output-title">OUTPUT</p>
+<pre class="output-text">
+Input: 85
+Output: B
+</pre>
+</div>
+</div>
+
+<div class="ques-card">
+<h3>Q66. Simple calculator</h3>
+<button class="toggle-btn">Show Code ↓</button>
+<div class="code-output">
+<pre class="code-area">
+#include &lt;iostream&gt;
+using namespace std;
+
+int main(){
+    int a,b;
+    char op;
+    cin >> a >> op >> b;
+
+    if(op=='+') cout << a+b;
+    else if(op=='-') cout << a-b;
+    else if(op=='*') cout << a*b;
+    else if(op=='/') cout << a/b;
+}
+</pre>
+<p class="output-title">OUTPUT</p>
+<pre class="output-text">
+Input: 5 + 3
+Output: 8
+</pre>
+</div>
+</div>
+
+<div class="ques-card">
+<h3>Q67. Concatenate two strings</h3>
+<button class="toggle-btn">Show Code ↓</button>
+<div class="code-output">
+<pre class="code-area">
+#include &lt;iostream&gt;
+#include &lt;string&gt;
+using namespace std;
+
+int main(){
+    string a,b;
+    cin >> a >> b;
+    cout << a+b;
+}
+</pre>
+<p class="output-title">OUTPUT</p>
+<pre class="output-text">
+Input: Hello World
+Output: HelloWorld
+</pre>
+</div>
+</div>
+
+<div class="ques-card">
+<h3>Q68. Convert string to lowercase</h3>
+<button class="toggle-btn">Show Code ↓</button>
+<div class="code-output">
+<pre class="code-area">
+#include &lt;iostream&gt;
+#include &lt;string&gt;
+using namespace std;
+
+int main(){
+    string s;
+    getline(cin,s);
+
+    for(int i=0;i&lt;s.length();i++){
+        if(s[i]&gt;='A' && s[i]&lt;='Z')
+            s[i]+=32;
+    }
+
+    cout << s;
+}
+</pre>
+<p class="output-title">OUTPUT</p>
+<pre class="output-text">
+Input: HELLO
+Output: hello
+</pre>
+</div>
+</div>
+
+<div class="ques-card">
+<h3>Q69. (Skipped)</h3>
+<button class="toggle-btn">Show Code ↓</button>
+<div class="code-output">
+<pre class="code-area">/* Not provided */</pre>
+</div>
+</div>
+
+<div class="ques-card">
+<h3>Q70. Trim string</h3>
+<button class="toggle-btn">Show Code ↓</button>
+<div class="code-output">
+<pre class="code-area">
+#include &lt;iostream&gt;
+#include &lt;string&gt;
+using namespace std;
+
+int main(){
+    string s;
+    getline(cin,s);
+
+    int start=0,end=s.length()-1;
+
+    while(s[start]==' ') start++;
+    while(s[end]==' ') end--;
+
+    for(int i=start;i&lt;=end;i++)
+        cout << s[i];
+}
+</pre>
+<p class="output-title">OUTPUT</p>
+<pre class="output-text">
+Input:   hello  
+Output: hello
+</pre>
+</div>
+</div>
+<div class="ques-card">
+<h3>Q71. Get substring between two positions</h3>
+<button class="toggle-btn">Show Code ↓</button>
+<div class="code-output">
+<pre class="code-area">
+#include &lt;iostream&gt;
+#include &lt;string&gt;
+using namespace std;
+
+int main(){
+    string s;
+    int start,end;
+    getline(cin,s);
+    cin >> start >> end;
+
+    for(int i=start;i&lt;=end;i++)
+        cout << s[i];
+}
+</pre>
+<p class="output-title">OUTPUT</p>
+<pre class="output-text">
+Input: hello world 0 4
+Output: hello
+</pre>
+</div>
+</div>
+
+<div class="ques-card">
+<h3>Q72. Replace 'd' with 'f'</h3>
+<button class="toggle-btn">Show Code ↓</button>
+<div class="code-output">
+<pre class="code-area">
+#include &lt;iostream&gt;
+#include &lt;string&gt;
+using namespace std;
+
+int main(){
+    string s;
+    getline(cin,s);
+
+    for(int i=0;i&lt;s.length();i++){
+        if(s[i]=='d') s[i]='f';
+    }
+
+    cout << s;
+}
+</pre>
+<p class="output-title">OUTPUT</p>
+<pre class="output-text">
+Input: dog
+Output: fog
+</pre>
+</div>
+</div>
+
+<div class="ques-card">
+<h3>Q73. Length of string</h3>
+<button class="toggle-btn">Show Code ↓</button>
+<div class="code-output">
+<pre class="code-area">
+#include &lt;iostream&gt;
+#include &lt;string&gt;
+using namespace std;
+
+int main(){
+    string s;
+    getline(cin,s);
+    cout << s.length();
+}
+</pre>
+<p class="output-title">OUTPUT</p>
+<pre class="output-text">
+Input: hello
+Output: 5
+</pre>
+</div>
+</div>
+
+<div class="ques-card">
+<h3>Q74. Print current date and time</h3>
+<button class="toggle-btn">Show Code ↓</button>
+<div class="code-output">
+<pre class="code-area">
+#include &lt;iostream&gt;
+using namespace std;
+
+int main(){
+    cout << __DATE__ << endl;
+    cout << __TIME__;
+}
+</pre>
+<p class="output-title">OUTPUT</p>
+<pre class="output-text">
+Output: (current system date and time)
+</pre>
+</div>
+</div>
+
+<div class="ques-card">
+<h3>Q75. (Skipped)</h3>
+<button class="toggle-btn">Show Code ↓</button>
+<div class="code-output">
+<pre class="code-area">/* Not provided */</pre>
+</div>
+</div>
+
+<div class="ques-card">
+<h3>Q76. Remove a character from string</h3>
+<button class="toggle-btn">Show Code ↓</button>
+<div class="code-output">
+<pre class="code-area">
+#include &lt;iostream&gt;
+#include &lt;string&gt;
+using namespace std;
+
+int main(){
+    string s,res="";
+    char ch;
+    getline(cin,s);
+    cin >> ch;
+
+    for(int i=0;i&lt;s.length();i++){
+        if(s[i]!=ch) res+=s[i];
+    }
+
+    cout << res;
+}
+</pre>
+<p class="output-title">OUTPUT</p>
+<pre class="output-text">
+Input: hello l
+Output: heo
+</pre>
+</div>
+</div>
+
+<div class="ques-card">
+<h3>Q77. Reverse a string</h3>
+<button class="toggle-btn">Show Code ↓</button>
+<div class="code-output">
+<pre class="code-area">
+#include &lt;iostream&gt;
+#include &lt;string&gt;
+using namespace std;
+
+int main(){
+    string s;
+    getline(cin,s);
+
+    int i=0,j=s.length()-1;
+    while(i&lt;j){
+        swap(s[i],s[j]);
+        i++; j--;
+    }
+
+    cout << s;
+}
+</pre>
+<p class="output-title">OUTPUT</p>
+<pre class="output-text">
+Input: hello
+Output: olleh
+</pre>
+</div>
+</div>
+
+<div class="ques-card">
+<h3>Q78. Remove HTML tags</h3>
+<button class="toggle-btn">Show Code ↓</button>
+<div class="code-output">
+<pre class="code-area">
+#include &lt;iostream&gt;
+#include &lt;string&gt;
+using namespace std;
+
+int main(){
+    string s,res="";
+    getline(cin,s);
+
+    int tag=0;
+    for(int i=0;i&lt;s.length();i++){
+        if(s[i]=='&lt;') tag=1;
+        else if(s[i]=='&gt;') tag=0;
+        else if(!tag) res+=s[i];
+    }
+
+    cout << res;
+}
+</pre>
+<p class="output-title">OUTPUT</p>
+<pre class="output-text">
+Input: &lt;b&gt;Hello&lt;/b&gt;
+Output: Hello
+</pre>
+</div>
+</div>
+
+<div class="ques-card">
+<h3>Q79. Count number of lines</h3>
+<button class="toggle-btn">Show Code ↓</button>
+<div class="code-output">
+<pre class="code-area">
+#include &lt;iostream&gt;
+#include &lt;string&gt;
+using namespace std;
+
+int main(){
+    string s;
+    getline(cin,s);
+
+    int count=1;
+    for(int i=0;i&lt;s.length();i++){
+        if(s[i]=='\n') count++;
+    }
+
+    cout << count;
+}
+</pre>
+<p class="output-title">OUTPUT</p>
+<pre class="output-text">
+Input: hello
+Output: 1
+</pre>
+</div>
+</div>
+
+<div class="ques-card">
+<h3>Q80. Total and percentage of marks</h3>
+<button class="toggle-btn">Show Code ↓</button>
+<div class="code-output">
+<pre class="code-area">
+#include &lt;iostream&gt;
+using namespace std;
+
+int main(){
+    int a,b,c,d,e;
+    cin >> a >> b >> c >> d >> e;
+
+    int total = a+b+c+d+e;
+    cout << total << endl;
+    cout << total/5;
+}
+</pre>
+<p class="output-title">OUTPUT</p>
+<pre class="output-text">
+Input: 50 60 70 80 90
+Output:
+350
+70
+</pre>
+</div>
+</div>
+
+
+<div class="ques-card">
+<h3>Q81. Print numbers from 1 to 10</h3>
+<button class="toggle-btn">Show Code ↓</button>
+<div class="code-output">
+<pre class="code-area">
+#include &lt;iostream&gt;
+using namespace std;
+
+int main(){
+    for(int i=1;i&lt;=10;i++)
+        cout << i << " ";
+}
+</pre>
+<p class="output-title">OUTPUT</p>
+<pre class="output-text">
+1 2 3 4 5 6 7 8 9 10
+</pre>
+</div>
+</div>
+
+<div class="ques-card">
+<h3>Q82. Sum of first 10 natural numbers</h3>
+<button class="toggle-btn">Show Code ↓</button>
+<div class="code-output">
+<pre class="code-area">
+#include &lt;iostream&gt;
+using namespace std;
+
+int main(){
+    int sum=0;
+    for(int i=1;i&lt;=10;i++) sum+=i;
+    cout << sum;
+}
+</pre>
+<p class="output-title">OUTPUT</p>
+<pre class="output-text">
+55
+</pre>
+</div>
+</div>
+
+<div class="ques-card">
+<h3>Q83. Multiplication table</h3>
+<button class="toggle-btn">Show Code ↓</button>
+<div class="code-output">
+<pre class="code-area">
+#include &lt;iostream&gt;
+using namespace std;
+
+int main(){
+    int n; cin >> n;
+    for(int i=1;i&lt;=10;i++)
+        cout << n << " x " << i << " = " << n*i << endl;
+}
+</pre>
+<p class="output-title">OUTPUT</p>
+<pre class="output-text">
+Input: 2
+2 x 1 = 2
+...
+2 x 10 = 20
+</pre>
+</div>
+</div>
+
+<div class="ques-card">
+<h3>Q87. Check prime number</h3>
+<button class="toggle-btn">Show Code ↓</button>
+<div class="code-output">
+<pre class="code-area">
+#include &lt;iostream&gt;
+using namespace std;
+
+int main(){
+    int n,flag=1;
+    cin >> n;
+
+    if(n&lt;2) flag=0;
+
+    for(int i=2;i*i&lt;=n;i++){
+        if(n%i==0){ flag=0; break; }
+    }
+
+    if(flag) cout << "Prime";
+    else cout << "Not Prime";
+}
+</pre>
+<p class="output-title">OUTPUT</p>
+<pre class="output-text">
+Input: 7
+Output: Prime
+</pre>
+</div>
+</div>
+
+<div class="ques-card">
+<h3>Q89. Count positives, negatives and zeros</h3>
+<button class="toggle-btn">Show Code ↓</button>
+<div class="code-output">
+<pre class="code-area">
+#include &lt;iostream&gt;
+using namespace std;
+
+int main(){
+    int n,x,p=0,ne=0,z=0;
+    cin >> n;
+
+    for(int i=0;i&lt;n;i++){
+        cin >> x;
+        if(x&gt;0) p++;
+        else if(x&lt;0) ne++;
+        else z++;
+    }
+
+    cout << p << " " << ne << " " << z;
+}
+</pre>
+<p class="output-title">OUTPUT</p>
+<pre class="output-text">
+    Input: 5 → 1 -2 0 4 0
+    Output: 2 1 2
+</pre>
+</div>
+</div>
+
+<div class="ques-card">
+    <h3>Q90. Largest and smallest number</h3>
+    <button class="toggle-btn">Show Code ↓</button>
+    <div class="code-output">
+        <pre class="code-area">
+            #include &lt;iostream&gt;
+            using namespace std;
+            
+            int main(){
+                int n,x;
+                cin >> n >> x;
+                
+                int max=x,min=x;
+                
+                for(int i=1;i&lt;n;i++){
+                    cin >> x;
+                    if(x&gt;max) max=x;
+                    if(x&lt;min) min=x;
+                }
+                
+                cout << max << " " << min;
+            }
+        </pre>
+<p class="output-title">OUTPUT</p>
+<pre class="output-text">
+    Input: 3 → 5 2 8
+    Output: 8 2
+</pre>
+</div>
+</div>
+
+<div class="ques-card">
+    <h3>Q95. Write a C++ method to compute average of three numbers</h3>
+    <button class="toggle-btn">Show Code ↓</button>
+    <div class="code-output">
+        
+        <pre class="code-area">
+            #include &lt;iostream&gt;
+            using namespace std;
+            
+            int averageOfThree(int a,int b,int c){
+                return (a+b+c)/3;
+            }
+            
+            int main(){
+                int a,b,c;
+    cin&gt;&gt;a&gt;&gt;b&gt;&gt;c;
+    cout&lt;&lt;averageOfThree(a,b,c);
+}
+</pre>
+
+<p class="output-title">OUTPUT</p>
+<pre class="output-text">
+Input: 3 6 9
+Output: 6
+</pre>
+
+</div></div><div class="ques-card">
+<h3>Q94. Write a C++ program to calculate series sum</h3>
+<button class="toggle-btn">Show Code ↓</button>
+<div class="code-output">
+
+<pre class="code-area">
+#include &lt;iostream&gt;
+using namespace std;
+
+int main(){
+    int n,sum=0;
+    cout &lt;&lt; "Enter n: ";
+    cin &gt;&gt; n;
+
+    for(int i=1;i&lt;=n;i++){
+        sum+=i;
+    }
+
+    cout&lt;&lt;"Series sum is: "&lt;&lt;sum;
+}
+</pre>
+
+<p class="output-title">OUTPUT</p>
+<pre class="output-text">
+Enter n: 5
+Series sum is: 15
+</pre>
+
+</div></div><div class="ques-card">
+<h3>Q94. Write a C++ program to calculate series sum</h3>
+<button class="toggle-btn">Show Code ↓</button>
+<div class="code-output">
+
+<pre class="code-area">
+#include &lt;iostream&gt;
+using namespace std;
+
+int main(){
+    int n,sum=0;
+    cout &lt;&lt; "Enter n: ";
+    cin &gt;&gt; n;
+
+    for(int i=1;i&lt;=n;i++){
+        sum+=i;
+    }
+
+    cout&lt;&lt;"Series sum is: "&lt;&lt;sum;
+}
+</pre>
+
+<p class="output-title">OUTPUT</p>
+<pre class="output-text">
+Enter n: 5
+Series sum is: 15
+</pre>
+
+</div></div><div class="ques-card">
+<h3>Q95. Write a C++ method to compute average of three numbers</h3>
+<button class="toggle-btn">Show Code ↓</button>
+<div class="code-output">
+
+<pre class="code-area">
+#include &lt;iostream&gt;
+using namespace std;
+
+int averageOfThree(int a,int b,int c){
+    return (a+b+c)/3;
+}
+
+int main(){
+    int a,b,c;
+    cin&gt;&gt;a&gt;&gt;b&gt;&gt;c;
+    cout&lt;&lt;averageOfThree(a,b,c);
+}
+</pre>
+
+<p class="output-title">OUTPUT</p>
+<pre class="output-text">
+Input: 3 6 9
+Output: 6
+</pre>
+
+</div></div><div class="ques-card">
+<h3>Q96. Write a C++ method to find smallest among three numbers</h3>
+<button class="toggle-btn">Show Code ↓</button>
+<div class="code-output">
+
+<pre class="code-area">
+#include &lt;iostream&gt;
+using namespace std;
+
+int smallest(int a,int b,int c){
+    int s=a;
+    if(b&lt;s) s=b;
+    if(c&lt;s) s=c;
+    return s;
+}
+
+int main(){
+    int a,b,c;
+    cin&gt;&gt;a&gt;&gt;b&gt;&gt;c;
+    cout&lt;&lt;smallest(a,b,c);
+}
+</pre>
+
+<p class="output-title">OUTPUT</p>
+<pre class="output-text">
+Input: 5 2 8
+Output: 2
+</pre>
+
+</div></div><div class="ques-card">
+<h3>Q97. Write a C++ method to check leap year</h3>
+<button class="toggle-btn">Show Code ↓</button>
+<div class="code-output">
+
+<pre class="code-area">
+#include &lt;iostream&gt;
+using namespace std;
+
+bool isLeap(int year){
+    if((year%400==0)||(year%4==0 && year%100!=0))
+        return true;
+    return false;
+}
+
+int main(){
+    int year;
+    cin&gt;&gt;year;
+
+    if(isLeap(year))
+        cout&lt;&lt;"Leap year";
+    else
+        cout&lt;&lt;"Not leap year";
+}
+</pre>
+
+<p class="output-title">OUTPUT</p>
+<pre class="output-text">
+Input: 2024
+Output: Leap year
+</pre>
+
+</div></div>
+<div class="ques-card">
+<h3>Q98. Write a C++ program to round float value</h3>
+<button class="toggle-btn">Show Code ↓</button>
+<div class="code-output">
+
+<pre class="code-area">
+#include &lt;iostream&gt;
+#include &lt;string&gt;
+using namespace std;
+
+int roundedValue(string text){
+    int integerPart=stoi(text);
+    int pos=text.find('.');
+    if(pos!=string::npos && text[pos+1]&gt;='5')
+        integerPart++;
+    return integerPart;
+}
+
+int main(){
+    string value;
+    cin&gt;&gt;value;
+    cout&lt;&lt;roundedValue(value);
+}
+</pre>
+
+<p class="output-title">OUTPUT</p>
+<pre class="output-text">
+Input: 5.6
+Output: 6
+</pre>
+
+</div></div>
+
+<div class="ques-card">
+<h3>Q99. Write a C++ method to sum digits</h3>
+<button class="toggle-btn">Show Code ↓</button>
+<div class="code-output">
+
+<pre class="code-area">
+#include &lt;iostream&gt;
+using namespace std;
+
+int sumDigits(int n){
+    int sum=0;
+    while(n&gt;0){
+        sum+=n%10;
+        n/=10;
+    }
+    return sum;
+}
+
+int main(){
+    int n;
+    cin&gt;&gt;n;
+    cout&lt;&lt;sumDigits(n);
+}
+</pre>
+
+<p class="output-title">OUTPUT</p>
+<pre class="output-text">
+Input: 123
+Output: 6
+</pre>
+
+</div></div>
+<div class="ques-card">
+<h3>Q100. Write a C++ method to calculate area of triangle</h3>
+<button class="toggle-btn">Show Code ↓</button>
+<div class="code-output">
+
+<pre class="code-area">
+#include &lt;iostream&gt;
+using namespace std;
+
+int areaTriangle(int b,int h){
+    return (b*h)/2;
+}
+
+int main(){
+    int b,h;
+    cin&gt;&gt;b&gt;&gt;h;
+    cout&lt;&lt;areaTriangle(b,h);
+}
+</pre>
+
+<p class="output-title">OUTPUT</p>
+<pre class="output-text">
+Input: 10 5
+Output: 25
+</pre>
+
+</div></div>
+
+<div class="ques-card">
+<h3>Q101. Area of pentagon</h3>
+<button class="toggle-btn">Show Code ↓</button>
+<div class="code-output">
+<pre class="code-area">
+#include &lt;iostream&gt;
+using namespace std;
+
+int main(){
+    int s,a;
+    cin >> s >> a;
+    cout << (5*s*a)/2;
+}
+</pre>
+</div>
+</div>
+
+<div class="ques-card">
+<h3>Q102. Check even number</h3>
+<button class="toggle-btn">Show Code ↓</button>
+<div class="code-output">
+<pre class="code-area">
+#include &lt;iostream&gt;
+using namespace std;
+
+int main(){
+    int n; cin >> n;
+    if(n%2==0) cout << "Even";
+    else cout << "Odd";
+}
+</pre>
+</div>
+</div>
+
+<div class="ques-card">
+<h3>Q103. Check palindrome number</h3>
+<button class="toggle-btn">Show Code ↓</button>
+<div class="code-output">
+<pre class="code-area">
+#include &lt;iostream&gt;
+using namespace std;
+
+int main(){
+    int n,rev=0,temp;
+    cin >> n;
+    temp=n;
+
+    while(n&gt;0){
+        rev=rev*10+n%10;
+        n/=10;
+    }
+
+    if(temp==rev) cout << "Palindrome";
+    else cout << "Not Palindrome";
+}
+</pre>
+</div>
+</div>
+
+<div class="ques-card">
+<h3>Q104. Display prime numbers</h3>
+<button class="toggle-btn">Show Code ↓</button>
+<div class="code-output">
+<pre class="code-area">
+#include &lt;iostream&gt;
+using namespace std;
+
+int main(){
+    int n; cin >> n;
+
+    for(int i=2;i&lt;=n;i++){
+        int flag=1;
+        for(int j=2;j*j&lt;=i;j++){
+            if(i%j==0){ flag=0; break; }
+        }
+        if(flag) cout << i << " ";
+    }
+}
+</pre>
+</div>
+</div>
+
+<div class="ques-card">
+<h3>Q106. Factorial using recursion</h3>
+<button class="toggle-btn">Show Code ↓</button>
+<div class="code-output">
+<pre class="code-area">
+#include &lt;iostream&gt;
+using namespace std;
+
+int fact(int n){
+    if(n==0) return 1;
+    return n*fact(n-1);
+}
+
+int main(){
+    int n; cin >> n;
+    cout << fact(n);
+}
+</pre>
+</div>
+</div>
+
+<div class="ques-card">
+<h3>Q107. Reverse integer</h3>
+<button class="toggle-btn">Show Code ↓</button>
+<div class="code-output">
+<pre class="code-area">
+#include &lt;iostream&gt;
+using namespace std;
+
+int main(){
+    int n,rev=0;
+    cin >> n;
+
+    while(n!=0){
+        rev=rev*10+n%10;
+        n/=10;
+    }
+
+    cout << rev;
+}
+</pre>
+</div>
+</div>
+
+<div class="ques-card">
+<h3>Q108. Round float to 1 decimal</h3>
+<button class="toggle-btn">Show Code ↓</button>
+<div class="code-output">
+<pre class="code-area">
+#include &lt;iostream&gt;
+using namespace std;
+
+int main(){
+    float x;
+    cin >> x;
+
+    int y = x*10 + 0.5;
+    cout << y/10.0;
+}
+</pre>
+</div>
+</div>
+
+<div class="ques-card">
+<h3>Q109. Check if double is integer</h3>
+<button class="toggle-btn">Show Code ↓</button>
+<div class="code-output">
+<pre class="code-area">
+#include &lt;iostream&gt;
+using namespace std;
+
+int main(){
+    double x;
+    cin >> x;
+
+    if(x == (int)x) cout << "Integer";
+    else cout << "Not Integer";
+}
+</pre>
+</div>
+</div>
+
+  <!-- Footer -->
+  <footer>
+    © 2026 C Programming Hub
+  </footer>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+  <script>
+    const toggleButtons = document.querySelectorAll('.toggle-btn');
+
+    toggleButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const card = btn.parentElement;
+        card.classList.toggle('active');
+        const output = card.querySelector('.code-output');
+
+        if(card.classList.contains('active')) {
+          output.style.display = 'flex';
+          btn.textContent = "Hide Code ↑";
+        } else {
+          output.style.display = 'none';
+          btn.textContent = "Show Code ↓";
+        }
+      });
+    });
+  </script>
+</body>
+</html>
+
+
+
+    <!-- Questions Section -->
