@@ -148,3 +148,9 @@ footer {
   color: white;
   margin-bottom: 40px;
 }
+
+#done{
+ text-decoration: underline;
+ color: red;
+ text-underline-offset: 5px;
+}
